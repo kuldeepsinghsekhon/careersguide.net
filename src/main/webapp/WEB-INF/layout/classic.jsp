@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; UTF-8"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+    <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,15 +21,50 @@
     <link href="css/navbar-fixed-top.css" rel="stylesheet">
 
 <script src="js/jquery-2.1.3.min"></script>
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
+  <style >
+  /* Carousel base class */
+.carousel {
+  height: 300px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 300px;
+  background-color: #722;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 300px;
+}
+  .navbar{
+background:#722;
+color:#fff;}
+
+body {
+  min-height: 2000px;
+  padding-top:60px;
+}
+footer{
+background:#722;
+color:#fff;
+size:11px;
+padding:20px;
+}
+footer ul{
+list-style:none;
+padding:20px;
+}
+a{color:#fff;}
+  
+  </style>
 </head>
 <body>
  <!-- Fixed navbar -->
@@ -45,9 +81,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="active"><a href='<spring:url value="/"/>'>Home</a></li>
+            <li><a href='<spring:url value="/users.html"/>'>Users</a></li>
+           
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
@@ -72,17 +108,18 @@
  <div class="container">
 
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Navbar example</h1>
+   
+       
        
         
         <tiles:insertAttribute name="body" />
+        </div>
 <br/>
 <br/>
 <tiles:insertAttribute name="footer"/>
-      </div>
+      
 
-    </div> <!-- /container -->
+   
 
 </body>
  <script src="js/ie10-viewport-bug-workaround.js"></script>
