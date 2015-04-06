@@ -14,13 +14,15 @@ public class User {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	 private String firstName;
+	
+	
+	private String firstName;
 
 	    private String lastName;
 
 	    private String email;
 
-	    @Column(length = 60)
+	    
 	    private String password;
 
 	    public String getFirstName() {
