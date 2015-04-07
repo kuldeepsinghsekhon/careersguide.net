@@ -11,8 +11,12 @@
     <put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
   </definition>
   <definition name="users" extends="common" >
-    <put-attribute name="title" value="CareesGuide home page" />
+    <put-attribute name="title" value="List of Users page" />
     <put-attribute name="body" value="/WEB-INF/jsp/users.jsp" />
+  </definition>
+  <definition name="user-profile" extends="common" >
+    <put-attribute name="title" value="User Home Page" />
+    <put-attribute name="body" value="/WEB-INF/jsp/profile.jsp" />
   </definition>
  
 </tiles-definitions>
