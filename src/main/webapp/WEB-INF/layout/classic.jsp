@@ -93,6 +93,9 @@ a{color:#5e5e5e;}
         <li class="${current=='index'?'active':'' }"><a href='<spring:url value="/" />'>Home</a></li>
         <li class="${current=='users'?'active':'' }"><a href='<spring:url value="/users.html" />'>Users</a></li>
          <li class="${current=='register'?'active':'' }"><a href='<spring:url value="/register.html" />'>Register</a></li>
+         <li class="${current=='regcorp'?'active':'' }"><a href='<spring:url value="/regcorp.html" />'>Employeer Register</a></li>
+                  <li class="${current=='jobform'?'active':'' }"><a href='<spring:url value="/jobform.html" />'>Submit Job</a></li>
+         
         <li ><a href='<spring:url value="/logout" />'>Logout</a></li>
         
       </ul>

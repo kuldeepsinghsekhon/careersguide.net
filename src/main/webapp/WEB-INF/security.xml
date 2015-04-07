@@ -12,6 +12,7 @@
 		<intercept-url pattern="/users**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/users/**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/account**" access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/jobform**" access="hasRole('ROLE_CORP')" />
 		<form-login />
 		<logout logout-url="/logout" />
 	</http>
@@ -20,7 +21,7 @@
 		<authentication-provider>
 <user-service>
 <user name="admin" authorities="ROLE_ADMIN ,ROLE_USER" password="admin"/>
-
+<user name="corp" authorities="ROLE_CORP" password="corp"/>
 
 </user-service>
 			

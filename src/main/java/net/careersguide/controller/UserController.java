@@ -50,5 +50,49 @@ public class UserController {
 	public String doUserRegister(@ModelAttribute("user") User user){
 		userService.saveUser(user);
 		return "redirect:/register.html";
+		
 	}
+	
+	
+	@RequestMapping("/regcorp")
+	public String registerCorp()
+	{
+		
+		return "regcorp";
+	}
+	@ModelAttribute("usercorp")
+	public User corpConstruct(){
+		return new User();
+	}
+	@RequestMapping(value="/regcorp", method=RequestMethod.POST)
+	public String doCorpRegister(@ModelAttribute("usercorp") User usercorp){
+		userService.saveCorp(usercorp);
+		return "redirect:/regcorp.html";
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

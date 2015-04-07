@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <div class="container">
    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
       <!-- Indicators -->
@@ -42,21 +43,13 @@
       </a>
     </div><!-- /.carousel -->
 	<div class="list-group">
+	<c:forEach items="${jobs}" var="job" >
   <div class="list-group-item ">
-    <h4 class="list-group-item-heading">List group item heading</h4>
-    <p class="list-group-item-text">Cras justo odio, dapibus ac facilisis in,  nibh ultricies vehicula ut id elit</p>
+    <h4 class="list-group-item-heading"><c:out value="${job.title}"/></h4>
+    <p class="list-group-item-text"><c:out value="${job.description}"/></p>
 	<a href="#" > read more</a>
   </div>
-   <div class="list-group-item ">
-    <h4 class="list-group-item-heading">List group item heading</h4>
-    <p class="list-group-item-text">Cras justo odio, dapibus ac facilisis in,  nibh ultricies vehicula ut id elit</p>
-	<a href="#" > read more</a>
-  </div>
-  <div class="list-group-item ">
-    <h4 class="list-group-item-heading">List group item heading</h4>
-    <p class="list-group-item-text">Cras justo odio, dapibus ac facilisis in,  nibh ultricies vehicula ut id elit<a href="#"  > read more</a></p>
-	
-  </div>
+   </c:forEach>
 </div>
 
 	</div>

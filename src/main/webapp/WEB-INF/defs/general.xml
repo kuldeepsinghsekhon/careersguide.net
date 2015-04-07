@@ -26,4 +26,14 @@
     <put-attribute name="body" value="/WEB-INF/jsp/user-register.jsp" />
      <put-attribute name="current" value="register" />
   </definition>
+  <definition name="regcorp" extends="common" >
+    <put-attribute name="title" value="UserRegistration Page" />
+    <put-attribute name="body" value="/WEB-INF/jsp/corp-register.jsp" />
+     <put-attribute name="current" value="regcorp" />
+  </definition>
+  <definition name="jobform" extends="common" >
+    <put-attribute name="title" value="Job Post Form" />
+    <put-attribute name="body" value="/WEB-INF/jsp/jobpost-form.jsp" />
+     <put-attribute name="current" value="jobform" />
+  </definition>
 </tiles-definitions>

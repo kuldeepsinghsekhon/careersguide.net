@@ -17,7 +17,7 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	@Autowired
-	RoleRepository roleRepository;
+	private RoleRepository roleRepository;
 	public List<User> findAll(){
 		return userRepository.findAll();
 		
@@ -36,7 +36,15 @@ public class UserService {
 	public void saveUser(User user) {
 		List<Role>roles =new ArrayList<Role>();
 		roles.add(roleRepository.findByName("ROLE_USER"));
+		user.setRoles(roles);
 		userRepository.save(user);
+	}
+
+	public void saveCorp(User usercorp) {
+		List<Role>roles =new ArrayList<Role>();
+		roles.add(roleRepository.findByName("ROLE_CORP"));
+		usercorp.setRoles(roles);
+		userRepository.save(usercorp);
 	}
 
 }

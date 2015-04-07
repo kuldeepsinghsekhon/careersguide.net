@@ -21,11 +21,20 @@ public class User {
 	    private String lastName;
 
 	    private String email;
-
 	    
 	    private String password;
+	    @OneToMany
+	    private List<Job>jobs;
 
-	    public String getFirstName() {
+	    public List<Job> getJobs() {
+			return jobs;
+		}
+
+		public void setJobs(List<Job> jobs) {
+			this.jobs = jobs;
+		}
+
+		public String getFirstName() {
 			return firstName;
 		}
 
