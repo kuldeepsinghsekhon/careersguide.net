@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+    <%@ taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tilesx" %>
     <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+<tilesx:useAttribute name="current"/>  
 <title><tiles:getAsString name="title"/></title>
  <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -52,17 +53,14 @@
   height: 300px;
 }
  
-.navbar{
-background:#722;
-color:#fff;}
 
 body {
   min-height: 2000px;
   padding-top:70px;
 }
 footer{
-background:#722;
-color:#fff;
+background:#f8f8f8;
+color:#5e5e5e;
 size:11px;
 padding:20px;
 }
@@ -70,13 +68,13 @@ footer ul{
 list-style:none;
 padding:20px;
 }
-a{color:#000;}
+a{color:#5e5e5e;}
   </style>
 </head>
-<body>
+<body>  
  <!-- Fixed navbar -->
  <div class="container">
-   <nav class="navbar  navbar-fixed-top">
+   <nav class="navbar navbar-default  navbar-fixed-top">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -93,7 +91,8 @@ a{color:#000;}
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="${current=='index'?'active':'' }"><a href='<spring:url value="/" />'>Home</a></li>
-        <li class="${current=='register'?'active':'' }"><a href='<spring:url value="/users.html" />'>Users</a></li>
+        <li class="${current=='users'?'active':'' }"><a href='<spring:url value="/users.html" />'>Users</a></li>
+         <li class="${current=='register'?'active':'' }"><a href='<spring:url value="/register.html" />'>Register</a></li>
         <li ><a href='<spring:url value="/logout" />'>Logout</a></li>
         
       </ul>
@@ -131,5 +130,6 @@ a{color:#000;}
    
 
 </body>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
  <script src="js/ie10-viewport-bug-workaround.js"></script>
 </html>
