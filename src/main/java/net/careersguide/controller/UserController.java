@@ -31,7 +31,7 @@ public class UserController {
 		return "user-profile";
 	}
 	@RequestMapping("/users/remove/{id}")
-	public String removeUser(Model model,@PathVariable int id)
+	public String removeUser(@PathVariable int id)
 	{
 		userService.removeUser(id);
 		return "redirect:/users.html";
