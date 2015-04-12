@@ -30,6 +30,12 @@ public class UserController {
 		model.addAttribute("user",userService.findOneUser(id));
 		return "user-profile";
 	}
+	@RequestMapping("/resume")
+	public String viewUserResume()
+	{
+		//model.addAttribute("user",userService.findOneUser(id));
+		return "resume";
+	}
 	@RequestMapping("/users/remove/{id}")
 	public String removeUser(@PathVariable int id)
 	{

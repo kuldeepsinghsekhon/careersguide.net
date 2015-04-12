@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"  %>
-
+<h3>Users List</h3>
 <table class="table table-bordered table-hover table-striped">
   <tr>
     <th>User Id</th>

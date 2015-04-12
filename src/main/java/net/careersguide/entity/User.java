@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-@Entity
+@Entity(name="app_user")
 public class User {
 	@Id
 	@GeneratedValue
@@ -19,7 +19,7 @@ public class User {
 	private String firstName;
 
 	    private String lastName;
-
+	    @Column(name="name")
 	    private String email;
 	    
 	    private String password;

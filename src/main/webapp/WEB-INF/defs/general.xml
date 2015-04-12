@@ -16,6 +16,11 @@
     <put-attribute name="body" value="/WEB-INF/jsp/users.jsp" />
      <put-attribute name="current" value="users" />
   </definition>
+  <definition name="resume" extends="common" >
+    <put-attribute name="title" value="User Resume Home Page" />
+    <put-attribute name="body" value="/WEB-INF/jsp/view-resume.jsp" />
+     <put-attribute name="current" value="resume" />
+  </definition>
   <definition name="user-profile" extends="common" >
     <put-attribute name="title" value="User Home Page" />
     <put-attribute name="body" value="/WEB-INF/jsp/profile.jsp" />
@@ -35,5 +40,10 @@
     <put-attribute name="title" value="Job Post Form" />
     <put-attribute name="body" value="/WEB-INF/jsp/jobpost-form.jsp" />
      <put-attribute name="current" value="jobform" />
+  </definition>
+  <definition name="login" extends="common" >
+    <put-attribute name="title" value="Login your account" />
+    <put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
+     <put-attribute name="current" value="login" />
   </definition>
 </tiles-definitions>

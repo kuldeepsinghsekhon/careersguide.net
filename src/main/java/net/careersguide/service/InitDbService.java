@@ -30,7 +30,7 @@ public class InitDbService {
 		
 
 		Role roleAdmin =new Role();
-		roleUser.setName("ROLE_ADMIN");
+		roleAdmin.setName("ROLE_ADMIN");
 		roleRepository.save(roleAdmin);
 		
 		Role roleCorp =new Role();
@@ -45,9 +45,22 @@ public class InitDbService {
 		userAdmin.setPassword("adminspassword");
 		List<Role> roles =new ArrayList<Role>();
 		roles.add(roleAdmin);
-		roles.add(roleUser);
+		
 		userAdmin.setRoles(roles);
+		userAdmin.setEnabled(true);
 		userRepository.save(userAdmin);
+
+		User userCorp =new User();
+		
+		userCorp.setEmail("corpMail");
+		userCorp.setFirstName("corp");
+		userCorp.setLastName("corp");
+		userCorp.setPassword("corpspassword");
+		List<Role> rolesCorp =new ArrayList<Role>();
+		roles.add(roleCorp);
+		userCorp.setRoles(rolesCorp);
+		userCorp.setEnabled(true);
+		userRepository.save(userCorp);
 	}
 
 }

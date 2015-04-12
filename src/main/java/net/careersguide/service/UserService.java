@@ -35,6 +35,7 @@ public class UserService {
 
 	public void saveUser(User user) {
 		List<Role>roles =new ArrayList<Role>();
+		user.setEnabled(true);
 		roles.add(roleRepository.findByName("ROLE_USER"));
 		user.setRoles(roles);
 		userRepository.save(user);
@@ -42,6 +43,7 @@ public class UserService {
 
 	public void saveCorp(User usercorp) {
 		List<Role>roles =new ArrayList<Role>();
+		usercorp.setEnabled(true);
 		roles.add(roleRepository.findByName("ROLE_CORP"));
 		usercorp.setRoles(roles);
 		userRepository.save(usercorp);

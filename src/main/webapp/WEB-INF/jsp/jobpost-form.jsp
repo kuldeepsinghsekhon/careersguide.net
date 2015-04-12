@@ -2,12 +2,6 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
-
-
-
-
-
-
 <form:form commandName="jobs" class="form-horizontal">
  <div class="form-group">
    <label for="title" class="col-sm-2 control-label">Title :</label>
