@@ -14,7 +14,7 @@ border:1px solid f3aaff;
 
 <div id="login-frm">
 
-<form:form commandName="user" class="form-horizontal" >
+<form:form commandName="user"  class="form-horizontal" >
  <div class="form-group">
     <label for="firstName" class="col-sm-2 control-label">Name :</label>
     <div class="col-sm-10">
@@ -45,8 +45,6 @@ border:1px solid f3aaff;
       <button type="submit" class="btn btn-default">Register</button>
     </div>
   </div>
-
-
 
 </form:form>
 

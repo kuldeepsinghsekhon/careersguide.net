@@ -73,7 +73,12 @@ body {
 					<li class="${current=='users'?'active':'' }"><a
 						href='<spring:url value="/users.html" />'>Users</a></li>
 						</security:authorize>
-					
+					<security:authorize access="hasRole('ROLE_USER')">
+					<li class="${current=='resume'?'active':'' }"><a
+						href='<spring:url value="/resume-update.html" />'>Update Resume</a></li>
+						<li class="${current=='resume-update'?'active':'' }"><a
+						href='<spring:url value="/resume.html" />'>Preview Resume</a></li>
+						</security:authorize>
 						<security:authorize access="hasRole('ROLE_CORP')">
 					<li class="${current=='jobform'?'active':'' }"><a
 						href='<spring:url value="/jobform.html" />'>Submit Job</a></li>
@@ -82,7 +87,7 @@ body {
 						<li class="${current=='register'?'active':'' }"><a
 						href='<spring:url value="/register.html" />'>Register</a></li>
 						<li class="${current=='regcorp'?'active':'' }"><a
-						href='<spring:url value="/regcorp.html" />'>Corporate</a></li>
+						href='<spring:url value="/regcorp.html" />'>Employeer Users</a></li>
 						<li class="${current=='login'?'active':'' }"><a
 						href='<spring:url value="/login.html" />'>Login</a></li>
 						</security:authorize>

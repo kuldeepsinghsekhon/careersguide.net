@@ -1,0 +1,54 @@
+package net.careersguide.entity;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+@Entity
+public class Test {
+	@Id
+	@GeneratedValue
+	private Integer id;
+	private String name;
+	private String description;
+	@OneToMany(mappedBy="test")
+	private List<Module>modules;
+	@ManyToOne
+	@JoinColumn(name="employer_id")
+	private User employer;
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public List<Module> getModules() {
+		return modules;
+	}
+	public void setModules(List<Module> modules) {
+		this.modules = modules;
+	}
+	public User getEmployer() {
+		return employer;
+	}
+	public void setEmployer(User employer) {
+		this.employer = employer;
+	}
+	
+}

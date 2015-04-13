@@ -2,6 +2,9 @@ package net.careersguide.controller;
 
 
 
+import java.security.Principal;
+
+import net.careersguide.entity.Resume;
 import net.careersguide.entity.User;
 import net.careersguide.service.UserService;
 
@@ -31,11 +34,31 @@ public class UserController {
 		return "user-profile";
 	}
 	@RequestMapping("/resume")
-	public String viewUserResume()
+	public String viewUserResume(Model model,Principal principal)
 	{
+		String name=principal.getName();
+		model.addAttribute("resumeContent",userService.findUserResume(name));
 		//model.addAttribute("user",userService.findOneUser(id));
 		return "resume";
 	}
+	@RequestMapping("/resume-update")
+	public String updateUserResume()
+	{
+		//model.addAttribute("user",userService.findOneUser(id));
+		return "resume-update";
+	}
+	@ModelAttribute("resume")
+	public Resume resumeConstruct(){
+		return new Resume();
+	}
+	@RequestMapping(value="/resume-update", method=RequestMethod.POST)
+	public String doResumeUpdate(@ModelAttribute("resume") Resume resume,Principal principal){
+		String name=principal.getName();
+		userService.updateResume(resume,name);
+		return "redirect:/resume-update.html";
+		
+	}
+	
 	@RequestMapping("/users/remove/{id}")
 	public String removeUser(@PathVariable int id)
 	{
@@ -51,10 +74,12 @@ public class UserController {
 	@ModelAttribute("user")
 	public User userConstruct(){
 		return new User();
+		
 	}
 	@RequestMapping(value="/register", method=RequestMethod.POST)
-	public String doUserRegister(@ModelAttribute("user") User user){
+	public String doUserRegister(@ModelAttribute("user") User user,@ModelAttribute("resume") Resume resume){
 		userService.saveUser(user);
+		userService.saveResume(resume,user);
 		return "redirect:/register.html";
 		
 	}

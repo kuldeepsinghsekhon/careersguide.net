@@ -1,12 +1,15 @@
 package net.careersguide.repository;
 
+import net.careersguide.entity.Resume;
 import net.careersguide.entity.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User,Integer> {
+public interface ResumeRepository extends JpaRepository<Resume, Integer> {
 
-	User findByEmail(String email);
+	
+
+	Resume findByUser(User user);
 
 
 

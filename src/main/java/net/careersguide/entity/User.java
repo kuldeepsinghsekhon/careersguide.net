@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 @Entity(name="app_user")
 public class User {
 	@Id
@@ -25,13 +26,33 @@ public class User {
 	    private String password;
 	    @OneToMany
 	    private List<Job>jobs;
+	    
+	    @OneToOne(mappedBy="user")
+	    private Resume resume;
+	    @OneToMany(mappedBy="employer")
+	    private List<Test>tests;
+	    public List<Test> getTests() {
+			return tests;
+		}
 
-	    public List<Job> getJobs() {
+		public void setTests(List<Test> tests) {
+			this.tests = tests;
+		}
+
+		public List<Job> getJobs() {
 			return jobs;
 		}
 
 		public void setJobs(List<Job> jobs) {
 			this.jobs = jobs;
+		}
+
+		public Resume getResume() {
+			return resume;
+		}
+
+		public void setResume(Resume resume) {
+			this.resume = resume;
 		}
 
 		public String getFirstName() {

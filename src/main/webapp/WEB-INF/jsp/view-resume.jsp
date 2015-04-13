@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <style>
 <!--
 /* uses font awesome for social icons */
@@ -168,7 +169,7 @@ opacity:0.9;
 
 <div class="resume">
     <header class="page-header">
-    <h1 class="page-title">Resume of John Doe</h1>
+    <h1 class="page-title">Resume of <c:out value="${resumeContent.firstName}"/>  <c:out value="${resumeContent.lastName}"/></h1>
     <small> <i class="fa fa-clock-o"></i> Last Updated on: <time>Sunday, October 05, 2014</time></small>
   </header>
 <div class="row">
@@ -222,7 +223,7 @@ opacity:0.9;
 
             <div class="col-xs-12 col-sm-8">
               <ul class="list-group">
-                <li class="list-group-item">John Doe</li>
+                <li class="list-group-item"> <c:out value="${resumeContent.firstName}"/>  <c:out value="${resumeContent.lastName}"/></li>
                 <li class="list-group-item">Software Engineer</li>
                 <li class="list-group-item">Google Inc. </li>
                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>

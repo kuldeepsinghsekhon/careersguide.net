@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
+
+
+import net.careersguide.entity.Resume;
 import net.careersguide.entity.Role;
 import net.careersguide.entity.User;
+import net.careersguide.repository.ResumeRepository;
 import net.careersguide.repository.RoleRepository;
 import net.careersguide.repository.UserRepository;
 
@@ -16,6 +21,8 @@ import org.springframework.stereotype.Service;
 public class UserService {
 	@Autowired
 	private UserRepository userRepository;
+	@Autowired
+	private ResumeRepository resumeRepository;
 	@Autowired
 	private RoleRepository roleRepository;
 	public List<User> findAll(){
@@ -47,6 +54,26 @@ public class UserService {
 		roles.add(roleRepository.findByName("ROLE_CORP"));
 		usercorp.setRoles(roles);
 		userRepository.save(usercorp);
+	}
+
+	public void updateResume(Resume resume,String name) {
+		User user=userRepository.findByEmail(name);
+		
+		resume.setUser(user);
+		
+		resumeRepository.save(resume);
+		
+		
+	}
+
+	public Resume findUserResume(String name) {
+		User user= userRepository.findByEmail(name);
+		return resumeRepository.findByUser(user);
+	}
+
+	public void saveResume(Resume resume,User user) {
+		resume.setUser(user);
+		resumeRepository.save(resume);
 	}
 
 }
