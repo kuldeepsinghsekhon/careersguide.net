@@ -15,11 +15,19 @@ public class Test {
 	private Integer id;
 	private String name;
 	private String description;
-	@OneToMany(mappedBy="test")
+	@OneToMany(mappedBy="test1")
 	private List<Module>modules;
 	@ManyToOne
 	@JoinColumn(name="employer_id")
 	private User employer;
+	@OneToMany(mappedBy="test")
+	private List<Question>questions;
+	public List<Question> getQuestions() {
+		return questions;
+	}
+	public void setQuestions(List<Question> questions) {
+		this.questions = questions;
+	}
 	public Integer getId() {
 		return id;
 	}

@@ -82,6 +82,8 @@ body {
 						<security:authorize access="hasRole('ROLE_CORP')">
 					<li class="${current=='jobform'?'active':'' }"><a
 						href='<spring:url value="/jobform.html" />'>Submit Job</a></li>
+						<li class="${current=='tests'?'active':'' }"><a
+						href='<spring:url value="/tests.html" />'>Exams</a></li>
 						</security:authorize>
 						<security:authorize access="!isAuthenticated()">
 						<li class="${current=='register'?'active':'' }"><a

@@ -14,7 +14,7 @@ public class Module {
 	private String name;
 	@ManyToOne
 	@JoinColumn(name="test_id")
-	private Test test;
+	private Test test1;
 	public Integer getId() {
 		return id;
 	}
@@ -27,11 +27,12 @@ public class Module {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Test getTest() {
-		return test;
+	public Test getTest1() {
+		return test1;
 	}
-	public void setTest(Test test) {
-		this.test = test;
+	public void setTest1(Test test1) {
+		this.test1 = test1;
 	}
+	
 
 }

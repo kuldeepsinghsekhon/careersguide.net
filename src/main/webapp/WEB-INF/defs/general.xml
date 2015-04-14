@@ -56,4 +56,9 @@
     <put-attribute name="body" value="/WEB-INF/jsp/tests.jsp" />
      <put-attribute name="tests" value="tests" />
   </definition>
+  <definition name="test" extends="common" >
+    <put-attribute name="title" value="Test Detail " />
+    <put-attribute name="body" value="/WEB-INF/jsp/test.jsp" />
+     <put-attribute name="test" value="test" />
+  </definition>
 </tiles-definitions>
