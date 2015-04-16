@@ -7,6 +7,7 @@ import java.util.List;
 
 
 
+
 import net.careersguide.entity.Resume;
 import net.careersguide.entity.Role;
 import net.careersguide.entity.User;
@@ -74,6 +75,11 @@ public class UserService {
 	public void saveResume(Resume resume,User user) {
 		resume.setUser(user);
 		resumeRepository.save(resume);
+	}
+
+	public User userByName(String name) {
+		return userRepository.findByEmail(name);
+		
 	}
 
 }

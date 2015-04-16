@@ -31,6 +31,11 @@
     <put-attribute name="body" value="/WEB-INF/jsp/profile.jsp" />
      <put-attribute name="current" value="user-profile" />
   </definition>
+  <definition name="applied-jobs" extends="common" >
+    <put-attribute name="title" value="List Applied Jobs by User " />
+    <put-attribute name="body" value="/WEB-INF/jsp/applied-jobs.jsp" />
+     <put-attribute name="current" value="applied-jobs" />
+  </definition>
  <definition name="register" extends="common" >
     <put-attribute name="title" value="UserRegistration Page" />
     <put-attribute name="body" value="/WEB-INF/jsp/user-register.jsp" />
@@ -45,6 +50,21 @@
     <put-attribute name="title" value="Job Post Form" />
     <put-attribute name="body" value="/WEB-INF/jsp/jobpost-form.jsp" />
      <put-attribute name="current" value="jobform" />
+  </definition>
+   <definition name="posted-jobs" extends="common" >
+    <put-attribute name="title" value="Job Post Form" />
+    <put-attribute name="body" value="/WEB-INF/jsp/posted-jobs.jsp" />
+     <put-attribute name="current" value="posted-jobs" />
+  </definition>
+   <definition name="applies" extends="common" >
+    <put-attribute name="title" value="Applies Received to Job" />
+    <put-attribute name="body" value="/WEB-INF/jsp/list-applies.jsp" />
+     <put-attribute name="current" value="applies" />
+  </definition>
+  <definition name="jobs" extends="common" >
+    <put-attribute name="title" value="Job Post Form" />
+    <put-attribute name="body" value="/WEB-INF/jsp/job-search.jsp" />
+     <put-attribute name="current" value="jobs" />
   </definition>
   <definition name="login" extends="common" >
     <put-attribute name="title" value="Login your account" />

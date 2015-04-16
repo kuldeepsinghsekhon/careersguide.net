@@ -69,22 +69,41 @@ body {
 				<ul class="nav navbar-nav">
 					<li class="${current=='index'?'active':'' }"><a
 						href='<spring:url value="/" />'>Home</a></li>
+						
+						
 						<security:authorize access="hasRole('ROLE_ADMIN')">
 					<li class="${current=='users'?'active':'' }"><a
 						href='<spring:url value="/users.html" />'>Users</a></li>
 						</security:authorize>
+						
+						
+						
 					<security:authorize access="hasRole('ROLE_USER')">
 					<li class="${current=='resume'?'active':'' }"><a
 						href='<spring:url value="/resume-update.html" />'>Update Resume</a></li>
 						<li class="${current=='resume-update'?'active':'' }"><a
 						href='<spring:url value="/resume.html" />'>Preview Resume</a></li>
+						
+						<li class="${current=='applied-jobs'?'active':'' }"><a
+						href='<spring:url value="/applied-jobs.html" />'>Apllication Status</a></li>
 						</security:authorize>
+						
+						
+						
 						<security:authorize access="hasRole('ROLE_CORP')">
 					<li class="${current=='jobform'?'active':'' }"><a
 						href='<spring:url value="/jobform.html" />'>Submit Job</a></li>
 						<li class="${current=='tests'?'active':'' }"><a
 						href='<spring:url value="/tests.html" />'>Exams</a></li>
+						<li class="${current=='posted-jobs'?'active':'' }"><a
+						href='<spring:url value="/posted-jobs.html" />'>All Jobs</a></li>
+						
+						<li class="${current=='applies'?'active':'' }"><a
+						href='<spring:url value="/applies.html" />'>Jobs Applies</a></li>
+						
 						</security:authorize>
+						
+						
 						<security:authorize access="!isAuthenticated()">
 						<li class="${current=='register'?'active':'' }"><a
 						href='<spring:url value="/register.html" />'>Register</a></li>

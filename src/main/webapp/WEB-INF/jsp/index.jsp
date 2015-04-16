@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"  %>
 <style>
 <!-- /*
 Fade content bs-carousel with hero headers
@@ -226,7 +227,8 @@ Image credits: unsplash.com
 									<p class="list-group-item-text">
 										<c:out value="${job.description}" />
 									</p>
-									<a href="#"> read more</a>
+									<p><a href="#"> read more</a></p>
+									<p><a class="btn btn-default"href='<spring:url value="/apply/${job.id}.html"/>'/> Apply job</a></p>
 								</div>
 							</c:forEach>
 						</div>

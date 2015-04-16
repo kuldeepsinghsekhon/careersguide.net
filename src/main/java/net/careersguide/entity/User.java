@@ -31,7 +31,17 @@ public class User {
 	    private Resume resume;
 	    @OneToMany(mappedBy="employer")
 	    private List<Test>tests;
-	    public List<Test> getTests() {
+	    @OneToMany(mappedBy="candidate")
+	    private List<Apply>applies;
+	    public List<Apply> getApplies() {
+			return applies;
+		}
+
+		public void setApplies(List<Apply> applies) {
+			this.applies = applies;
+		}
+
+		public List<Test> getTests() {
 			return tests;
 		}
 

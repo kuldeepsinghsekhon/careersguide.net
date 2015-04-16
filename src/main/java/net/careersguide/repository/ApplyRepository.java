@@ -2,13 +2,20 @@ package net.careersguide.repository;
 
 import java.util.List;
 
+import net.careersguide.entity.Apply;
 import net.careersguide.entity.Job;
 import net.careersguide.entity.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface JobRepository extends JpaRepository<Job, Integer> {
+public interface ApplyRepository extends JpaRepository<Apply, Integer> {
 
-	List<Job> findByCorporate(User user);
+	List<Apply> findByCandidate(User user);
+
+	
+
+	List<Apply> findByJob(Job job);
+
+	
 
 }
