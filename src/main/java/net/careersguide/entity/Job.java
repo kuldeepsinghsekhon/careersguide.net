@@ -20,6 +20,17 @@ public class Job {
 	@GeneratedValue
 	private Integer id;
 	private String title;
+	private String description;
+	private String employerIndustry;
+	private String functionalArea;
+	public String getFunctionalArea() {
+		return functionalArea;
+	}
+	public void setFunctionalArea(String functionalArea) {
+		this.functionalArea = functionalArea;
+	}
+
+
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private User corporate;
@@ -33,7 +44,7 @@ public class Job {
 	public void setApplies(List<Apply> applies) {
 		this.applies = applies;
 	}
-	private String description;
+	
 	
 	private String category;
 	@Column(name="publish_date")
@@ -80,6 +91,12 @@ public class Job {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public String getEmployerIndustry() {
+		return employerIndustry;
+	}
+	public void setEmployerIndustry(String employerIndustry) {
+		this.employerIndustry = employerIndustry;
 	}
 	public String getCategory() {
 		return category;
