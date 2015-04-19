@@ -86,11 +86,106 @@
 
 				</div>
 
+<div class="form-group">
+
+					<label for="experienceMin" class="col-sm-4 control-label">Annual Salary</label>
+
+					<div class=" col-sm-4   ">
+						<form:select path="salaryMin" class="form-control">
+							<form:option value="0" label="Min-salary" />
+
+							<form:option value="100000">1 Lack</form:option>
+							<form:option value="200000">2 Lack</form:option>
+							<form:option value="300000">3 Lack</form:option>
+							<form:option value="400000">4 Lack</form:option>
+						</form:select>
+
+					</div>
+
+					<div class="col-sm-4  ">
+						<form:select path="salaryMax" class="form-control">
+							<form:option value="0" label="Max-Salary" />
+
+							<form:option value="100000">1 Lack</form:option>
+							<form:option value="200000">2 Lack</form:option>
+							<form:option value="300000">3 Lack</form:option>
+							<form:option value="400000">4 Lack</form:option>
+						</form:select>
+
+					</div>
+
+				</div>
 
 
 
+<div class="form-group">
+					<label for="State" class="col-sm-4 control-label">State of Job</label>
+					<div class="col-sm-8">
+						<form:select path="state" class="form-control">
+							<form:option value="0" label="Select State" />
 
+							<form:option value="punjab">punjab</form:option>
+							<form:option value="himachal">himachan</form:option>
+							
+						</form:select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="City" class="col-sm-4 control-label">City of Job</label>
+					<div class="col-sm-8">
+						<form:select path="city" class="form-control">
+							<form:option value="0" label="Select City" />
 
+							<form:option value="amritsar">Amritsar</form:option>
+							<form:option value="jalandar">jalandar</form:option>
+							
+						</form:select>
+					</div>
+				</div>
+				<h3 class="well well-sm ">Company  Details</h3>
+				
+				
+				
+				
+				<div class="form-group">
+					<label for="companyName" class="col-sm-4 control-label">Company Name :</label>
+					<div class="col-sm-8">
+						<form:input path="companyName" class="form-control col-sm-2" />
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="companyDescription" class="col-sm-4 control-label">Company Description :</label>
+					<div class="col-sm-8">
+						<form:textarea path="companyDescription" class="form-control col-sm-2" />
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="companyTelephone" class="col-sm-4 control-label">Company Telephone :</label>
+					<div class="col-sm-8">
+						<form:input path="companyTelephone" class="form-control col-sm-2" />
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="companyEmail" class="col-sm-4 control-label">Company Email :</label>
+					<div class="col-sm-8">
+						<form:input path="companyEmail" class="form-control col-sm-2" />
+					</div>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
@@ -101,6 +196,7 @@
 
 			</form:form>
 		</div>
+
 	</div>
 	<!-- row ends -->
 </div>

@@ -23,29 +23,26 @@ public class Job {
 	private String description;
 	private String employerIndustry;
 	private String functionalArea;
-	public String getFunctionalArea() {
-		return functionalArea;
+	private Integer salaryMin;
+	private Integer salaryMax;
+	public Integer getSalaryMin() {
+		return salaryMin;
 	}
-	public void setFunctionalArea(String functionalArea) {
-		this.functionalArea = functionalArea;
+	public void setSalaryMin(Integer salaryMin) {
+		this.salaryMin = salaryMin;
 	}
-
-
+	public Integer getSalaryMax() {
+		return salaryMax;
+	}
+	public void setSalaryMax(Integer salaryMax) {
+		this.salaryMax = salaryMax;
+	}
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private User corporate;
 	
 	@OneToMany(mappedBy="job")
 	private List<Apply>applies;
-	
-	public List<Apply> getApplies() {
-		return applies;
-	}
-	public void setApplies(List<Apply> applies) {
-		this.applies = applies;
-	}
-	
-	
 	private String category;
 	@Column(name="publish_date")
 	private Date publishDate;
@@ -53,6 +50,34 @@ public class Job {
 	private String country;
 	private String state;
 	private String city;
+	private String companyName;
+	private String companyDescription;
+	private String companyTelephone;
+	private String companyEmail;
+	public String getCompanyTelephone() {
+		return companyTelephone;
+	}
+	public void setCompanyTelephone(String companyTelephone) {
+		this.companyTelephone = companyTelephone;
+	}
+	public String getCompanyEmail() {
+		return companyEmail;
+	}
+	public void setCompanyEmail(String companyEmail) {
+		this.companyEmail = companyEmail;
+	}
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	public String getCompanyDescription() {
+		return companyDescription;
+	}
+	public void setCompanyDescription(String companyDescription) {
+		this.companyDescription = companyDescription;
+	}
 	private String skills;
 	private String qualification;
 	@Column(name="min_experience")
@@ -68,6 +93,35 @@ public class Job {
 	private Date lastDate;
 	@Column(name="interview_date")
 	private Date interviewDate;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public String getFunctionalArea() {
+		return functionalArea;
+	}
+	public void setFunctionalArea(String functionalArea) {
+		this.functionalArea = functionalArea;
+	}
+
+
+	
+	
+	public List<Apply> getApplies() {
+		return applies;
+	}
+	public void setApplies(List<Apply> applies) {
+		this.applies = applies;
+	}
+	
+	
+	
 	public Integer getId() {
 		return id;
 	}
