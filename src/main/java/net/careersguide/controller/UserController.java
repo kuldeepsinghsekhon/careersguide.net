@@ -5,7 +5,7 @@ package net.careersguide.controller;
 import java.security.Principal;
 
 import net.careersguide.entity.Resume;
-import net.careersguide.entity.User;
+
 import net.careersguide.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,42 +65,12 @@ public class UserController {
 		userService.removeUser(id);
 		return "redirect:/users.html";
 	}
-	@RequestMapping("/register")
-	public String registerUser()
-	{
-		
-		return "register";
-	}
-	@ModelAttribute("user")
-	public User userConstruct(){
-		return new User();
-		
-	}
-	@RequestMapping(value="/register", method=RequestMethod.POST)
-	public String doUserRegister(@ModelAttribute("user") User user,@ModelAttribute("resume") Resume resume){
-		userService.saveUser(user);
-		userService.saveResume(resume,user);
-		return "redirect:/register.html";
-		
-	}
 	
 	
-	@RequestMapping("/regcorp")
-	public String registerCorp()
-	{
-		
-		return "regcorp";
-	}
-	@ModelAttribute("usercorp")
-	public User corpConstruct(){
-		return new User();
-	}
-	@RequestMapping(value="/regcorp", method=RequestMethod.POST)
-	public String doCorpRegister(@ModelAttribute("usercorp") User usercorp){
-		userService.saveCorp(usercorp);
-		return "redirect:/regcorp.html";
-		
-	}
+	
+	
+	
+	
 	
 	
 	

@@ -16,7 +16,7 @@ public class User {
 	@GeneratedValue
 	private Integer id;
 	
-	
+	private String token;
 	private String firstName;
 
 	    private String lastName;
@@ -135,6 +135,14 @@ public class User {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
 	}
 
 	
