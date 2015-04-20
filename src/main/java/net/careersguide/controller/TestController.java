@@ -51,4 +51,11 @@ public class TestController {
 		testService.createQuestion(question,name,id);
 	return "redirect:/test/{id}.html";	
 	}
+	@RequestMapping(value="/test/remove/{id}")
+	public String removeExam(@PathVariable int id){
+		Test test =testService.findOneTest(id);
+		testService.deleteTest(test);
+	return "redirect:/tests.html";	
+	}
+	
 }

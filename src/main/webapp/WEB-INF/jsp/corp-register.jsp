@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
 
@@ -10,7 +10,15 @@
 
 <div class="container-fluid">
     <section class="container">
-		<div class="container-page">	
+		<div class="container-page">
+		<c:if test="${param.success eq true}">
+		<div class="alert alert-success ">
+		Registration Success full 
+		<h6>Activate your Account</h6>
+		<p>Please check your  mail and click on Verification Link To Activate your Account</p>
+		</div>
+		
+		</c:if>	
 		<form:form commandName="usercorp" 	>		
 			<div class="col-md-8">
 				<h3 class="dark-grey">Employer Registration</h3>

@@ -8,12 +8,11 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import net.careersguide.entity.Role;
 import net.careersguide.entity.User;
-
 import net.careersguide.repository.RoleRepository;
 import net.careersguide.repository.UserRepository;
 @Service
@@ -28,40 +27,46 @@ public class RegistrationService {
 	 private static final int EXPIRATION = 60 * 24;
 	 
 	public void saveUser(User user) {
-		List<Role>roles =new ArrayList<Role>();
 		user.setEnabled(true);
+		BCryptPasswordEncoder encoder =new BCryptPasswordEncoder();
+		user.setPassword(encoder.encode(user.getPassword()));
+		List<Role>roles =new ArrayList<Role>();
+		
 		roles.add(roleRepository.findByName("ROLE_USER"));
 		user.setRoles(roles);
 		String token = UUID.randomUUID().toString();
         user.setToken(token);
-        
+        userRepository.save(user);
         String recipientAddress = user.getEmail();
         String subject = "Registration Confirmation";
         String confirmationUrl =  "/regitrationConfirm.html?token=" + token;
         String message="Please click on link to complete Registration";
-        String mailBody= message + " rn" + "http://localhost:8080" + confirmationUrl;
+        String mailBody= message + " /n" + "http://localhost:8080" + confirmationUrl;
        
         sendEmailService.sendRegistrationMail(recipientAddress, subject, mailBody);
-        userRepository.save(user);
+       
        
 	}
 	
 	public void saveCorp(User usercorp) {
-		List<Role>roles =new ArrayList<Role>();
 		usercorp.setEnabled(true);
+		BCryptPasswordEncoder encoder =new BCryptPasswordEncoder();
+		usercorp.setPassword(encoder.encode(usercorp.getPassword()));
+		List<Role>roles =new ArrayList<Role>();
+		
 		roles.add(roleRepository.findByName("ROLE_CORP"));
 		usercorp.setRoles(roles);
 		String token = UUID.randomUUID().toString();
 		usercorp.setToken(token);
-        
+		userRepository.save(usercorp);
         String recipientAddress = usercorp.getEmail();
         String subject = "Registration Confirmation";
         String confirmationUrl =  "/regitrationConfirm.html?token=" + token;
         String message="Please click on link to complete Registration";
-        String mailBody= message + " rn" + "http://localhost:8080" + confirmationUrl;
+        String mailBody= message + " /n" + "http://localhost:8080" + confirmationUrl;
        
         sendEmailService.sendRegistrationMail(recipientAddress, subject, mailBody);
-		userRepository.save(usercorp);
+		
 	}
 	
 	private Date calculateExpiryDate(int expiryTimeInMinutes) {

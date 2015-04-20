@@ -1,5 +1,6 @@
 package net.careersguide.service;
 
+import java.net.Authenticator;
 import java.util.List;
 
 import net.careersguide.entity.Question;
@@ -10,6 +11,9 @@ import net.careersguide.repository.TestRepository;
 import net.careersguide.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.method.P;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -46,6 +50,11 @@ public class TestService {
 		question.setTest(test);
 		questionRepository.save(question);
 		
+	}
+	@PreAuthorize("#test.employer.email==authentication.name or hasRole('ROLE_ADMIN')")
+	public void deleteTest(@P("test")Test test) {
+		
+		testRepository.delete(test);
 	}
 
 	

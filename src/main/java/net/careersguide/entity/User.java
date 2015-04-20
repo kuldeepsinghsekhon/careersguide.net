@@ -2,6 +2,7 @@ package net.careersguide.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,11 +28,11 @@ public class User {
 	    @OneToMany
 	    private List<Job>jobs;
 	    
-	    @OneToOne(mappedBy="user")
+	    @OneToOne(mappedBy="user",cascade=CascadeType.REMOVE)
 	    private Resume resume;
-	    @OneToMany(mappedBy="employer")
+	    @OneToMany(mappedBy="employer",cascade=CascadeType.REMOVE)
 	    private List<Test>tests;
-	    @OneToMany(mappedBy="candidate")
+	    @OneToMany(mappedBy="candidate",cascade=CascadeType.REMOVE)
 	    private List<Apply>applies;
 	    public List<Apply> getApplies() {
 			return applies;

@@ -2,6 +2,7 @@ package net.careersguide.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,7 +21,7 @@ public class Test {
 	@ManyToOne
 	@JoinColumn(name="employer_id")
 	private User employer;
-	@OneToMany(mappedBy="test")
+	@OneToMany(mappedBy="test",cascade=CascadeType.REMOVE)
 	private List<Question>questions;
 	public List<Question> getQuestions() {
 		return questions;

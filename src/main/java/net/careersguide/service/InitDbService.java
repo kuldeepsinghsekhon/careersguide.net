@@ -6,6 +6,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 
+
 import net.careersguide.entity.Question;
 import net.careersguide.entity.Role;
 import net.careersguide.entity.Test;
@@ -19,6 +20,7 @@ import net.careersguide.repository.UserRepository;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Transactional
@@ -55,7 +57,9 @@ public class InitDbService {
 		userAdmin.setEmail("adminMail");
 		userAdmin.setFirstName("Admin");
 		userAdmin.setLastName("User");
-		userAdmin.setPassword("adminspassword");
+		BCryptPasswordEncoder encoder =new BCryptPasswordEncoder();
+		
+		userAdmin.setPassword(encoder.encode("admin"));
 		List<Role> roles =new ArrayList<Role>();
 		roles.add(roleAdmin);
 		
@@ -68,9 +72,11 @@ public class InitDbService {
 		userCorp.setEmail("corpMail");
 		userCorp.setFirstName("corp");
 		userCorp.setLastName("corp");
-		userCorp.setPassword("corpspassword");
+		
+		
+		userCorp.setPassword(encoder.encode("corp"));
 		List<Role> rolesCorp =new ArrayList<Role>();
-		roles.add(roleCorp);
+		rolesCorp.add(roleCorp);
 		userCorp.setRoles(rolesCorp);
 		userCorp.setEnabled(true);
 		userRepository.save(userCorp);

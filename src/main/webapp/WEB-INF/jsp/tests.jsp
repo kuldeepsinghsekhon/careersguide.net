@@ -10,26 +10,27 @@ $(document).ready(function(){
 });
 //-->
 </script>
-<h3>List of All Available Tests</h3>
+
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Create New Test
+  Create Exam
 </button>
 
 <!-- Modal -->
+<form:form commandName="test"  class="form-horizontal" >
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Create Exam</h4>
       </div>
       <div class="modal-body">
       
 
 <div id="login-frm">
 
-<form:form commandName="test"  class="form-horizontal" >
+
  <div class="form-group">
     <label for="firstName" class="col-sm-2 control-label">Name :</label>
     <div class="col-sm-10">
@@ -46,11 +47,11 @@ $(document).ready(function(){
   
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Create Exam</button>
+     
     </div>
   </div>
 
-</form:form>
+
 
 </div>
 
@@ -65,11 +66,14 @@ $(document).ready(function(){
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+         <button type="submit" class="btn btn-primary">Create Exam</button>
+       
       </div>
     </div>
   </div>
 </div>
+</form:form>
+<h3>List of All Available Tests</h3>
 <table class="table table-bordered table-hover table-striped">
   <tr>
     <th>Test Name</th>
