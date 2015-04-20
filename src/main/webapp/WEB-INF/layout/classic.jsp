@@ -108,7 +108,7 @@ body {
 						<li class="${current=='register'?'active':'' }"><a
 						href='<spring:url value="/register.html" />'>Register</a></li>
 						<li class="${current=='regcorp'?'active':'' }"><a
-						href='<spring:url value="/regcorp.html" />'>Employeer Users</a></li>
+						href='<spring:url value="/regcorp.html" />'>Employer Register</a></li>
 						<li class="${current=='login'?'active':'' }"><a
 						href='<spring:url value="/login.html" />'>Login</a></li>
 						</security:authorize>
