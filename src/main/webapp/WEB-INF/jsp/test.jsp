@@ -90,17 +90,73 @@
    <table class="table table-bordered table-hover table-striped">
   
   
-   <tr><td ><c:out value="${question.statement}"/></td></tr>
-  <tr><td><c:out value="${question.solution1}"/></td></tr>
-  <tr><td><c:out value="${question.solution2}"/></td></tr>
-  <tr><td><c:out value="${question.solution3}"/></td></tr>
-  <tr><td><c:out value="${question.solution4}"/></td></tr>
+  
   <tr><td ><c:out value="Rght solution is   :${question.rightsolution}"/></td></tr>
    <tr></tr>
   </table>
   
   </c:forEach>
- 
-  
+  <c:forEach items="${testdetail.questions}" var="question">
+ <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-circle-arrow-right"></span><c:out value="${question.statement}"/></h3>
+                </div>
+                <div class="panel-body two-col">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="well well-sm">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                      <c:out value="${question.solution1}"/>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="well well-sm">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                       <c:out value="${question.solution2}"/>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="well well-sm margin-bottom-none">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                      <c:out value="${question.solution3}"/>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="well well-sm margin-bottom-none">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        <c:out value="${question.solution4}"/>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-success btn-sm">
+                        <span class="glyphicon glyphicon-ok"></span>Vote</button>
+                    <button type="button" class="btn btn-primary btn-sm">
+                        View Result</button>
+                </div>
+            </div>
+        </div>
+  </c:forEach>
   
 

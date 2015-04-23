@@ -26,7 +26,12 @@ public class Resume {
 	@OneToOne
 	@JoinColumn(name="user_id")
 	private User user;
-    public Integer getId() {
+	
+   
+
+
+
+	public Integer getId() {
 		return id;
 	}
 
@@ -214,7 +219,7 @@ public class Resume {
 	
 	private String currentCompany;
 	
-	
+	 
 	
 
 }

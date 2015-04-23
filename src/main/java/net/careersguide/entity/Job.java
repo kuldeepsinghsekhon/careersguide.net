@@ -20,6 +20,7 @@ public class Job {
 	@GeneratedValue
 	private Integer id;
 	private String title;
+	@Column(length=1000)
 	private String description;
 	private String employerIndustry;
 	private String functionalArea;

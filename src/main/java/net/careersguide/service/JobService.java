@@ -36,4 +36,16 @@ private UserService userService;
 		return  jobRepository.findByCorporate(user);
 	}
 
+	public Job findOneJob(int id) {
+		return jobRepository.findById(id);
+	}
+
+	public List<Job> findAllBy(String seachValue,String qualification) {
+		
+		return jobRepository.findByTitleOrQualification(seachValue, qualification);
+		//return jobRepository.findByTitle(seachValue);
+	}
+
+	
+
 }

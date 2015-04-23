@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include  file="../layout/taglib.jsp"%>
 <style >
 
 #login-frm{
@@ -24,34 +23,38 @@ border:1px solid f3aaff;
 		</div>
 		
 		</c:if>	
-		<form:form commandName="user" 	>		
+		<form:form commandName="user">		
 			<div class="col-md-8">
 				<h3 class="dark-grey">Candidate Registration</h3>
 				
 				<div class="form-group col-lg-12">
-					<label>Name</label>
+					<label>Name</label><form:errors path="firstName" />
 					<form:input path ="firstName"  class="form-control" id="" value="" />
+				</div>
+				<div class="form-group col-lg-6">
+					<label>Email Address</label><form:errors path="email" />
+					<form:input path ="email"  class="form-control" id="" value=""/>
+					
 				</div>
 				
 				<div class="form-group col-lg-6">
-					<label>Password</label>
+					<label>Repeat Email Address</label>
+					<input type="text" name="" class="form-control" id="" value="">
+				</div>		
+				
+				<div class="form-group col-lg-6">
+					<label>Password</label> <form:errors path="password" />
 					<form:input path ="password"  type="password"  class="form-control" id="" value=""/>
+					
 				</div>
 				
 				<div class="form-group col-lg-6">
 					<label>Repeat Password</label>
 					<input type="password" name="" class="form-control" id="" value="">
+					
 				</div>
 								
-				<div class="form-group col-lg-6">
-					<label>Email Address</label>
-					<form:input path ="email"  class="form-control" id="" value=""/>
-				</div>
-				
-				<div class="form-group col-lg-6">
-					<label>Repeat Email Address</label>
-					<input type="" name="" class="form-control" id="" value="">
-				</div>			
+					
 				
 				<div class="col-sm-6">
 					<input type="checkbox" class="checkbox" />Sigh up for our newsletter

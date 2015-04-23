@@ -40,11 +40,13 @@ public class RegistrationController {
 	}
 	
 	@RequestMapping(value="/register", method=RequestMethod.POST)
-	public String doUserRegister(@Valid @ModelAttribute("user") User user,@ModelAttribute("resume") Resume resume,BindingResult result, RedirectAttributes redirectAttributes){
-		
+	public String doUserRegister(@Valid @ModelAttribute("user") User user,BindingResult bindingResult, RedirectAttributes redirectAttributes){
+		if( bindingResult.hasErrors()){
+			return "register";
+		}
 		registrationService.saveUser(user);
 		
-		userService.saveResume(resume,user);
+		userService.saveResume(user);//@ModelAttribute("resume") Resume resume
 		redirectAttributes.addFlashAttribute("success",true);
 		return "redirect:/register.html?success=true";
 		
@@ -62,7 +64,10 @@ public class RegistrationController {
 		return new User();
 	}
 	@RequestMapping(value="/regcorp", method=RequestMethod.POST)
-	public String doCorpRegister(@ModelAttribute("usercorp") User usercorp){
+	public String doCorpRegister(@Valid @ModelAttribute("usercorp") User usercorp,BindingResult bindingResult){
+		if( bindingResult.hasErrors()){
+			return "regcorp";
+		}
 		registrationService.saveCorp(usercorp);
 		return "redirect:/regcorp.html?success=true";
 		

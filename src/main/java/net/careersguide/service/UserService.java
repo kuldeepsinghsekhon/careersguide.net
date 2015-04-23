@@ -3,10 +3,12 @@ package net.careersguide.service;
 
 
 import java.util.List;
+
 import net.careersguide.entity.Resume;
 import net.careersguide.entity.User;
 import net.careersguide.repository.ResumeRepository;
 import net.careersguide.repository.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,10 +36,18 @@ public class UserService {
 
 		public void updateResume(Resume resume,String name) {
 		User user=userRepository.findByEmail(name);
+		Resume candidateResume =resumeRepository.findByUser(user);
+		candidateResume.setSummary(resume.getSummary());
+		candidateResume.setEmail(resume.getEmail());	
+		candidateResume.setFirstName(resume.getFirstName());
+		candidateResume.setLastName(resume.getLastName());
+		candidateResume.setFatherName(resume.getFatherName());
+		candidateResume.setAddress(resume.getAddress());
+		candidateResume.setState(resume.getState());
+		candidateResume.setCity(resume.getCity());
 		
-		resume.setUser(user);
-		
-		resumeRepository.save(resume);
+			
+		resumeRepository.save(candidateResume);
 				
 	}
 
@@ -46,7 +56,8 @@ public class UserService {
 		return resumeRepository.findByUser(user);
 	}
 
-	public void saveResume(Resume resume,User user) {
+	public void saveResume(User user) {
+		Resume resume=new Resume();
 		resume.setUser(user);
 		resumeRepository.save(resume);
 	}

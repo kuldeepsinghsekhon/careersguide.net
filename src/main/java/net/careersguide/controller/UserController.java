@@ -41,19 +41,22 @@ public class UserController {
 		//model.addAttribute("user",userService.findOneUser(id));
 		return "resume";
 	}
-	@RequestMapping("/resume-update")
-	public String updateUserResume()
-	{
-		//model.addAttribute("user",userService.findOneUser(id));
-		return "resume-update";
-	}
+	
 	@ModelAttribute("resume")
 	public Resume resumeConstruct(){
 		return new Resume();
 	}
+	@RequestMapping("/resume-update")
+	public String updateUserResume(Model model,Principal principal)
+	{
+		String name =principal.getName();
+		model.addAttribute("resume",userService.findUserResume(name));
+		return "resume-update";
+	}
 	@RequestMapping(value="/resume-update", method=RequestMethod.POST)
 	public String doResumeUpdate(@ModelAttribute("resume") Resume resume,Principal principal){
 		String name=principal.getName();
+		
 		userService.updateResume(resume,name);
 		return "redirect:/resume-update.html";
 		

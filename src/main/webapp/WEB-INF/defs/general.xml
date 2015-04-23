@@ -63,8 +63,13 @@
   </definition>
   <definition name="jobs" extends="common" >
     <put-attribute name="title" value="Job Post Form" />
-    <put-attribute name="body" value="/WEB-INF/jsp/job-search.jsp" />
+    <put-attribute name="body" value="/WEB-INF/jsp/jobs.jsp" />
      <put-attribute name="current" value="jobs" />
+  </definition>
+   <definition name="jobdetail" extends="common" >
+    <put-attribute name="title" value="Job Detail" />
+    <put-attribute name="body" value="/WEB-INF/jsp/jobDetail.jsp" />
+     <put-attribute name="current" value="jobdetail" />
   </definition>
   <definition name="login" extends="common" >
     <put-attribute name="title" value="Login your account" />

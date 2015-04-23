@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"  %>
+    pageEncoding="UTF-8"%>
+<%@ include  file="../layout/taglib.jsp"%>
 <style>
 <!-- /*
 Fade content bs-carousel with hero headers
@@ -197,51 +196,80 @@ Image credits: unsplash.com
 	</div>
 </div>
 <!-- /.carousel -->
+<div class="page-header">
+  <h1>Find Latest Jobs <small>Job you deserve</small></h1>
+</div>
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-md-8 ">
 		<div class="panel with-nav-tabs panel-default">
 			<div class="panel-heading">
 				<ul class="nav nav-tabs">
-					<li class="active"><a href="#tab1default" data-toggle="tab">Default
-							1</a></li>
-					<li><a href="#tab2default" data-toggle="tab">Default 2</a></li>
-					<li><a href="#tab3default" data-toggle="tab">Default 3</a></li>
-					<li class="dropdown"><a href="#" data-toggle="dropdown">Dropdown
-							<span class="caret"></span>
-					</a>
+					<li class="active"><a href="#tab1default" data-toggle="tab">Default1</a></li>
+					
+					<li class="dropdown"><a href="#" data-toggle="dropdown">Dropdown<span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#tab4default" data-toggle="tab">Default 4</a></li>
 							<li><a href="#tab5default" data-toggle="tab">Default 5</a></li>
-						</ul></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 			<div class="panel-body">
 				<div class="tab-content">
 					<div class="tab-pane fade in active" id="tab1default">
-						<div class="list-group">
+						<div class="">
 							<c:forEach items="${jobs}" var="job">
-								<div class="list-group-item ">
+								<div class="list-group-item well ">
 									<h4 class="list-group-item-heading">
 										<c:out value="${job.title}" />
 									</h4>
 									<p class="list-group-item-text">
 										<c:out value="${job.description}" />
 									</p>
-									<p><a href="#"> read more</a></p>
-									<p><a class="btn btn-default"href='<spring:url value="/apply/${job.id}.html"/>'/> Apply job</a></p>
+									<p><a class="btn btn-primary" href='<spring:url value="/jobdetail/${job.id}.html"/>'> read more</a>
+									<a class="btn btn-info"href='<spring:url value="/apply/${job.id}.html"/>'/> Apply Now</a></p>
 								</div>
 							</c:forEach>
 						</div>
 					</div>
 					<div class="tab-pane fade" id="tab2default">Default 2</div>
 					<div class="tab-pane fade" id="tab3default">Default 3</div>
-					<div class="tab-pane fade" id="tab4default">Default 4</div>
-					<div class="tab-pane fade" id="tab5default">Default 5</div>
+					
 				</div>
 			</div>
 		</div>
 	</div>
+<div class="col-md-4">
 
+<div class="panel panel-default">
+  <div class="panel-heading"><h3 class="panel-title">Latests Jobs</h3></div>
+  <div class="panel-body">
+   <div class="list-group">
+							<c:forEach items="${jobs}" var="job">
+								<div class="list-group-item  ">
+									<h4 class="list-group-item-heading">
+										<a class=" " href='<spring:url value="/jobdetail/${job.id}.html"/>'><c:out value="${job.title}" /></a>
+									</h4>
+									<p class="list-group-item-text">
+										<c:out value="${job.description}" />
+									</p>
+									
+									
+								</div>
+							</c:forEach>
+						</div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">News</h3>
+  </div>
+  <div class="panel-body">
+    Panel content
+  </div>
+</div>
+</div>
 </div>
 
 

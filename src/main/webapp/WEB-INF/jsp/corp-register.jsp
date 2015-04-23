@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 
+
+<%@ include  file="../layout/taglib.jsp"%>
 
 
 
@@ -19,34 +19,36 @@
 		</div>
 		
 		</c:if>	
-		<form:form commandName="usercorp" 	>		
+		<form:form commandName="usercorp" >		
 			<div class="col-md-8">
 				<h3 class="dark-grey">Employer Registration</h3>
 				
 				<div class="form-group col-lg-12">
-					<label>Company Name</label>
+					<label>Company Name</label><form:errors path="firstName" />
 					<form:input path ="firstName"  class="form-control" id="" value="" />
+				</div>
+				<div class="form-group col-lg-6">
+					<label>Email Address</label><form:errors path="email" />
+					<form:input path ="email"  class="form-control" id="" value=""/>
+					
 				</div>
 				
 				<div class="form-group col-lg-6">
-					<label>Password</label>
+					<label>Repeat Email Address</label>
+					<input type="text" name="" class="form-control" id="" value="">
+				</div>		
+				
+				<div class="form-group col-lg-6">
+					<label>Password</label> <form:errors path="password" />
 					<form:input path ="password"  type="password"  class="form-control" id="" value=""/>
+					
 				</div>
 				
 				<div class="form-group col-lg-6">
 					<label>Repeat Password</label>
 					<input type="password" name="" class="form-control" id="" value="">
+					
 				</div>
-								
-				<div class="form-group col-lg-6">
-					<label>Email Address</label>
-					<form:input path ="email"  class="form-control" id="" value=""/>
-				</div>
-				
-				<div class="form-group col-lg-6">
-					<label>Repeat Email Address</label>
-					<input type="" name="" class="form-control" id="" value="">
-				</div>			
 				
 				<div class="col-sm-6">
 					<input type="checkbox" class="checkbox" />Sigh up for our newsletter
@@ -62,27 +64,41 @@
 			<button type="submit" class="btn btn-primary btn-block">Register</button>
 			</div>
 			</div>
-		
+		</form:form>
 			<div class="col-md-4">
-				<h3 class="dark-grey">Terms and Conditions</h3>
-				<p>
-					By clicking on "Register" you agree to The Company's' Terms and Conditions
-				</p>
-				<p>
-					While rare, prices are subject to change based on exchange rate fluctuations - 
-					should such a fluctuation happen, we may request an additional payment. You have the option to request a full refund or to pay the new price. (Paragraph 13.5.8)
-				</p>
-				<p>
-					Should there be an error in the description or pricing of a product, we will provide you with a full refund (Paragraph 13.5.6)
-				</p>
-				<p>
-					Acceptance of an order by us is dependent on our suppliers ability to provide the product. (Paragraph 13.5.6)
-				</p>
+				<h3 class="dark-grey">Employer Login</h3>
+                      <div class="well">
+                      <form  action="/j_spring_security_check" method="post" class="form-horizontal" id="loginForm" >
+                         
+                              <div class="form-group">
+                                  <label for="username" class="control-label">Username</label>
+                                 <input id="textinput" name="j_username" type="text" value="" required="" title="Please enter you username" placeholder="example@gmail.com" class="form-control" id="username">
+                                 
+                                  <span class="help-block"></span>
+                              </div>
+                              <div class="form-group">
+                                  <label for="password" class="control-label">Password</label>
+                                   <input id="textinput" name="j_password" type="password" value="" required="" title="Please enter your password" placeholder="example@gmail.com" placeholder="Enter Password" class="form-control" id="password" >
+                                 
+                                  <span class="help-block"></span>
+                              </div>
+                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" name="remember" id="remember"> Remember login
+                                  </label>
+                                  <p class="help-block">(if this is a private computer)</p>
+                              </div>
+                              <button type="submit" class="btn btn-danger btn-block">Login</button>
+                              <a href="/forgot/" class="btn btn-info btn-block">Forgot Password</a>
+                          </form>
+                      </div>
+                  </div>
 				
 				
-			</div>
+			
 		</div>
 	</section>
-	</form:form>
+	
 </div>
 

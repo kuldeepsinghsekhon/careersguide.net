@@ -41,7 +41,7 @@ public class RegistrationService {
         String subject = "Registration Confirmation";
         String confirmationUrl =  "/regitrationConfirm.html?token=" + token;
         String message="Please click on link to complete Registration";
-        String mailBody= message + " /n" + "http://localhost:8080" + confirmationUrl;
+        String mailBody= message + " /n" + "http://careersguide.in" + confirmationUrl;
        
         sendEmailService.sendRegistrationMail(recipientAddress, subject, mailBody);
        

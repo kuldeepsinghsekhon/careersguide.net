@@ -11,6 +11,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Size;
 @Entity(name="app_user")
 public class User {
 	@Id
@@ -18,12 +19,14 @@ public class User {
 	private Integer id;
 	
 	private String token;
+	@Size(min=3, message="Minimum 4 Character Required")
 	private String firstName;
 
 	    private String lastName;
+	    @Size(min=3, message="Enter a valid Email")
 	    @Column(name="name")
 	    private String email;
-	    
+	    @Size(min=3, message="Minimum 4 Character required")
 	    private String password;
 	    @OneToMany
 	    private List<Job>jobs;

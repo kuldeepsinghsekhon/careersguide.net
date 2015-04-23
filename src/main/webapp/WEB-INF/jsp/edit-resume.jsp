@@ -1,18 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+    <%@ include file="../layout/taglib.jsp" %>
 <h3>Update Your Resume</h3>
 <form:form commandName="resume" class="form-horizontal" >
  <div class="form-group">
     <label for="firstName" class="col-sm-2 control-label">Name :</label>
     <div class="col-sm-10">
-      <form:input path ="firstName"  class="form-control" />
+      <form:input path ="firstName"  class="form-control" value='${resume.firstName}' />
     </div>
   </div>
    <div class="form-group">
     <label for="lastName" class="col-sm-2 control-label">Last Name</label>
     <div class="col-sm-10">
-      <form:input path ="lastName"  class="form-control" />
+      <form:input path ="lastName"  class="form-control" value='${resume.lastName}'/>
     </div>
   </div>
   <div class="form-group">

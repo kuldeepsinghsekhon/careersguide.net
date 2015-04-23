@@ -9,11 +9,7 @@
 <meta name="author" content="">
 <link rel="icon" href="../../favicon.ico">
 
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tilesx"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
+<%@ include  file="../layout/taglib.jsp"%>
 <title><tiles:getAsString name="title" /></title>
 <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
 <!-- Latest compiled and minified CSS -->
@@ -103,13 +99,14 @@ body {
 						href='<spring:url value="/applies.html" />'>Jobs Applies</a></li>
 						
 						</security:authorize>
-						
+						<li class="${current=='jobs'?'active':'' }"><a
+						href='<spring:url value="/jobs.html" />'>Search</a></li>
 						
 						<security:authorize access="!isAuthenticated()">
 						<li class="${current=='register'?'active':'' }"><a
 						href='<spring:url value="/register.html" />'>Register</a></li>
 						<li class="${current=='regcorp'?'active':'' }"><a
-						href='<spring:url value="/regcorp.html" />'>Employer Register</a></li>
+						href='<spring:url value="/regcorp.html" />'>Submit Job</a></li>
 						<li class="${current=='login'?'active':'' }"><a
 						href='<spring:url value="/login.html" />'>Login</a></li>
 						</security:authorize>
