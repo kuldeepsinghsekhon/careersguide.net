@@ -74,7 +74,9 @@ public class RegistrationController {
 	}
 	
 	
-	
-	
+	@RequestMapping("/forgotpass")
+	public String renewPassword(){
+		return "forgotpass";
+	}
 
 }

@@ -111,7 +111,8 @@ body {
 						href='<spring:url value="/login.html" />'>Login</a></li>
 						</security:authorize>
 					
-						
+						<li class="${current=='contactus'?'active':'' }"><a
+						href='<spring:url value="/contactus.html" />'>ContactUs</a></li>
 						<security:authorize access="isAuthenticated()">
 					<li><a href='<spring:url value="/logout" />'>Logout</a></li>
 					</security:authorize>

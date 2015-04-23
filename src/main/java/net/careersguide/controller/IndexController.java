@@ -19,5 +19,9 @@ public class IndexController {
 		model.addAttribute("jobs",jobservice.getJobs());
 		return "index";
 	}
+	@RequestMapping("/contactus")
+	public String showContactForm(){
+		return "contactus";
+	}
 	
 }

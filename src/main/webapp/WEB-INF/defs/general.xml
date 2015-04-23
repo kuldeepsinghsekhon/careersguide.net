@@ -86,4 +86,14 @@
     <put-attribute name="body" value="/WEB-INF/jsp/test.jsp" />
      <put-attribute name="test" value="test" />
   </definition>
+  <definition name="contactus" extends="common" >
+    <put-attribute name="title" value="ContacUS " />
+    <put-attribute name="body" value="/WEB-INF/jsp/contactus.jsp" />
+     <put-attribute name="contactus" value="contactus" />
+  </definition>
+  <definition name="forgotpass" extends="common" >
+    <put-attribute name="title" value=" Password Request Form " />
+    <put-attribute name="body" value="/WEB-INF/jsp/forgotpassword.jsp" />
+     <put-attribute name="contactus" value="forgotpass" />
+  </definition>
 </tiles-definitions>
