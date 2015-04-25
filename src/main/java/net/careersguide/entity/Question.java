@@ -12,9 +12,8 @@ public class Question {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	@ManyToOne
-	@JoinColumn(name="test_id")
-	private Test test;
+	
+	
 	private String statement;
 	private String solution1;
 	private String solution2;
@@ -22,13 +21,9 @@ public class Question {
 	private String solution4;
 	private String solution5;
 	private String rightsolution;
-	public Test getTest() {
-		return test;
-	}
-	public void setTest(Test test) {
-		this.test = test;
-	}
-	
+	@ManyToOne
+	@JoinColumn(name="test_id")
+	private Test test;
 	public Integer getId() {
 		return id;
 	}
@@ -76,6 +71,12 @@ public class Question {
 	}
 	public void setRightsolution(String rightsolution) {
 		this.rightsolution = rightsolution;
+	}
+	public Test getTest() {
+		return test;
+	}
+	public void setTest(Test test) {
+		this.test = test;
 	}
 	
 }

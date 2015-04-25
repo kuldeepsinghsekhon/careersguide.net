@@ -21,43 +21,57 @@ public class Test {
 	@ManyToOne
 	@JoinColumn(name="employer_id")
 	private User employer;
+	
 	@OneToMany(mappedBy="test",cascade=CascadeType.REMOVE)
 	private List<Question>questions;
-	public List<Question> getQuestions() {
-		return questions;
-	}
-	public void setQuestions(List<Question> questions) {
-		this.questions = questions;
-	}
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	public List<Module> getModules() {
 		return modules;
 	}
+
 	public void setModules(List<Module> modules) {
 		this.modules = modules;
 	}
+
 	public User getEmployer() {
 		return employer;
 	}
+
 	public void setEmployer(User employer) {
 		this.employer = employer;
 	}
+
+	public List<Question> getQuestions() {
+		return questions;
+	}
+
+	public void setQuestions(List<Question> questions) {
+		this.questions = questions;
+	}
+	
 	
 }

@@ -29,8 +29,6 @@ $(document).ready(function(){
       
 
 <div id="login-frm">
-
-
  <div class="form-group">
     <label for="firstName" class="col-sm-2 control-label">Name :</label>
     <div class="col-sm-10">
@@ -43,31 +41,15 @@ $(document).ready(function(){
       <form:input path ="description"  class="form-control" />
     </div>
   </div>
-  
-  
-  <div class="form-group">
+    <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-     
-    </div>
+      </div>
   </div>
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
          <button type="submit" class="btn btn-primary">Create Exam</button>
-       
       </div>
     </div>
   </div>
@@ -86,7 +68,7 @@ $(document).ready(function(){
     <td><c:out value="${test.name}"/></td>
      <td><a href='<spring:url value="/test/${test.id}.html"/>'><c:out value="${test.name}"/></a></td>
     <td><c:out value="${ test.description}"/></td>
-    <td><a class="btn btn-danger" href='<spring:url value="/test/remove/${test.id}.html"/>'>Remove</a></td>
+    <td><a class="btn btn-danger" href='<spring:url value="/tests/remove/${test.id}.html"/>'>Remove</a></td>
   </tr>
   </c:forEach>
 </table>
