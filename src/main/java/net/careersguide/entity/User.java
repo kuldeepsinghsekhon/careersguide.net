@@ -1,5 +1,6 @@
 package net.careersguide.entity;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -109,14 +110,7 @@ public class User {
 			this.enabled = enabled;
 		}
 
-		public boolean isTokenExpired() {
-			return tokenExpired;
-		}
-
-		public void setTokenExpired(boolean tokenExpired) {
-			this.tokenExpired = tokenExpired;
-		}
-
+		
 		public List<Role> getRoles() {
 			return roles;
 		}
@@ -127,7 +121,15 @@ public class User {
 
 		private boolean enabled;
 
-	    private boolean tokenExpired;
+	    private Date tokenExpiryDate;
+	public Date getTokenExpiryDate() {
+			return tokenExpiryDate;
+		}
+
+		public void setTokenExpiryDate(Date tokenExpiryDate) {
+			this.tokenExpiryDate = tokenExpiryDate;
+		}
+
 	@ManyToMany
 	@JoinTable
 	private List<Role>roles;

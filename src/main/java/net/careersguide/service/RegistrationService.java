@@ -27,19 +27,21 @@ public class RegistrationService {
 	 private static final int EXPIRATION = 60 * 24;
 	 
 	public void saveUser(User user) {
-		user.setEnabled(true);
+		user.setEnabled(false);
 		BCryptPasswordEncoder encoder =new BCryptPasswordEncoder();
 		user.setPassword(encoder.encode(user.getPassword()));
 		List<Role>roles =new ArrayList<Role>();
-		
 		roles.add(roleRepository.findByName("ROLE_USER"));
 		user.setRoles(roles);
-		String token = UUID.randomUUID().toString();
+		String token = UUID.randomUUID().toString().replaceAll("-", "");
         user.setToken(token);
+        Date tokenExpiryDate=calculateExpiryDate(EXPIRATION);
+		user.setTokenExpiryDate(tokenExpiryDate);
         userRepository.save(user);
+        int id=user.getId();
         String recipientAddress = user.getEmail();
         String subject = "Registration Confirmation";
-        String confirmationUrl =  "/regitrationConfirm.html?token=" + token;
+        String confirmationUrl =  "/regitrationConfirm.html?v=" + token+"&u="+id;
         String message="Please click on link to complete Registration";
         String mailBody= message + " /n" + "http://careersguide.in" + confirmationUrl;
        
@@ -58,10 +60,13 @@ public class RegistrationService {
 		usercorp.setRoles(roles);
 		String token = UUID.randomUUID().toString();
 		usercorp.setToken(token);
+		Date tokenExpiryDate=calculateExpiryDate(EXPIRATION);
+		usercorp.setTokenExpiryDate(tokenExpiryDate);
 		userRepository.save(usercorp);
+		int id=usercorp.getId();
         String recipientAddress = usercorp.getEmail();
         String subject = "Registration Confirmation";
-        String confirmationUrl =  "/regitrationConfirm.html?token=" + token;
+        String confirmationUrl =  "/regitrationConfirm.html?v=" + token+"&u="+id;
         String message="Please click on link to complete Registration";
         String mailBody= message + " /n" + "http://localhost:8080" + confirmationUrl;
        
@@ -75,5 +80,11 @@ public class RegistrationService {
         cal.add(Calendar.MINUTE, expiryTimeInMinutes);
         return new Date(cal.getTime().getTime());
     }
+
+	public void conformUser(User user) {
+		user.setEnabled(true);
+		user.setToken(null);
+		userRepository.save(user);
+	}
 	
 }
