@@ -20,6 +20,15 @@ public class User {
 	private Integer id;
 	
 	private String token;
+	private String forgotPassToken;
+	public String getForgotPassToken() {
+		return forgotPassToken;
+	}
+
+	public void setForgotPassToken(String forgotPassToken) {
+		this.forgotPassToken = forgotPassToken;
+	}
+
 	@Size(min=3, message="Minimum 4 Character Required")
 	private String firstName;
 

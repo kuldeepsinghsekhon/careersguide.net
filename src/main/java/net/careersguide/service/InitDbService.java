@@ -69,7 +69,7 @@ public class InitDbService {
 
 		User userCorp =new User();
 		
-		userCorp.setEmail("corpMail");
+		userCorp.setEmail("corp@local.com");
 		userCorp.setFirstName("corp");
 		userCorp.setLastName("corp");
 		

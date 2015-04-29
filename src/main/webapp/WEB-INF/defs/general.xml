@@ -6,6 +6,10 @@
     <definition name="common" template="/WEB-INF/layout/classic.jsp">
     <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
   </definition>
+  
+    <definition name="pagepart" template="/WEB-INF/layout/pagepart.jsp">
+    
+  </definition>
   <definition name="index" extends="common" >
     <put-attribute name="title" value="CareesGuide home page" />
     <put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
@@ -26,10 +30,25 @@
     <put-attribute name="body" value="/WEB-INF/jsp/edit-resume.jsp" />
      <put-attribute name="current" value="resume-update" />
   </definition>
-  <definition name="user-profile" extends="common" >
+  <definition name="profile" extends="common" >
     <put-attribute name="title" value="User Home Page" />
     <put-attribute name="body" value="/WEB-INF/jsp/profile.jsp" />
-     <put-attribute name="current" value="user-profile" />
+     <put-attribute name="current" value="profile" />
+  </definition>
+   <definition name="settings" extends="common" >
+    <put-attribute name="title" value="UserSettings" />
+    <put-attribute name="body" value="/WEB-INF/jsp/settings.jsp" />
+     <put-attribute name="current" value="settings" />
+  </definition>
+   <definition name="pass" extends="pagepart">
+   
+    <put-attribute name="body" value="/WEB-INF/jsp/passchange.jsp" />
+    <put-attribute name="title" value="Change Password" />
+  </definition>
+  <definition name="ajaxtest" extends="common" >
+    <put-attribute name="title" value="UserSettings" />
+    <put-attribute name="body" value="/WEB-INF/jsp/setting.jsp" />
+     <put-attribute name="current" value="ajaxtest" />
   </definition>
   <definition name="applied-jobs" extends="common" >
     <put-attribute name="title" value="List Applied Jobs by User " />
@@ -96,4 +115,15 @@
     <put-attribute name="body" value="/WEB-INF/jsp/forgotpassword.jsp" />
      <put-attribute name="contactus" value="forgotpass" />
   </definition>
+  <definition name="updatepass" extends="common" >
+    <put-attribute name="title" value=" Password Request Form " />
+    <put-attribute name="body" value="/WEB-INF/jsp/updatepass.jsp" />
+     <put-attribute name="contactus" value="updatepass" />
+  </definition>
+  <definition name="fbhome" extends="common" >
+    <put-attribute name="title" value=" Password Request Form " />
+    <put-attribute name="body" value="/WEB-INF/jsp/fbhome.jsp" />
+     <put-attribute name="fbhome" value="fbhome" />
+  </definition>
+  
 </tiles-definitions>

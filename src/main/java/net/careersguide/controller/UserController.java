@@ -31,8 +31,27 @@ public class UserController {
 	public String findOneUser(Model model,@PathVariable int id)
 	{
 		model.addAttribute("user",userService.findOneUser(id));
-		return "user-profile";
+		return "profile";
 	}
+	
+	//View Other people Profile
+	@RequestMapping("/profile/{id}")
+	public String userProfile(Model model,@PathVariable int id,Principal principal)
+	{
+		
+		model.addAttribute("user",userService.findOneUser(id));
+	
+		return "profile";
+	}
+	//View Self Profile
+	@RequestMapping("/profile")
+	public String findOneUser(Model model,Principal principal)
+	{
+		String name=principal.getName();
+		model.addAttribute("user",userService.userByName(name));
+		return "profile";
+	}
+	
 	@RequestMapping("/resume")
 	public String viewUserResume(Model model,Principal principal)
 	{

@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.encoding.PasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -58,7 +59,7 @@ public class RegistrationService {
 		
 		roles.add(roleRepository.findByName("ROLE_CORP"));
 		usercorp.setRoles(roles);
-		String token = UUID.randomUUID().toString();
+		String token = UUID.randomUUID().toString().replaceAll("-", "");
 		usercorp.setToken(token);
 		Date tokenExpiryDate=calculateExpiryDate(EXPIRATION);
 		usercorp.setTokenExpiryDate(tokenExpiryDate);
@@ -86,5 +87,29 @@ public class RegistrationService {
 		user.setToken(null);
 		userRepository.save(user);
 	}
+
+	public void renewPasswordRequest(String email) {
+		User user=userRepository.findByEmail(email);
+		String token = UUID.randomUUID().toString().replaceAll("-", "");
+        user.setForgotPassToken(token);
+   
+        String recipientAddress = user.getEmail();
+        String password=user.getPassword();
+        String subject = "Password Change Request";
+        String chagePasswordUrl =  "/updatepass.html";
+        String message="Please click on Given link and use this token"+token+"to Change The password";
+        String mailBody= message + " <br/>" + "http://careersguide.in" + chagePasswordUrl;
+       
+        sendEmailService.sendRegistrationMail(recipientAddress, subject, mailBody);
+	}
+
+	public void changeForgotPassword(String email, String password) {
+		User user=userRepository.findByEmail(email);
+		BCryptPasswordEncoder encoder =new BCryptPasswordEncoder();
+		user.setPassword(encoder.encode(password));
+		userRepository.save(user);
+		
+	}
+	
 	
 }

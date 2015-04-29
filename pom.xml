@@ -188,7 +188,7 @@
   	<dependency>
   		<groupId>org.slf4j</groupId>
   		<artifactId>slf4j-log4j12</artifactId>
-  		<version>1.7.6</version>
+  		<version>1.7.11</version>
   	</dependency>
   	
   
@@ -239,9 +239,34 @@
   		<artifactId>hibernate-validator</artifactId>
   		<version>5.1.0.Final</version>
   	</dependency>
+  	<dependency>
+  		<groupId>org.springframework.social</groupId>
+  		<artifactId>spring-social-facebook</artifactId>
+  		<version>2.0.0.RELEASE</version>
+   	</dependency>
+  	<dependency>
+	<groupId>org.springframework.social</groupId>
+	<artifactId>spring-social-facebook-web</artifactId>
+	<version>2.0.0.RELEASE</version>
+</dependency>	
+  	<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>2.2</version>
+		</dependency>
+  	<dependency>
+  		<groupId>org.springframework.social</groupId>
+  		<artifactId>spring-social-twitter</artifactId>
+  		<version>1.1.0.RELEASE</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework.social</groupId>
+  		<artifactId>spring-social-linkedin</artifactId>
+  		<version>1.0.1.RELEASE</version>
+  	</dependency>
   </dependencies>
   <properties>
-  	<org.springframework.version>4.0.2.RELEASE</org.springframework.version>
+  	<org.springframework.version>4.1.6.RELEASE</org.springframework.version>
   	<apache.tiles>3.0.4</apache.tiles>
   	<spring.security.version>3.2.3.RELEASE</spring.security.version>
   </properties>

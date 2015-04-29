@@ -9,16 +9,15 @@
 <meta name="author" content="">
 <link rel="icon" href="../../favicon.ico">
 
-<%@ include  file="../layout/taglib.jsp"%>
+<%@ include file="../layout/taglib.jsp"%>
 <title><tiles:getAsString name="title" /></title>
-<link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:500'
+	rel='stylesheet' type='text/css'>
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="../../css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
 
 <!-- Optional theme -->
-<link rel="stylesheet"
-	href="../../css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../../css/bootstrap-theme.min.css">
 
 
 
@@ -60,63 +59,81 @@ body {
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Careers Guide</a>
+				
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li class="${current=='index'?'active':'' }"><a
-						href='<spring:url value="/" />'>Home</a></li>
-						
-						
-						<security:authorize access="hasRole('ROLE_ADMIN')">
-					<li class="${current=='users'?'active':'' }"><a
-						href='<spring:url value="/users.html" />'>Users</a></li>
-						</security:authorize>
-						
-						
-						
-					<security:authorize access="hasRole('ROLE_USER')">
-					<li class="${current=='resume'?'active':'' }"><a
-						href='<spring:url value="/resume-update.html" />'>Update Resume</a></li>
-						<li class="${current=='resume-update'?'active':'' }"><a
-						href='<spring:url value="/resume.html" />'>Preview Resume</a></li>
-						
-						<li class="${current=='applied-jobs'?'active':'' }"><a
-						href='<spring:url value="/applied-jobs.html" />'>Apllication Status</a></li>
-						</security:authorize>
-						
-						
-						
-						<security:authorize access="hasRole('ROLE_CORP')">
-					<li class="${current=='jobform'?'active':'' }"><a
-						href='<spring:url value="/jobform.html" />'>Submit Job</a></li>
-						<li class="${current=='tests'?'active':'' }"><a
-						href='<spring:url value="/tests.html" />'>Exams</a></li>
-						<li class="${current=='posted-jobs'?'active':'' }"><a
-						href='<spring:url value="/posted-jobs.html" />'>All Jobs</a></li>
-						
-						<li class="${current=='applies'?'active':'' }"><a
-						href='<spring:url value="/applies.html" />'>Jobs Applies</a></li>
-						
-						</security:authorize>
-						<li class="${current=='jobs'?'active':'' }"><a
-						href='<spring:url value="/jobs.html" />'>Search</a></li>
-						
-						<security:authorize access="!isAuthenticated()">
-						<li class="${current=='register'?'active':'' }"><a
-						href='<spring:url value="/register.html" />'>Register</a></li>
-						<li class="${current=='regcorp'?'active':'' }"><a
-						href='<spring:url value="/regcorp.html" />'>Submit Job</a></li>
-						<li class="${current=='login'?'active':'' }"><a
-						href='<spring:url value="/login.html" />'>Login</a></li>
-						</security:authorize>
-					
-						<li class="${current=='contactus'?'active':'' }"><a
-						href='<spring:url value="/contactus.html" />'>ContactUs</a></li>
-						<security:authorize access="isAuthenticated()">
-					<li><a href='<spring:url value="/logout" />'>Logout</a></li>
+						href='<spring:url value="/" />'><span class=" glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+
+ <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class=""><span class=" btn glyphicon glyphicon-search" aria-hidden="true"></span></button>
+      </form>
+					<security:authorize access="hasRole('ROLE_ADMIN')">
+						<li class="${current=='users'?'active':'' }"><a
+							href='<spring:url value="/users.html" />'>Users</a></li>
 					</security:authorize>
+
+
+
+					<security:authorize access="hasRole('ROLE_USER')">
+						<li class="${current=='resume'?'active':'' }"><a
+							href='<spring:url value="/resume-update.html" />'>Update
+								Resume</a></li>
+						<li class="${current=='resume-update'?'active':'' }"><a
+							href='<spring:url value="/resume.html" />'>Preview Resume</a></li>
+
+						<li class="${current=='applied-jobs'?'active':'' }"><a
+							href='<spring:url value="/applied-jobs.html" />'>Apllication
+								Status</a></li>
+					</security:authorize>
+
+
+
+					<security:authorize access="hasRole('ROLE_CORP')">
+						<li class="${current=='jobform'?'active':'' }"><a
+							href='<spring:url value="/jobform.html" />'>Submit Job</a></li>
+						<li class="${current=='tests'?'active':'' }"><a
+							href='<spring:url value="/tests.html" />'>Exams</a></li>
+						<li class="${current=='posted-jobs'?'active':'' }"><a
+							href='<spring:url value="/posted-jobs.html" />'>All Jobs</a></li>
+
+						<li class="${current=='applies'?'active':'' }"><a
+							href='<spring:url value="/applies.html" />'>Jobs Applies</a></li>
+
+					</security:authorize>
+					<li class="${current=='jobs'?'active':'' }"><a
+						href='<spring:url value="/jobs.html" />'>Search</a></li>
+
+					<security:authorize access="!isAuthenticated()">
+						<li class="${current=='register'?'active':'' }"><a
+							href='<spring:url value="/register.html" />'>Register</a></li>
+						<li class="${current=='regcorp'?'active':'' }"><a
+							href='<spring:url value="/regcorp.html" />'>Submit Job</a></li>
+						<li class="${current=='login'?'active':'' }"><a
+							href='<spring:url value="/login.html" />'>Login</a></li>
+					</security:authorize>
+
+					<li class="${current=='contactus'?'active':'' }"><a
+						href='<spring:url value="/contactus.html" />'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></a></li>
+					
 				</ul>
+				<ul class="nav navbar-nav navbar-right">
+				<security:authorize access="isAuthenticated()">
+				<li><a href='<spring:url value="/profile.html" />'><span class=" glyphicon glyphicon-user" aria-hidden="true"></span>Profile</a></li>
+					
+					<li><a href="/settings.html"><span class=" glyphicon glyphicon-cog" aria-hidden="true"></span></a></li>
+				
+						<li><a href='<spring:url value="/logout" />'><span class=" glyphicon glyphicon-off" aria-hidden="true"></span></a></li>
+					</security:authorize>
+					
+				</ul>
+				</li>
+				</ul>
+
 			</div>
 			<!--/.nav-collapse -->
 		</div>

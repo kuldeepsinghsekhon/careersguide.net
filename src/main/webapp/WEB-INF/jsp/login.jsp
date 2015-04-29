@@ -35,7 +35,7 @@
                                   <p class="help-block">(if this is a private computer)</p>
                               </div>
                               <button type="submit" class="btn btn-danger btn-block">Login</button>
-                              <a href="/forgot/" class="btn btn-info btn-block">Forgot Password</a>
+                              <a href="/forgotpass.html" class="btn btn-info btn-block">Forgot Password</a>
                           </form>
                       </div>
                   </div>

@@ -9,6 +9,5 @@
 		<class>net.careersguide.entity.Test</class>
 		<class>net.careersguide.entity.Module</class>
 		<class>net.careersguide.entity.Role</class>
-		<class>net.careersguide.modal.SocialUser</class>
 	</persistence-unit>
 </persistence>
