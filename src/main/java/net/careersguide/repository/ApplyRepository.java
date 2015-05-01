@@ -16,6 +16,10 @@ public interface ApplyRepository extends JpaRepository<Apply, Integer> {
 
 	List<Apply> findByJob(Job job);
 
+
+
+	Apply findByJobAndCandidate(Job job, User user);
+
 	
 
 }

@@ -11,6 +11,9 @@ border:1px solid f3aaff;
 }
 
 </style>
+
+
+
 <div class="container-fluid">
     <section class="container">
 		<div class="container-page">	
@@ -23,40 +26,36 @@ border:1px solid f3aaff;
 		</div>
 		
 		</c:if>	
-		<form:form commandName="user">		
+		<form:form commandName="user" cssClass="registrationForm">		
 			<div class="col-md-8">
 				<h3 class="dark-grey">Candidate Registration</h3>
 				
 				<div class="form-group col-lg-12">
 					<label>Name</label><form:errors path="firstName" />
-					<form:input path ="firstName"  class="form-control" id="" value="" />
+					<form:input path ="firstName"  cssClass="form-control" id="" value="" />
 				</div>
-				<div class="form-group col-lg-6">
+				<div class="form-group col-lg-12">
 					<label>Email Address</label><form:errors path="email" />
-					<form:input path ="email"  class="form-control" id="" value=""/>
+					<form:input path ="email"  cssClass="form-control" />
 					
 				</div>
+					
 				
-				<div class="form-group col-lg-6">
-					<label>Repeat Email Address</label>
-					<input type="text" name="" class="form-control" id="" value="">
-				</div>		
-				
-				<div class="form-group col-lg-6">
+				<div class="form-group col-lg-12">
 					<label>Password</label> <form:errors path="password" />
-					<form:input path ="password"  type="password"  class="form-control" id="" value=""/>
+					<form:input path ="password"  type="password"  cssClass="form-control"/>
 					
 				</div>
 				
-				<div class="form-group col-lg-6">
+				<div class="form-group col-lg-12">
 					<label>Repeat Password</label>
-					<input type="password" name="" class="form-control" id="" value="">
+					<input type="password" name="password_again" class="form-control" id="" value="">
 					
 				</div>
 								
 					
 				
-				<div class="col-sm-6">
+				<div class="col-sm-12">
 					<input type="checkbox" class="checkbox" />Sigh up for our newsletter
 				</div>
 
@@ -93,6 +92,41 @@ border:1px solid f3aaff;
 	</section>
 	</form:form>
 </div>
+<script type="text/javascript">
 
+$(document).ready(function(){
+	$(".registrationForm").validate(
+			{
+				rules:{
+					firstName:{
+						required:true,
+						minlength:3
+						},
+						email:{
+							required:true,
+							email:true
+							},
+							password:{
+								required:true,
+								minlength:5
+								},
+								password_again:{
+									required:true,
+									minlength:5,
+									equalTo:"#password"
+									}
+					},
+					highlight:function(element){
+						$(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+						},
+						unhighlight:function(element){
+							$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+							}
+			}
+
+		);	
+});
+
+</script>
 
 

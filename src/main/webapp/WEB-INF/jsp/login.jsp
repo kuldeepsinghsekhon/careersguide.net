@@ -13,17 +13,17 @@
  <div class="row">
                   <div class="col-xs-7">
                       <div class="well">
-                      <form  action="/j_spring_security_check" method="post" class="form-horizontal" id="loginForm" >
+                      <form  action="/j_spring_security_check" method="post" class="form-horizontal loginForm" id="loginForm" >
                          
                               <div class="form-group">
-                                  <label for="username" class="control-label">Username</label>
-                                 <input id="textinput" name="j_username" type="text" value="" required="" title="Please enter you username" placeholder="example@gmail.com" class="form-control" id="username">
+                                  <label for="j_username" class="control-label">Username</label>
+                                 <input id="textinput" name="j_username" type="text"  placeholder="example@gmail.com" class="form-control" id="username">
                                  
                                   <span class="help-block"></span>
                               </div>
                               <div class="form-group">
-                                  <label for="password" class="control-label">Password</label>
-                                   <input id="textinput" name="j_password" type="password" value="" required="" title="Please enter your password" placeholder="example@gmail.com" placeholder="Enter Password" class="form-control" id="password" >
+                                  <label for="j_password" class="control-label">Password</label>
+                                   <input id="textinput" name="j_password" type="password"   placeholder="password" class="form-control" id="password" >
                                  
                                   <span class="help-block"></span>
                               </div>
@@ -56,7 +56,35 @@
  
 </div>
 
+<script type="text/javascript">
+<!-- 
+$(document).ready(function(){
+	$(".loginForm").validate(
+			{
+				rules:{
+					
+					j_username:{
+							required:true,
+							email:true
+							},
+							j_password:{
+								required:true,
+								minlength:5
+								}
+								
+					},
+					highlight:function(element){
+						$(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+						},
+						unhighlight:function(element){
+							$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+							}
+			}
 
+		);	
+});
+-->
+</script>
 
 
 

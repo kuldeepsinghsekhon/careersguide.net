@@ -10,9 +10,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.Size;
+
+import net.careersguide.annotations.UniqueUsername;
 @Entity(name="app_user")
 public class User {
 	@Id
@@ -33,10 +36,11 @@ public class User {
 	private String firstName;
 
 	    private String lastName;
-	    @Size(min=3, message="Enter a valid Email")
-	    @Column(name="name")
+	    @Size(min=4, message="Enter a valid Email")
+	    @Column(name="name",unique=true)
+	    @UniqueUsername(message="Such username Already Exists")
 	    private String email;
-	    @Size(min=3, message="Minimum 4 Character required")
+	    @Size(min=4, message="Minimum 4 Character required")
 	    private String password;
 	    @OneToMany
 	    private List<Job>jobs;
@@ -47,6 +51,8 @@ public class User {
 	    private List<Test>tests;
 	    @OneToMany(mappedBy="candidate",cascade=CascadeType.REMOVE)
 	    private List<Apply>applies;
+	    @OneToMany(mappedBy="examEmployer",cascade=CascadeType.REMOVE)
+	    private List<CenterCode> centerCode;
 	    public List<Apply> getApplies() {
 			return applies;
 		}

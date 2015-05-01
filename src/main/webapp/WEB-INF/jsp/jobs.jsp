@@ -43,8 +43,6 @@ body { padding-top:80px; }
 				<span class="label label-info"> 78</span>
 			</div>
 			<div class="panel-body">
-
-
 				<c:forEach items="${jobs}" var="job">
 					<ul class="list-group">
 						<li class="list-group-item">
@@ -84,11 +82,6 @@ body { padding-top:80px; }
 							</div>
 						</li>
 				</c:forEach>
-
-
-
-
-
 
 				</ul>
 				<a href="#" class="btn btn-primary btn-sm btn-block" role="button"><span

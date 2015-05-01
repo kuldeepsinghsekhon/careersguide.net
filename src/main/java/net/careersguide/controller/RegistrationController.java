@@ -1,23 +1,15 @@
 package net.careersguide.controller;
 
 import java.util.Calendar;
-
 import javax.validation.Valid;
-
-import net.careersguide.entity.Resume;
 import net.careersguide.entity.User;
-
-import net.careersguide.repository.UserRepository;
 import net.careersguide.service.RegistrationService;
 import net.careersguide.service.UserService;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -137,9 +129,6 @@ public class RegistrationController {
 		String email =user.getEmail();
 		String password =user.getPassword();
 		User dbuser =userService.userByName(email);
-		if(token==null||email==null||password==null){
-			return "redirect:/login.html";
-		}
 		if(dbuser.getForgotPassToken().contentEquals(token)){
 		registrationService.changeForgotPassword(email,password);
 		return "redirect:/login.html";

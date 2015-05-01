@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ include  file="../layout/taglib.jsp"%>
+	pageEncoding="UTF-8"%>
+<%@ include file="../layout/taglib.jsp"%>
 <style>
 <!-- /*
 Fade content bs-carousel with hero headers
@@ -197,80 +197,57 @@ Image credits: unsplash.com
 </div>
 <!-- /.carousel -->
 <div class="page-header">
-  <h1>Find Latest Jobs <small>Job you deserve</small></h1>
+	<h1>Latest Jobs</h1>
 </div>
-<div class="row">
-	<div class="col-md-8 ">
-		<div class="panel with-nav-tabs panel-default">
+<div class="container">
+	<div class="row">
+		<div class="panel panel-default widget">
 			<div class="panel-heading">
-				<ul class="nav nav-tabs">
-					<li class="active"><a href="#tab1default" data-toggle="tab">Default1</a></li>
-					
-					<li class="dropdown"><a href="#" data-toggle="dropdown">Dropdown<span class="caret"></span></a>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="#tab4default" data-toggle="tab">Default 4</a></li>
-							<li><a href="#tab5default" data-toggle="tab">Default 5</a></li>
-						</ul>
-					</li>
-				</ul>
+				<h3 class="panel-title">Recent Jobs</h3>
 			</div>
 			<div class="panel-body">
-				<div class="tab-content">
-					<div class="tab-pane fade in active" id="tab1default">
-						<div class="">
-							<c:forEach items="${jobs}" var="job">
-								<div class="list-group-item well ">
-									<h4 class="list-group-item-heading">
-										<c:out value="${job.title}" />
-									</h4>
-									<p class="list-group-item-text">
-										<c:out value="${job.description}" />
-									</p>
-									<p><a class="btn btn-primary" href='<spring:url value="/jobdetail/${job.id}.html"/>'> read more</a>
-									<a class="btn btn-info"href='<spring:url value="/apply/${job.id}.html"/>'/> Apply Now</a></p>
+				<c:forEach items="${jobs}" var="job">
+					<ul class="list-group">
+						<li class="list-group-item">
+							<div class="row">
+								<div class="col-xs-2 col-md-1">
+									<img src="http://placehold.it/80"
+										class="img-circle img-responsive" alt="" />
 								</div>
-							</c:forEach>
-						</div>
-					</div>
-					<div class="tab-pane fade" id="tab2default">Default 2</div>
-					<div class="tab-pane fade" id="tab3default">Default 3</div>
-					
-				</div>
+								<div class="col-xs-10 col-md-11">
+									<div>
+										<a
+											href="http://www.jquery2dotnet.com/2013/10/google-style-login-page-desing-usign.html">
+											<c:out value="${job.title}" />
+										</a>
+										<div class="mic-info">
+											By: <a href="#">Bhaumik Patel</a> on 2 Aug 2013
+										</div>
+									</div>
+									<div class="comment-text">
+										<c:out value="${job.description}" />
+									</div>
+									<div class="action">
+										<a href='<spring:url value="/jobdetail/${job.id}.html"/>'>
+											<button type="button" class="btn btn-primary btn-xs"
+												title="View Detail">
+												<span class="glyphicon glyphicon-pencil"></span> View
+											</button>
+										</a> <a href='<spring:url value="/apply/${job.id}.html"/>'>
+											<button type="button" class="btn btn-success btn-xs"
+												title="Apply">
+												<span class="glyphicon glyphicon-ok"></span>Apply
+											</button>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+				</c:forEach>
+				</ul>
+				<a href="#" class="btn btn-primary btn-sm btn-block" role="button"><span
+					class="glyphicon glyphicon-refresh"></span> More</a>
 			</div>
 		</div>
 	</div>
-<div class="col-md-4">
-
-<div class="panel panel-default">
-  <div class="panel-heading"><h3 class="panel-title">Latests Jobs</h3></div>
-  <div class="panel-body">
-   <div class="list-group">
-							<c:forEach items="${jobs}" var="job">
-								<div class="list-group-item  ">
-									<h4 class="list-group-item-heading">
-										<a class=" " href='<spring:url value="/jobdetail/${job.id}.html"/>'><c:out value="${job.title}" /></a>
-									</h4>
-									<p class="list-group-item-text">
-										<c:out value="${job.description}" />
-									</p>
-									
-									
-								</div>
-							</c:forEach>
-						</div>
-  </div>
 </div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">News</h3>
-  </div>
-  <div class="panel-body">
-    Panel content
-  </div>
-</div>
-</div>
-</div>
-
-
-

@@ -168,7 +168,7 @@ body{margin-top:50px;}
 <tr><th>Job Id</th><th>Job Title</th></tr>
 <c:forEach items="${postedjobs}" var="job">
 
-<tr><td><a href=''><c:out value="${job.id}"/></a></td><td><c:out value="${job.title}"/></td><td><a href='<spring:url value="/applies/${job.id}.html"/>'>View Applies</a></td><td><a class="btn btn-info" href='<spring:url value="/jobdetail/${job.id}.html"/>'> job Detail</a></td></tr>
+<tr><td><a href=''><c:out value="${job.id}"/></a></td><td><c:out value="${job.title}"/></td><td><a href='<spring:url value="/response/${job.id}.html"/>'>View Response</a></td><td><a class="btn btn-info" href='<spring:url value="/jobdetail/${job.id}.html"/>'> job Detail</a></td></tr>
 
 
 

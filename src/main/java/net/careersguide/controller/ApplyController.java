@@ -25,10 +25,22 @@ public class ApplyController {
 
 	@RequestMapping(value = "/apply/{id}")
 	public String doApplay(@PathVariable int id, Principal principal) {
+		if(principal==null){
+			return "redirect:/register.html";
+			
+		}
 		String name = principal.getName();
-		User user = userService.userByName(name);
-		applyService.doApply(id, user);
-		return "redirect:/jobs.html";
+		
+			User user = userService.userByName(name);
+			if(applyService.findByJobAndCandidate(id,user)){
+				applyService.doApply(id, user);
+				return "redirect:/jobs.html";
+			}
+			
+			
+			
+		
+	return "redirect:/jobs.html?success=false";
 	}
 
 	// List the jobs whom candidate had applied in candidate profile
@@ -41,13 +53,13 @@ public class ApplyController {
 
 	}
 
-	@RequestMapping("/applies/{id}")
+	@RequestMapping("/response/{id}")
 	public String showApplies(Model model, Principal principal,
 			@PathVariable int id) {
 		String name = principal.getName();
 		User user = userService.userByName(name);
 		model.addAttribute("candidates", applyService.findById(id));
-		return "applies";
+		return "response";
 
 	}
 

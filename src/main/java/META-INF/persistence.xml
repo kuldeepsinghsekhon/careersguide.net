@@ -9,5 +9,7 @@
 		<class>net.careersguide.entity.Test</class>
 		<class>net.careersguide.entity.Module</class>
 		<class>net.careersguide.entity.Role</class>
+		<class>net.careersguide.entity.Eassign</class>
+		<class>net.careersguide.entity.CenterCode</class>
 	</persistence-unit>
 </persistence>

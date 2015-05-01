@@ -40,4 +40,9 @@ public class ApplyService {
 		return applyRepository.findByJob(job);
 	}
 
+	public boolean findByJobAndCandidate(int id, User user) {
+		Job job = jobRepository.findOne(id);
+		return applyRepository.findByJobAndCandidate(job,user)==null;
+	}
+
 }

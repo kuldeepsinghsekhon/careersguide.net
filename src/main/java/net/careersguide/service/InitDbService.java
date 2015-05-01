@@ -54,7 +54,7 @@ public class InitDbService {
 		
 		User userAdmin =new User();
 		
-		userAdmin.setEmail("adminMail");
+		userAdmin.setEmail("admin@local.com");
 		userAdmin.setFirstName("Admin");
 		userAdmin.setLastName("User");
 		BCryptPasswordEncoder encoder =new BCryptPasswordEncoder();
@@ -71,10 +71,10 @@ public class InitDbService {
 		
 		userCorp.setEmail("corp@local.com");
 		userCorp.setFirstName("corp");
-		userCorp.setLastName("corp");
+		userCorp.setLastName("corp1");
 		
 		
-		userCorp.setPassword(encoder.encode("corp"));
+		userCorp.setPassword(encoder.encode("corp1"));
 		List<Role> rolesCorp =new ArrayList<Role>();
 		rolesCorp.add(roleCorp);
 		userCorp.setRoles(rolesCorp);
@@ -105,6 +105,22 @@ public class InitDbService {
 		question2.setSolution4("singh");
 		question2.setTest(test);
 		questionRepository.save(question2);
+		
+		
+User usercandidate =new User();
+		
+		usercandidate.setEmail("candidate@local.com");
+		usercandidate.setFirstName("candidate");
+		usercandidate.setLastName("User");
+		//BCryptPasswordEncoder encoder =new BCryptPasswordEncoder();
+		
+		usercandidate.setPassword(encoder.encode("candidate"));
+		List<Role> candidateroles =new ArrayList<Role>();
+		candidateroles.add(roleUser);
+		
+		usercandidate.setRoles(candidateroles);
+		usercandidate.setEnabled(true);
+		userRepository.save(usercandidate);
 		
 	}
 

@@ -75,10 +75,10 @@
     <put-attribute name="body" value="/WEB-INF/jsp/posted-jobs.jsp" />
      <put-attribute name="current" value="posted-jobs" />
   </definition>
-   <definition name="applies" extends="common" >
-    <put-attribute name="title" value="Applies Received to Job" />
+   <definition name="response" extends="common" >
+    <put-attribute name="title" value="Response Received to Job" />
     <put-attribute name="body" value="/WEB-INF/jsp/list-applies.jsp" />
-     <put-attribute name="current" value="applies" />
+     <put-attribute name="current" value="response" />
   </definition>
   <definition name="jobs" extends="common" >
     <put-attribute name="title" value="Job Post Form" />

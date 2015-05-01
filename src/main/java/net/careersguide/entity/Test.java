@@ -24,9 +24,20 @@ public class Test {
 	
 	@OneToMany(mappedBy="test",cascade=CascadeType.REMOVE)
 	private List<Question>questions;
-
+	@OneToMany(mappedBy="exam",cascade=CascadeType.REMOVE)
+private List<Apply> applications;
 	public Integer getId() {
 		return id;
+	}
+
+
+
+	public List<Apply> getApplications() {
+		return applications;
+	}
+
+	public void setApplications(List<Apply> applications) {
+		this.applications = applications;
 	}
 
 	public void setId(Integer id) {

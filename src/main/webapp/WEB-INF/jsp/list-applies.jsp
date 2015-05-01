@@ -45,8 +45,6 @@ $(document).ready(function(){
 
 </c:forEach>
 
-
-
 </table>
 <div class="clearfix"></div>
 <ul class="pagination pull-right">
