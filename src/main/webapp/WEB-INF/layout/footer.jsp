@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; UTF-8"
     pageEncoding="ISO-8859-1"%>
+    
 <footer class="navbar navbar-default">
 <div class="container">
 <div class="row">

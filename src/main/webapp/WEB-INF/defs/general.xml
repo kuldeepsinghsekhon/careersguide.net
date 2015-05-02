@@ -115,11 +115,7 @@
     <put-attribute name="body" value="/WEB-INF/jsp/forgotpassword.jsp" />
      <put-attribute name="contactus" value="forgotpass" />
   </definition>
-  <definition name="updatepass" extends="common" >
-    <put-attribute name="title" value=" Password Request Form " />
-    <put-attribute name="body" value="/WEB-INF/jsp/updatepass.jsp" />
-     <put-attribute name="contactus" value="updatepass" />
-  </definition>
+  
   <definition name="fbhome" extends="common" >
     <put-attribute name="title" value=" Password Request Form " />
     <put-attribute name="body" value="/WEB-INF/jsp/fbhome.jsp" />

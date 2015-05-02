@@ -23,13 +23,15 @@ public class User {
 	private Integer id;
 	
 	private String token;
-	private String forgotPassToken;
-	public String getForgotPassToken() {
-		return forgotPassToken;
+	private String PasswordResetToken;
+	
+
+	public String getPasswordResetToken() {
+		return PasswordResetToken;
 	}
 
-	public void setForgotPassToken(String forgotPassToken) {
-		this.forgotPassToken = forgotPassToken;
+	public void setPasswordResetToken(String passwordResetToken) {
+		PasswordResetToken = passwordResetToken;
 	}
 
 	@Size(min=3, message="Minimum 4 Character Required")
@@ -53,7 +55,16 @@ public class User {
 	    private List<Apply>applies;
 	    @OneToMany(mappedBy="examEmployer",cascade=CascadeType.REMOVE)
 	    private List<CenterCode> centerCode;
-	    public List<Apply> getApplies() {
+	    private Date prtExpiryDate;
+	    public Date getPrtExpiryDate() {
+			return prtExpiryDate;
+		}
+
+		public void setPrtExpiryDate(Date prtExpiryDate) {
+			this.prtExpiryDate = prtExpiryDate;
+		}
+
+		public List<Apply> getApplies() {
 			return applies;
 		}
 

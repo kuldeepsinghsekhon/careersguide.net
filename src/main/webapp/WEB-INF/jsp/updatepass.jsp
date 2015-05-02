@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
      <%@ include  file="../layout/taglib.jsp"%>
-<form:form commandName="updatepass" class="form-horizontal"> 
+<%-- <form:form commandName="updatepass" class="form-horizontal"> 
   
   				<div class="form-group col-lg-11">
 					<label>Email Address</label><form:errors path="email" />
@@ -26,4 +26,4 @@
 			<button type="submit" class="btn btn-primary btn-block">Submit</button>
 			</div>
 				
-</form:form>
+</form:form> --%>

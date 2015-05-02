@@ -12,6 +12,7 @@ import org.springframework.security.authentication.encoding.PasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import net.careersguide.entity.PassWord;
 import net.careersguide.entity.Role;
 import net.careersguide.entity.User;
 import net.careersguide.repository.RoleRepository;
@@ -88,28 +89,4 @@ public class RegistrationService {
 		userRepository.save(user);
 	}
 
-	public void renewPasswordRequest(String email) {
-		User user=userRepository.findByEmail(email);
-		String token = UUID.randomUUID().toString().replaceAll("-", "");
-        user.setForgotPassToken(token);
-   
-        String recipientAddress = user.getEmail();
-        String password=user.getPassword();
-        String subject = "Password Change Request";
-        String chagePasswordUrl =  "/updatepass.html";
-        String message="Please click on Given link and use this token"+token+"to Change The password";
-        String mailBody= message + " <br/>" + "http://careersguide.in" + chagePasswordUrl;
-       
-        sendEmailService.sendRegistrationMail(recipientAddress, subject, mailBody);
-	}
-
-	public void changeForgotPassword(String email, String password) {
-		User user=userRepository.findByEmail(email);
-		BCryptPasswordEncoder encoder =new BCryptPasswordEncoder();
-		user.setPassword(encoder.encode(password));
-		userRepository.save(user);
-		
-	}
-	
-	
 }

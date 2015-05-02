@@ -22,7 +22,7 @@ $(document).ready(function(){
 	            if(statusTxt == "error")
 	                alert("Error: " + xhr.status + ": " + xhr.statusText);
 	        });
-	    });
+	    }  );
     $("#contactus").click(function(){
        
         $("#myDiv").load("/contactus.html", function(responseTxt, statusTxt, xhr){
@@ -35,7 +35,23 @@ $(document).ready(function(){
 });
 
 </script>
-
+<script type="text/javascript">
+function savePass(){
+    var pass = $("#pass").val();
+    var valid = pass == $("#passConfirm").val();
+    if(!valid) {
+      $("#message").show();
+      return;
+    }
+    $.post("<c:url value="/pass.html"></c:url>",{password: pass}, function(data){
+            window.location.href = "<c:url value="/settings.html"></c:url>";
+    })
+    .fail(function(data) {
+        window.location.href = 
+          "<c:url value="/login.html"></c:url>" + "?message=" + data.responseJSON.message;
+    });
+}
+</script>
 
 <div class="container">
 
@@ -62,7 +78,7 @@ $(document).ready(function(){
                                
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-trash text-danger"></span><a href="http://www.jquery2dotnet.com" class="text-danger">
+                                        <span class="glyphicon glyphicon-trash text-danger"></span><a href="#" class="text-danger">
                                             Delete Account</a>
                                     </td>
                                 </tr>
@@ -74,7 +90,39 @@ $(document).ready(function(){
             </div>
         </div>
         <div class="col-sm-9 col-md-9" id="bodyDiv">
-          
+        
+        
+		<div class="alert alert-danger " hidden="true" id="message">
+		<h4>Password does not match</h4>
+		
+		</div>
+		<c:if test="${param.success eq true}">
+		<div class="alert alert-success ">
+		Registration Success full 
+		<h6>Activate your Account</h6>
+		<p>Please check your  mail and click on Verification Link To Activate your Account</p>
+		</div>
+		
+		</c:if>	
+		
+		<div class="panel panel-default">
+  <div class="panel-heading">Change password</div>
+  <div class="panel-body">
+  
+				<div class="form-group col-lg-11">
+					<label> Password</label> 
+					<input   type="password"  class="form-control" id="pass" value=""/>
+					
+				</div>
+				<div class="form-group col-lg-11">
+					<label>Re Password</label>
+					<input  type="password"  class="form-control" id="passConfirm" value=""/>
+				</div>	
+				<div class="col-sm-4">			
+			<button type="submit"  onclick="savePass()" class="btn btn-primary btn-block submit" >Submit</button>
+			</div>
         </div>
     </div>
+</div>
+</div>
 </div>
