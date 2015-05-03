@@ -264,6 +264,11 @@
   		<artifactId>spring-social-linkedin</artifactId>
   		<version>1.0.1.RELEASE</version>
   	</dependency>
+  	<dependency>
+  		<groupId>net.tanesha.recaptcha4j</groupId>
+  		<artifactId>recaptcha4j</artifactId>
+  		<version>0.0.7</version>
+  	</dependency>
   </dependencies>
   <properties>
   	<org.springframework.version>4.1.6.RELEASE</org.springframework.version>

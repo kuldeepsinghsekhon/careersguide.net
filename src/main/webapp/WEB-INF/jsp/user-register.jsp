@@ -56,8 +56,23 @@ border:1px solid f3aaff;
 					
 				
 				<div class="col-sm-12">
-					<input type="checkbox" class="checkbox" />Sigh up for our newsletter
-				</div>
+				<p>Help us prevent spam!</p>
+				<p>Please type the text from the image below - press the refresh refresh button for a new challenge </p>
+					<div id="captcha_paragraph">
+			<c:if test="${invalidRecaptcha == true}">
+				<span class="error_form_validation"><spring:message code="invalid.captcha" text="Invalid captcha please try again"/></span>
+			</c:if>
+		    <%
+		        ReCaptcha c = ReCaptchaFactory.newReCaptcha("6LeqPwYTAAAAAIjScJIK4NmXoUY-1PekPoWoYJHl", 
+		        					"6LeqPwYTAAAAAL0PblaOtcEI1pcBAKXNOTsPJkC8", false);
+		        out.print(c.createRecaptchaHtml(null, null));
+		    %>	 	   
+		</div> 	
+		<c:if test="${param.success eq false}">
+		<div class="alert alert-danger ">
+		Wrong   ReCaptcha Try Again
+		</div>
+		</c:if>		</div>
 
 				<div class="col-sm-6">
 					<input type="checkbox" class="checkbox" />Send notifications to this email
@@ -69,7 +84,7 @@ border:1px solid f3aaff;
 			<button type="submit" class="btn btn-primary btn-block">Register</button>
 			</div>
 			</div>
-		
+		</form:form>
 			<div class="col-md-4">
 				<h3 class="dark-grey">Terms and Conditions</h3>
 				<p>
@@ -90,7 +105,7 @@ border:1px solid f3aaff;
 			</div>
 		</div>
 	</section>
-	</form:form>
+	
 </div>
 <script type="text/javascript">
 

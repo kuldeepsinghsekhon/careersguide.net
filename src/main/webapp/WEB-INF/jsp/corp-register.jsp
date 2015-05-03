@@ -19,6 +19,7 @@
 		</div>
 		
 		</c:if>	
+		
 		<form:form commandName="usercorp" cssClass="registrationForm">		
 			<div class="col-md-8">
 				<h3 class="dark-grey">Employer Registration</h3>
@@ -47,8 +48,25 @@
 					
 				</div>
 				
-				<div class="col-sm-6">
-					<input type="checkbox" class="checkbox" />Sigh up for our newsletter
+				<div class="col-sm-12">
+				<p>Help us prevent spam!</p>
+				<p>Please type the text from the image below - press the refresh refresh button for a new challenge </p>
+					<div id="captcha_paragraph">
+			<c:if test="${invalidRecaptcha == true}">
+				<span class="error_form_validation"><spring:message code="invalid.captcha" text="Invalid captcha please try again"/></span>
+			</c:if>
+		    <%
+		        ReCaptcha c = ReCaptchaFactory.newReCaptcha("6LeqPwYTAAAAAIjScJIK4NmXoUY-1PekPoWoYJHl", 
+		        					"6LeqPwYTAAAAAL0PblaOtcEI1pcBAKXNOTsPJkC8", false);
+		        out.print(c.createRecaptchaHtml(null, null));
+		    %>	 	   
+		</div> 	
+		<c:if test="${param.success eq false}">
+		<div class="alert alert-danger ">
+		Wrong   ReCaptcha Try Again
+		</div>
+		
+		</c:if>
 				</div>
 
 				<div class="col-sm-6">

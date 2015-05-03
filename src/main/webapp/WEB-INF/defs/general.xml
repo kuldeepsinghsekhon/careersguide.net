@@ -98,22 +98,22 @@
   <definition name="tests" extends="common" >
     <put-attribute name="title" value="List of Tests " />
     <put-attribute name="body" value="/WEB-INF/jsp/tests.jsp" />
-     <put-attribute name="tests" value="tests" />
+     <put-attribute name="current" value="tests" />
   </definition>
   <definition name="test" extends="common" >
     <put-attribute name="title" value="Test Detail " />
     <put-attribute name="body" value="/WEB-INF/jsp/test.jsp" />
-     <put-attribute name="test" value="test" />
+     <put-attribute name="current" value="test" />
   </definition>
   <definition name="contactus" extends="common" >
     <put-attribute name="title" value="ContacUS " />
     <put-attribute name="body" value="/WEB-INF/jsp/contactus.jsp" />
-     <put-attribute name="contactus" value="contactus" />
+     <put-attribute name="current" value="contactus" />
   </definition>
   <definition name="forgotpass" extends="common" >
     <put-attribute name="title" value=" Password Request Form " />
     <put-attribute name="body" value="/WEB-INF/jsp/forgotpassword.jsp" />
-     <put-attribute name="contactus" value="forgotpass" />
+     <put-attribute name="current" value="forgotpass" />
   </definition>
   
   <definition name="fbhome" extends="common" >
@@ -121,5 +121,9 @@
     <put-attribute name="body" value="/WEB-INF/jsp/fbhome.jsp" />
      <put-attribute name="fbhome" value="fbhome" />
   </definition>
-  
+   <definition name="cregister" extends="common" >
+    <put-attribute name="title" value="UserRegistration with captcha Page" />
+    <put-attribute name="body" value="/WEB-INF/jsp/cregister.jsp" />
+     <put-attribute name="current" value="cregister" />
+  </definition>
 </tiles-definitions>

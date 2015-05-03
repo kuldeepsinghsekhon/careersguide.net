@@ -1,10 +1,16 @@
 package net.careersguide.controller;
 
 import java.util.Calendar;
+
+import javax.servlet.ServletRequest;
 import javax.validation.Valid;
+
 import net.careersguide.entity.User;
 import net.careersguide.service.RegistrationService;
 import net.careersguide.service.UserService;
+import net.tanesha.recaptcha.ReCaptchaImpl;
+import net.tanesha.recaptcha.ReCaptchaResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +19,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -23,7 +30,8 @@ public class RegistrationController {
 
 	@Autowired
 	private UserService userService;
-
+	@Autowired
+	private ReCaptchaImpl reCaptcha;
 	@RequestMapping("/register")
 	public String registerUser() {
 		return "register";
@@ -37,16 +45,23 @@ public class RegistrationController {
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String doUserRegister(@Valid @ModelAttribute("user") User user,
-			BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+			BindingResult bindingResult, RedirectAttributes redirectAttributes,@RequestParam("recaptcha_challenge_field") String challangeField, 
+			@RequestParam("recaptcha_response_field") String responseField,ServletRequest servletRequest) {
+		
+		
+		String remoteAddress = servletRequest.getRemoteAddr();
+		ReCaptchaResponse reCaptchaResponse = this.reCaptcha.checkAnswer(remoteAddress, challangeField, responseField);
 		if (bindingResult.hasErrors()) {
-			return "register";
+			return "redirect:/register.html?captcha=false";
 		}
+		if(reCaptchaResponse.isValid() && !bindingResult.hasErrors()){
 		registrationService.saveUser(user);
 
 		userService.saveResume(user);// @ModelAttribute("resume") Resume resume
 		redirectAttributes.addFlashAttribute("success", true);
 		return "redirect:/register.html?success=true";
-
+		}
+		return "redirect:/register.html?success=false";
 	}
 
 	@RequestMapping("/regcorp")
@@ -62,13 +77,18 @@ public class RegistrationController {
 
 	@RequestMapping(value = "/regcorp", method = RequestMethod.POST)
 	public String doCorpRegister(@Valid @ModelAttribute("usercorp") User usercorp,
-			BindingResult bindingResult) {
+			BindingResult bindingResult,@RequestParam("recaptcha_challenge_field") String challangeField, 
+			@RequestParam("recaptcha_response_field") String responseField,ServletRequest servletRequest) {
+		String remoteAddress = servletRequest.getRemoteAddr();
+		ReCaptchaResponse reCaptchaResponse = this.reCaptcha.checkAnswer(remoteAddress, challangeField, responseField);
 		if (bindingResult.hasErrors()) {
-			return "regcorp";
+			return "regcorp.html?captcha=false";
 		}
+		if(reCaptchaResponse.isValid() && !bindingResult.hasErrors()){
 		registrationService.saveCorp(usercorp);
 		return "redirect:/regcorp.html?success=true";
-
+		}
+		return "redirect:/regcorp.html?success=false";
 	}
 
 	
@@ -97,6 +117,34 @@ public class RegistrationController {
 		return "redirect:/index.html";
 		}
 		return "redirect:/login.html";
+	}
+	
+	//==================================================================
+	
+	
+	
+	@RequestMapping("/cregister")
+	public String cregisterUser() {
+		return "cregister";
+	}
+	@RequestMapping(value = "/cregister", method = RequestMethod.POST)
+	public String cdoUserRegister(@Valid @ModelAttribute("user") User user,
+			BindingResult bindingResult, RedirectAttributes redirectAttributes,@RequestParam("recaptcha_challenge_field") String challangeField, 
+			@RequestParam("recaptcha_response_field") String responseField,ServletRequest servletRequest,
+			SessionStatus sessionStatus) {
+		String remoteAddress = servletRequest.getRemoteAddr();
+		ReCaptchaResponse reCaptchaResponse = this.reCaptcha.checkAnswer(remoteAddress, challangeField, responseField);
+		if (bindingResult.hasErrors()) {
+			return "cregister";
+		}
+		if(reCaptchaResponse.isValid() && !bindingResult.hasErrors()){
+		registrationService.saveUser(user);
+
+		userService.saveResume(user);// @ModelAttribute("resume") Resume resume
+		redirectAttributes.addFlashAttribute("success", true);
+		return "redirect:/cregister.html?success=true";
+		}
+		return "redirect:/cregister.html?success=false";
 	}
 	
 }

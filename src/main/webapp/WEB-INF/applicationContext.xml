@@ -34,4 +34,7 @@
         <property name="entityManagerFactory" ref="myEmf"/>
     </bean>
     <import resource="security.xml"/>
+    <bean id="reCaptcha" class="net.tanesha.recaptcha.ReCaptchaImpl">
+		<property name="privateKey" value="6LeqPwYTAAAAAL0PblaOtcEI1pcBAKXNOTsPJkC8"/>
+	</bean>
     </beans>
