@@ -88,84 +88,16 @@ $(document).ready(function(){
 				
 <form:form commandName="resume" class="form-horizontal" >
  
- <div class="form-group">
-    <label for="description" class="col-sm-2 control-label">Summary</label>
-    <div class="col-sm-10">
-      <form:textarea path="summary"  class="form-control" value='${resume.summary}' />
-    </div>
-     </div>
-       <div class="form-group">
-    <label for="description" class="col-sm-2 control-label">Research Interests</label>
-    <div class="col-sm-10">
-      <form:textarea path="interests"  class="form-control" value='${resume.interests}' />
-    </div>
-     </div> 
-  <div class="form-group">
-    <label for="Current Company" class="col-sm-2 control-label">Current Company</label>
-    <div class="col-sm-10">
-      <form:input path="currentCompany"   class="form-control" value='${resume.currentCompany}' />
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="Current Profile" class="col-sm-2 control-label">Current Profile</label>
-    <div class="col-sm-10">
-      <form:input path="currentProfile"   class="form-control" value='${resume.currentProfile}' />
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="Current Salary" class="col-sm-2 control-label">Current Salary</label>
-    <div class="col-sm-10">
-      <form:input path="currentSalary"   class="form-control" value='${resume.currentSalary}' />
-    </div>
-  </div>
-  
-     <h3>Personal Information</h3>
+ 
+     <h3>Educational Detail</h3>
      <hr>
      <br>
      <div class="form-group">
-    <label for="firstName" class="col-sm-2 control-label">Name :</label>
+    <label for="firstName" class="col-sm-2 control-label">Course Name :</label>
     <div class="col-sm-10">
-      <form:input path ="firstName"  class="form-control" value='${resume.firstName}' />
+     <input name="education[1].courseName" />
     </div>
-  </div>
-   <div class="form-group">
-    <label for="lastName" class="col-sm-2 control-label">Last Name</label>
-    <div class="col-sm-10">
-      <form:input path ="lastName"  class="form-control" value='${resume.lastName}'/>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-    <div class="col-sm-10">
-      <form:input path ="email"  class="form-control" value='${resume.email}'/>
-    </div>
-  </div>
-     <div class="form-group">
-    <label for="fatherName" class="col-sm-2 control-label">Father</label>
-    <div class="col-sm-10">
-      <form:input path ="fatherName"  class="form-control" value='${resume.fatherName}' />
-    </div>
-  </div>
-   
-  <div class="form-group">
-    <label for="address" class="col-sm-2 control-label">Address</label>
-    <div class="col-sm-10">
-      <form:textarea path="address"  class="form-control" value='${resume.address}'/>
-    </div>
-    </div>
-   
-      <div class="form-group">
-    <label for="State" class="col-sm-2 control-label">State</label>
-    <div class="col-sm-10">
-      <form:input path ="state"  class="form-control" value='${resume.state}'/>
-    </div>
-  </div>
-   <div class="form-group">
-    <label for="city" class="col-sm-2 control-label">City</label>
-    <div class="col-sm-10">
-      <form:input path ="city"  class="form-control" value='${resume.city}' />
-    </div>
-  </div>
+  
   
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">

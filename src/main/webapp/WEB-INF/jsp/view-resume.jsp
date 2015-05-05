@@ -170,7 +170,7 @@ opacity:0.9;
 <div class="resume">
     <header class="page-header">
     <h1 class="page-title">Resume of <c:out value="${resumeContent.firstName}"/>  <c:out value="${resumeContent.lastName}"/></h1>
-    <small> <i class="fa fa-clock-o"></i> Last Updated on: <time>Sunday, October 05, 2014</time></small>
+    <small> <i class="fa fa-clock-o"></i> Last Updated on: <time> <c:out value="${resumeContent.updatedate}"/></time></small>
   </header>
 <div class="row">
   <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
@@ -224,8 +224,8 @@ opacity:0.9;
             <div class="col-xs-12 col-sm-8">
               <ul class="list-group">
                 <li class="list-group-item"> <c:out value="${resumeContent.firstName}"/>  <c:out value="${resumeContent.lastName}"/></li>
-                <li class="list-group-item">Software Engineer</li>
-                <li class="list-group-item">Google Inc. </li>
+                <li class="list-group-item"><c:out value="${resumeContent.currentProfile}"/> </li>
+                <li class="list-group-item"><c:out value="${resumeContent.currentCompany}"/> </li>
                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
                 <li class="list-group-item"><i class="fa fa-envelope"></i> <c:out value="${resumeContent.email}"/></li>
               </ul>
@@ -243,9 +243,7 @@ opacity:0.9;
       <div class="bs-callout bs-callout-danger">
         <h4>Research Interests</h4>
         <p>
-          Software Engineering, Machine Learning, Image Processing,
-          Computer Vision, Artificial Neural Networks, Data Science,
-          Evolutionary Algorithms.
+         <c:out value="${resumeContent.interests}"/>
         </p>
       </div>
 
@@ -336,13 +334,13 @@ opacity:0.9;
             </div>
             <div class="progress">
               <div data-placement="top" style="width: 50%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" role="progressbar" class="progress-bar progress-bar-warning">
-                <span class="sr-only">50%</span>
+                <span class="sr-only">70%</span>
                 <span class="progress-type">C++</span>
               </div>
             </div>
             <div class="progress">
               <div data-placement="top" style="width: 10%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" role="progressbar" class="progress-bar progress-bar-danger">
-                <span class="sr-only">10%</span>
+                <span class="sr-only">100%</span>
                 <span class="progress-type">Go</span>
               </div>
             </div>

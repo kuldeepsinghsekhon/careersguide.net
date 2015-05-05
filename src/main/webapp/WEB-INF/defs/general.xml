@@ -121,9 +121,19 @@
     <put-attribute name="body" value="/WEB-INF/jsp/fbhome.jsp" />
      <put-attribute name="fbhome" value="fbhome" />
   </definition>
-   <definition name="cregister" extends="common" >
-    <put-attribute name="title" value="UserRegistration with captcha Page" />
-    <put-attribute name="body" value="/WEB-INF/jsp/cregister.jsp" />
-     <put-attribute name="current" value="cregister" />
+   <definition name="experiences" extends="common" >
+    <put-attribute name="title" value="User Prior experiences " />
+    <put-attribute name="body" value="/WEB-INF/jsp/experiences.jsp" />
+     <put-attribute name="current" value="experiences" />
+  </definition>
+  <definition name="education" extends="common" >
+    <put-attribute name="title" value="User education " />
+    <put-attribute name="body" value="/WEB-INF/jsp/education.jsp" />
+     <put-attribute name="current" value="education" />
+  </definition>
+  <definition name="skills" extends="common" >
+    <put-attribute name="title" value="User education " />
+    <put-attribute name="body" value="/WEB-INF/jsp/skills.jsp" />
+     <put-attribute name="current" value="skills" />
   </definition>
 </tiles-definitions>

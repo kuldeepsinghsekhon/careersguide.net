@@ -11,5 +11,8 @@
 		<class>net.careersguide.entity.Role</class>
 		<class>net.careersguide.entity.Eassign</class>
 		<class>net.careersguide.entity.CenterCode</class>
+		<class>net.careersguide.entity.Experience</class>
+		<class>net.careersguide.entity.Education</class>
+		<class>net.careersguide.entity.Skill</class>
 	</persistence-unit>
 </persistence>

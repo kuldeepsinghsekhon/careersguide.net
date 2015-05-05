@@ -7,12 +7,16 @@ import javax.transaction.Transactional;
 
 
 
+
+
 import net.careersguide.entity.Question;
+import net.careersguide.entity.Resume;
 import net.careersguide.entity.Role;
 import net.careersguide.entity.Test;
 import net.careersguide.entity.User;
 import net.careersguide.repository.ModuleRepository;
 import net.careersguide.repository.QuestionRepository;
+import net.careersguide.repository.ResumeRepository;
 import net.careersguide.repository.RoleRepository;
 import net.careersguide.repository.TestRepository;
 import net.careersguide.repository.UserRepository;
@@ -37,6 +41,8 @@ public class InitDbService {
 	private ModuleRepository moduleRepository;
 	@Autowired
 	private QuestionRepository questionRepository;
+	@Autowired
+	private ResumeRepository resumeRepository;
 	@PostConstruct
 	public void init(){
 		Role roleUser =new Role();
@@ -121,6 +127,9 @@ User usercandidate =new User();
 		usercandidate.setRoles(candidateroles);
 		usercandidate.setEnabled(true);
 		userRepository.save(usercandidate);
+		Resume resume=new Resume();
+		resume.setUser(usercandidate);
+		resumeRepository.save(resume);
 		
 	}
 

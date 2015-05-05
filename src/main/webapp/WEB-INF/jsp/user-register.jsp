@@ -74,12 +74,9 @@ border:1px solid f3aaff;
 		</div>
 		</c:if>		</div>
 
-				<div class="col-sm-6">
-					<input type="checkbox" class="checkbox" />Send notifications to this email
-				</div>	
-				<div class="col-sm-6">			
-			<a href=""class="">Need Help Register</a>
-			</div>
+				<div class="col-sm-12">
+					<input type="checkbox" class="checkbox" />Terms and Conditions	</div>	
+				
 			<div class="col-sm-6">			
 			<button type="submit" class="btn btn-primary btn-block">Register</button>
 			</div>
