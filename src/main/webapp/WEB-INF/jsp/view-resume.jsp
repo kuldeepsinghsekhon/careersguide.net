@@ -249,37 +249,19 @@ opacity:0.9;
 
       <div class="bs-callout bs-callout-danger">
         <h4>Prior Experiences</h4>
-        <ul class="list-group">
+         <ul class="list-group">
+         <c:forEach items='${resumeContent.experiences}' var="experience">
           <a class="list-group-item inactive-link" href="#">
             <h4 class="list-group-item-heading">
-              Software Engineer at Twitter
+              <c:out value='${experience.title}'/> at <c:out value='${experience.industry}'/>
             </h4>
             <p class="list-group-item-text">
-              Lorem ipsum dolor sit amet, ea vel prima adhuc, scripta liberavisse ea quo, te vel vidit mollis complectitur. Quis verear mel ne. Munere vituperata vis cu, 
-         te pri duis timeam scaevola, nam postea diceret ne. Cum ex quod aliquip mediocritatem, mei habemus persecuti mediocritatem ei.
+              <c:out value='${experience.jobDescription}'/>
             </p>
           </a>
-          <a class="list-group-item inactive-link" href="#">
-            <h4 class="list-group-item-heading">Software Engineer at LinkedIn</h4>
-            <p class="list-group-item-text">
-              Lorem ipsum dolor sit amet, ea vel prima adhuc, scripta liberavisse ea quo, te vel vidit mollis complectitur. 
-              Quis verear mel ne. Munere vituperata vis cu, te pri duis timeam scaevola, 
-              nam postea diceret ne. Cum ex quod aliquip mediocritatem, mei habemus persecuti mediocritatem ei.
-                </p><ul>
-                  <li>
-                 Lorem ipsum dolor sit amet, ea vel prima adhuc, scripta liberavisse ea quo, te vel vidit mollis complectitur. 
-              Quis verear mel ne. Munere vituperata vis cu, te pri duis timeam scaevola, 
-              nam postea diceret ne. Cum ex quod aliquip mediocritatem, mei habemus persecuti mediocritatem ei.
-                  </li>
-                  <li>
-                 Lorem ipsum dolor sit amet, ea vel prima adhuc, scripta liberavisse ea quo, te vel vidit mollis complectitur. 
-              Quis verear mel ne. Munere vituperata vis cu, te pri duis timeam scaevola, 
-              nam postea diceret ne. Cum ex quod aliquip mediocritatem, mei habemus persecuti mediocritatem ei.
-                  </li>
-                </ul>
-            <p></p>
-          </a>
+          </c:forEach>
         </ul>
+        
       </div>
       <div class="bs-callout bs-callout-danger">
         <h4>Key Expertise</h4>
@@ -360,21 +342,19 @@ opacity:0.9;
         <h4>Education</h4>
         <table class="table table-striped table-responsive ">
           <thead>
-            <tr><th>Degree</th>
+            <tr><th>Degree</th><th>University</th>
             <th>Graduation Year</th>
             <th>CGPA</th>
           </tr></thead>
           <tbody>
+            <c:forEach items="${resumeContent.education}" var="education">
             <tr>
-              <td>Masters in Computer Science and Engineering</td>
-              <td>2014</td>
-              <td> 3.50 </td>
+              <td> <c:out value='${education.courseName}'/></td>
+               <td> <c:out value='${education.institution}'/></td>
+              <td> <c:out value='${education.passingYear}'/></td>
+              <td>  <c:out value='${education.marks}'/> </td>
             </tr>
-            <tr>
-              <td>BSc. in Computer Science and Engineering</td>
-              <td>2011</td>
-              <td> 3.25 </td>
-            </tr>
+            </c:forEach>
           </tbody>
         </table>
       </div>

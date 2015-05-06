@@ -11,29 +11,38 @@ public class Skill {
 	@Id
 	@GeneratedValue
 	private Integer id;
+	private String skillName;
+	private String certificationName;
+	private String percentSkill;
+	private String version;
+	private String passingYear;
 	@ManyToOne
 	@JoinColumn(name="resume_id")
 	private Resume resume;
-	private String name;
-	private String version;
-	private String passingYear;
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Resume getResume() {
-		return resume;
+	
+	public String getSkillName() {
+		return skillName;
 	}
-	public void setResume(Resume resume) {
-		this.resume = resume;
+	public void setSkillName(String skillName) {
+		this.skillName = skillName;
 	}
-	public String getName() {
-		return name;
+	public String getCertificationName() {
+		return certificationName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setCertificationName(String certificationName) {
+		this.certificationName = certificationName;
+	}
+	public String getPercentSkill() {
+		return percentSkill;
+	}
+	public void setPercentSkill(String percentSkill) {
+		this.percentSkill = percentSkill;
 	}
 	public String getVersion() {
 		return version;
@@ -47,4 +56,11 @@ public class Skill {
 	public void setPassingYear(String passingYear) {
 		this.passingYear = passingYear;
 	}
+	public Resume getResume() {
+		return resume;
+	}
+	public void setResume(Resume resume) {
+		this.resume = resume;
+	}
+	
 }

@@ -13,7 +13,7 @@ public class Education {
 	private Integer id;
 	private String courseName;
 	private String specialization;
-	private String intitution;
+	private String institution;
 	private String passingYear;
 	private String marks;
 	@ManyToOne
@@ -55,12 +55,13 @@ public class Education {
 	public void setSpecialization(String specialization) {
 		this.specialization = specialization;
 	}
-	public String getIntitution() {
-		return intitution;
+	public String getInstitution() {
+		return institution;
 	}
-	public void setIntitution(String intitution) {
-		this.intitution = intitution;
+	public void setInstitution(String institution) {
+		this.institution = institution;
 	}
+	
 	
 
 }

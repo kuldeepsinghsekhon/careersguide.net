@@ -76,7 +76,10 @@ public class UserService {
 
 	public Resume findUserResume(String name) {
 		User user= userRepository.findByEmail(name);
-		return resumeRepository.findByUser(user);
+		Resume resume=resumeRepository.findByUser(user);
+		resume.setEducation(educationRepository.findByResume(resume));
+		resume.setExperiences(experienceRepository.findByResume(resume));
+		return resume;
 	}
 
 	public void saveResume(User user) {
@@ -101,6 +104,24 @@ public class UserService {
 		Resume resume =resumeRepository.findByUser(user);
 		skill.setResume(resume);
 		skillRepository.save(skill);
+	}
+
+	public List<Education> findEducationByResume(String name) {
+		User user =userRepository.findByEmail(name);
+		Resume resume =resumeRepository.findByUser(user);
+		return educationRepository.findByResume(resume);
+	}
+
+	public Object findUserExperiences(String name) {
+		User user =userRepository.findByEmail(name);
+		Resume resume =resumeRepository.findByUser(user);
+		return experienceRepository.findByResume(resume);
+	}
+
+	public List<Skill> findUserSkills(String name) {
+		User user =userRepository.findByEmail(name);
+		Resume resume =resumeRepository.findByUser(user);
+		return skillRepository.findByResume(resume);
 	}
 	
 

@@ -14,7 +14,7 @@ $(document).ready(function(){
 	    }  );
 });
 </script>
-<h3>Update Your Resume</h3>
+<h3 align="center">Update Your Resume</h3>
 <div class="container">
 
     <div class="row">
@@ -26,8 +26,8 @@ $(document).ready(function(){
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" ><span class="glyphicon glyphicon-user">
-                            </span>Update Resume</a>
-                        </h4>
+                            </span>Update Resume </a>
+                        </h4> 
                     </div>
                     <div id="collapseThree" class="panel-collapse">
                         <div class="panel-body" id="panel-boby">
@@ -74,168 +74,107 @@ $(document).ready(function(){
 		</div>
 		<c:if test="${param.success eq true}">
 		<div class="alert alert-success ">
-		Registration Success full 
-		<h6>Activate your Account</h6>
-		<p>Please check your  mail and click on Verification Link To Activate your Account</p>
+	
+		<h6>Success full </h6>
+		
 		</div>
 		
 		</c:if>	
 		
 		<div class="panel panel-default">
-  <div class="panel-heading">Change password</div>
+  <div class="panel-heading">Educational Detail</div>
   <div class="panel-body">
-  
-				
+     <div class="bs-callout bs-callout-danger">
+        <h4>Education</h4><!-- Button trigger modal -->
+<button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#myModal">
+ Add Education
+</button>
+        <table class="table table-striped table-responsive ">
+          <thead>
+            <tr><th>Degree</th><th>University</th>
+            <th>Graduation Year</th>
+            <th>CGPA</th>
+          </tr></thead>
+          <tbody>
+           <c:forEach items="${educations}" var="education">
+            <tr>
+              <td> <c:out value='${education.courseName}'/></td>
+               <td> <c:out value='${education.institution}'/></td>
+              <td> <c:out value='${education.passingYear}'/></td>
+              <td>  <c:out value='${education.marks}'/> </td>
+            </tr>
+            </c:forEach>	
+          </tbody>
+        </table>
+      </div>
+    </div>
+   
+
+<!-- Modal -->
 <form:form commandName="resume" class="form-horizontal" >
- 
- 
-     <h3>Educational Detail</h3>
-     <hr>
-     <br>
-     <div class="form-group">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Education</h4>
+      </div>
+      <div class="modal-body">
+      
+
+<div class="form-group">
     <label for="firstName" class="col-sm-2 control-label">Course Name :</label>
     <div class="col-sm-10">
-     <input name="education[1].courseName" />
-    </div>
-  
-  
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Update Resume</button>
+     <input name="education[0].courseName"  class="form-control"/>
+     
     </div>
   </div>
+   <div class="form-group">
+    <label for="firstName" class="col-sm-2 control-label">Specialization:</label>
+    <div class="col-sm-10">
+     <input name="education[0].specialization"  class="form-control"/>
+     
+    </div>
+  </div>
+   <div class="form-group">
+    <label for="firstName" class="col-sm-2 control-label">University/institution  :</label>
+    <div class="col-sm-10">
+     <input name="education[0].institution"  class="form-control"/>
+     
+    </div>
+  </div>
+   <div class="form-group">
+    <label for="firstName" class="col-sm-2 control-label">Passing year :</label>
+    <div class="col-sm-10">
+     <input name="education[0].passingYear"  class="form-control"/>
+     
+    </div>
+  </div>
+   <div class="form-group">
+    <label for="firstName" class="col-sm-2 control-label">Marks Percent:</label>
+    <div class="col-sm-10">
+     <input name="education[0].marks"  class="form-control"/>
+     
+    </div>
+  </div>
+  
 
-
-
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         <button type="submit" class="btn btn-primary">submit </button>
+      </div>
+    </div>
+  </div>
+</div>
 </form:form>
+
+			
+
 </div>
 </div>
 </div>
-
-
-    <script language="javascript">function addRow(tableID){var table=document.getElementById(tableID);var rowCount=table.rows.length;var row=table.insertRow(rowCount);var colCount=table.rows[0].cells.length;for(var i=0;i<colCount;i++){var newcell=row.insertCell(i);newcell.innerHTML=table.rows[0].cells[i].innerHTML;switch(newcell.childNodes[0].type){case"text":newcell.childNodes[0].value="";break;case"checkbox":newcell.childNodes[0].checked=false;break;case"select-one":newcell.childNodes[0].selectedIndex=0;break;}}}
-function deleteRow(tableID){try{var table=document.getElementById(tableID);var rowCount=table.rows.length;for(var i=0;i<rowCount;i++){var row=table.rows[i];var chkbox=row.cells[0].childNodes[0];if(null!=chkbox&&true==chkbox.checked){if(rowCount<=1){alert("Cannot delete all the rows.");break;}
-table.deleteRow(i);rowCount--;i--;}}}catch(e){alert(e);}}</script>
- 
- 
- 
-    <input value="Add Row" onclick="addRow('dataTable')" type="button">
- 
-    <input value="Delete Row" onclick="deleteRow('dataTable')" type="button">
- 
-    <table id="dataTable" border="1" width="350px">
-        <tbody><tr>
-            <td><input name="chk[]" type="checkbox"></td>
-            <td><input name="txt[]" type="text"></td>
-            <td>
-                <select name="country[]">
-                    <option value="in">India</option>
-                    <option value="de">Germany</option>
-                    <option value="fr">France</option>
-                    <option value="us">United States</option>
-                    <option value="ch">Switzerland</option>
-                </select>
-            </td>
-        </tr>
-    </tbody></table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
 
 
     

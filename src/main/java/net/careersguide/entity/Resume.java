@@ -35,7 +35,7 @@ public class Resume {
 	private Integer experience;
 	@OneToMany(mappedBy="resume")
 	private List<Experience>experiences;
-	@OneToMany(mappedBy="resume",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="resume")
 	private List<Education>education;
 	@OneToMany(mappedBy="resume")
 	private List<Skill>skills;

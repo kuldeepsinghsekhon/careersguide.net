@@ -85,28 +85,28 @@ public class UserController {
 		
 	}
 	@RequestMapping("/experiences")
-	public String showExperiences(){
+	public String showExperiences(Model model,Principal principal){
+		String name =principal.getName();
+		if(name==null){return "redirect:/login.html";}
+		model.addAttribute("experiences",userService.findUserExperiences(name));
 		return"experiences";
 	}
-	@ModelAttribute("experiences")
+	@ModelAttribute("experience")
 	public Experience experiencesModel(){
 		return new Experience();
 	}
 	@RequestMapping(value="/experiences",method=RequestMethod.POST)
-	public String doExperienceUpdate(@ModelAttribute("resume")Resume resume,Principal principal){
+	public String doExperienceUpdate(@ModelAttribute("experience")Experience experience,Principal principal){
 		String name =principal.getName();
 		if(name==null){return "redirect:/login.html";}
-		List<Experience>experiences=resume.getExperiences();
-		if(null != experiences && experiences.size() > 0) {
-           // ContactController.contacts = experiences;
-            for (Experience experience : experiences) {
-                userService.saveExperience(experience,name);
-            }
-        }
+		userService.saveExperience(experience,name);
 		return "redirect:/experiences.html?success=true";
 	}
 	@RequestMapping("/education")
-	public String showEducation(){
+	public String showEducation(Model model,Principal principal){
+		if(principal==null){return "redirect:/login.html";}
+		String name=principal.getName();
+		model.addAttribute("educations", userService.findEducationByResume(name));
 		return"education";
 	}
 	@RequestMapping(value="/education",method=RequestMethod.POST)
@@ -115,28 +115,36 @@ public class UserController {
 		if(name==null){return "redirect:/login.html";}
 		List<Education>educations=resume.getEducation();
 		if(null != educations && educations.size() > 0) {
-           // ContactController.contacts = experiences;
+           
             for (Education education : educations) {
                 userService.saveEducation(education,name);
             }
         }
 		return "redirect:/education.html?success=true";
 	}
+	@ModelAttribute("skills")
+	public Skill skillModel(){
+		return new Skill();
+	}
 	@RequestMapping("/skills")
-	public String showSkills(){
+	public String showSkills(Model model,Principal principal){
+		if(principal==null){return "redirect:/login.html";}
+		String name= principal.getName();
+		model.addAttribute("skills",userService.findUserSkills(name));
 		return"skills";
 	}
+	
 	@RequestMapping(value="/skills",method=RequestMethod.POST)
 	public String doSkillUpdate(@ModelAttribute("resume")Resume resume,Principal principal){
 		String name =principal.getName();
 		if(name==null){return "redirect:/login.html";}
 		List<Skill>skills=resume.getSkills();
 		if(null != skills && skills.size() > 0) {
-           // ContactController.contacts = experiences;
-            for (Skill skill : skills) {
+			 for (Skill skill : skills) {
+		
                 userService.saveSkill(skill,name);
-            }
-        }
+		}
+	}
 		return "redirect:/skills.html?success=true";
 	}
 	@RequestMapping("/users/remove/{id}")
