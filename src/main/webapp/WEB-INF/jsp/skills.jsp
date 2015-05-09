@@ -121,8 +121,12 @@
 				</div>
   <div class="form-group col-sm-12">
 					<label class="col-sm-4"> Passing Year</label> 
-					<form:input   path="skills[0].passingYear"  class="form-control" id="pass" value=""/>
-					
+					<form:select   path="skills[0].passingYear"  class="form-control" id="pass" value="">
+					<form:option value="" label="passing year" />
+				<c:forEach var="i" begin="1970" end="2015">
+  <form:option value='${i}'>${i}</form:option>
+</c:forEach>
+					</form:select>
 				</div>
 				<div class="form-group col-sm-12">
 					<label class="col-sm-4"> Version</label> 
@@ -131,7 +135,13 @@
 				</div>
 				<div class="form-group col-sm-12">
 					<label class="col-sm-4">Self Rating</label> 
-					<form:select   path="skills[0].percentSkill"  class="form-control" id="pass" value=""/>
+					<form:select   path="skills[0].percentSkill"  class="form-control" id="pass" value="">
+					<form:option value="0" label="%skill" />
+<c:forEach var="i" begin="10" end="100">
+  <form:option value='${i}'>${i}%</form:option>
+</c:forEach>
+							
+						</form:select>
 				</div>
  
 

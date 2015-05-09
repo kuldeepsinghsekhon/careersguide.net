@@ -58,8 +58,8 @@
 		<entity-name>net.careersguide.entity.Experience</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>206</entity-height>
-		<entity-X-Coordinate>722</entity-X-Coordinate>
-		<entity-Y-Coordinate>651</entity-Y-Coordinate>
+		<entity-X-Coordinate>727</entity-X-Coordinate>
+		<entity-Y-Coordinate>661</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -121,22 +121,22 @@
 	</entity>
 
 	<entity>
-		<entity-name>net.careersguide.entity.Skill</entity-name>
+		<entity-name>net.careersguide.entity.Module</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>186</entity-height>
-		<entity-X-Coordinate>722</entity-X-Coordinate>
-		<entity-Y-Coordinate>425</entity-Y-Coordinate>
+		<entity-height>146</entity-height>
+		<entity-X-Coordinate>581</entity-X-Coordinate>
+		<entity-Y-Coordinate>99</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
 	</entity>
 
 	<entity>
-		<entity-name>net.careersguide.entity.Module</entity-name>
+		<entity-name>net.careersguide.entity.Skill</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>146</entity-height>
-		<entity-X-Coordinate>581</entity-X-Coordinate>
-		<entity-Y-Coordinate>99</entity-Y-Coordinate>
+		<entity-height>226</entity-height>
+		<entity-X-Coordinate>722</entity-X-Coordinate>
+		<entity-Y-Coordinate>425</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

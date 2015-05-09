@@ -115,12 +115,6 @@
     <put-attribute name="body" value="/WEB-INF/jsp/forgotpassword.jsp" />
      <put-attribute name="current" value="forgotpass" />
   </definition>
-  
-  <definition name="fbhome" extends="common" >
-    <put-attribute name="title" value=" Password Request Form " />
-    <put-attribute name="body" value="/WEB-INF/jsp/fbhome.jsp" />
-     <put-attribute name="fbhome" value="fbhome" />
-  </definition>
    <definition name="experiences" extends="common" >
     <put-attribute name="title" value="User Prior experiences " />
     <put-attribute name="body" value="/WEB-INF/jsp/experiences.jsp" />
@@ -135,5 +129,10 @@
     <put-attribute name="title" value="User education " />
     <put-attribute name="body" value="/WEB-INF/jsp/skills.jsp" />
      <put-attribute name="current" value="skills" />
+  </definition>
+   <definition name="setting" extends="common" >
+    <put-attribute name="title" value=" testing Form " />
+    <put-attribute name="body" value="/WEB-INF/jsp/setting.jsp" />
+     <put-attribute name="fbhome" value="setting" />
   </definition>
 </tiles-definitions>

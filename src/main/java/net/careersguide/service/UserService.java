@@ -79,6 +79,7 @@ public class UserService {
 		Resume resume=resumeRepository.findByUser(user);
 		resume.setEducation(educationRepository.findByResume(resume));
 		resume.setExperiences(experienceRepository.findByResume(resume));
+		resume.setSkills(skillRepository.findByResume(resume));
 		return resume;
 	}
 

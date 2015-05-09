@@ -263,80 +263,31 @@ opacity:0.9;
         </ul>
         
       </div>
-      <div class="bs-callout bs-callout-danger">
-        <h4>Key Expertise</h4>
-        <ul class="list-group">
-          <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc </li>
-          <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-          <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-          <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-          <li class="list-group-item">Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-          <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-
-
-
-        </ul>
-      </div>
+      
       <div class="bs-callout bs-callout-danger">
         <h4>Language and Platform Skills</h4>
-        <ul class="list-group">
-          <a class="list-group-item inactive-link" href="#">
+        <table class="table table-striped ">
+          <thead>
+            <tr><th>Name</th><th>Certification</th>
+            <th>Passing year</th>
+             <th>Version</th>
+            <th>Personal Rating %</th>
+          </tr></thead>
+          <tbody>
+           <c:forEach items='${resumeContent.skills}' var="skill">
+            <tr>
+              <td> <c:out value='${skill.skillName}'/></td>
+               <td> <c:out value='${skill.certificationName}'/></td>
+              <td> <c:out value='${skill.passingYear}'/></td>
+              <td>  <c:out value='${skill.version}'/> </td>
+              <td>  <c:out value='${skill.percentSkill}'/> </td>
+            </tr>
+            </c:forEach>	
+          </tbody>
+        </table>
+        
+
             
-
-            <div class="progress">
-              <div data-placement="top" style="width: 80%;" 
-              aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar progress-bar-success">
-                <span class="sr-only">80%</span>
-                <span class="progress-type">Java/ JavaEE/ Spring Framework </span>
-              </div>
-            </div>
-            <div class="progress">
-              <div data-placement="top" style="width: 70%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="1" role="progressbar" class="progress-bar progress-bar-success">
-                <span class="sr-only">70%</span>
-                <span class="progress-type">PHP/ Lamp Stack</span>
-              </div>
-            </div>
-            <div class="progress">
-              <div data-placement="top" style="width: 70%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="1" role="progressbar" class="progress-bar progress-bar-success">
-                <span class="sr-only">70%</span>
-                <span class="progress-type">JavaScript/ NodeJS/ MEAN stack </span>
-              </div>
-            </div>
-            <div class="progress">
-              <div data-placement="top" style="width: 65%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="1" role="progressbar" class="progress-bar progress-bar-warning">
-                <span class="sr-only">65%</span>
-                <span class="progress-type">Python/ Numpy/ Scipy</span>
-              </div>
-            </div>
-            <div class="progress">
-              <div data-placement="top" style="width: 60%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar progress-bar-warning">
-                <span class="sr-only">60%</span>
-                <span class="progress-type">C</span>
-              </div>
-            </div>
-            <div class="progress">
-              <div data-placement="top" style="width: 50%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" role="progressbar" class="progress-bar progress-bar-warning">
-                <span class="sr-only">70%</span>
-                <span class="progress-type">C++</span>
-              </div>
-            </div>
-            <div class="progress">
-              <div data-placement="top" style="width: 10%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" role="progressbar" class="progress-bar progress-bar-danger">
-                <span class="sr-only">100%</span>
-                <span class="progress-type">Go</span>
-              </div>
-            </div>
-
-            <div class="progress-meter">
-              <div style="width: 25%;" class="meter meter-left"><span class="meter-text">I suck</span></div>
-              <div style="width: 25%;" class="meter meter-left"><span class="meter-text">I know little</span></div>
-              <div style="width: 30%;" class="meter meter-right"><span class="meter-text">I'm a guru</span></div>
-              <div style="width: 20%;" class="meter meter-right"><span class="meter-text">I''m good</span></div>
-            </div>
-
-          </a>
-
-        </ul>
       </div>
       <div class="bs-callout bs-callout-danger">
         <h4>Education</h4>

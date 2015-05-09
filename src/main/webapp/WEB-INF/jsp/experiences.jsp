@@ -81,7 +81,7 @@
         </ul>
         
       </div>
-           	
+        </div>   	
          
 					<!-- Modal -->
 					<form:form commandName="experience" class="form-horizontal">

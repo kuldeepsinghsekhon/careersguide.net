@@ -156,16 +156,33 @@ body {
 							<i class="glyphicon glyphicon-home"></i>
 							Overview </a>
 						</li>
+						
 						<li>
-							<a href="#">
+							<a href='<spring:url value="/settings.html" />'>
 							<i class="glyphicon glyphicon-user"></i>
 							Account Settings </a>
 						</li>
 						<li>
-							<a href="#" target="_blank">
+							<a href='<spring:url value="/resume-update.html" />' target="_blank">
 							<i class="glyphicon glyphicon-ok"></i>
-							Tasks </a>
+							Resume Update </a>
 						</li>
+						<li>
+							<a href='<spring:url value="/education.html" />' target="_blank">
+							<i class="glyphicon glyphicon-ok"></i>
+							Education Update </a>
+						</li>
+						<li>
+							<a href='<spring:url value="/experiences.html" />' target="_blank">
+							<i class="glyphicon glyphicon-ok"></i>
+							Experience Update </a>
+						</li>
+						<li>
+							<a href='<spring:url value="/skills.html" />' target="_blank">
+							<i class="glyphicon glyphicon-ok"></i>
+							Skills Update </a>
+						</li>
+						
 						<li>
 							<a href="#">
 							<i class="glyphicon glyphicon-flag"></i>
@@ -178,7 +195,7 @@ body {
 		</div>
 		<div class="col-md-9">
             <div class="profile-content">
-			 <table class="table" class="table table-bordered table-hover table-striped">
+			 <table class="table" class="table table-profile table-hover  ">
   <tr>
    
         <th colspan="2">User Profile</th>
@@ -186,8 +203,9 @@ body {
   </tr>
 
   <tr>
-    <td><c:out value="${ user.firstName}"/></td>
-     <td><c:out value="${ user.lastName}"/></td>
+  <td>Name:</td>
+    <td><c:out value="${ user.firstName}"/>
+    <c:out value="${ user.lastName}"/></td>
    
   </tr>
  

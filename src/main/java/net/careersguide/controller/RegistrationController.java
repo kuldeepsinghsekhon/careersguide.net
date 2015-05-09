@@ -123,11 +123,11 @@ public class RegistrationController {
 	
 	
 	
-	@RequestMapping("/cregister")
+	@RequestMapping("/setting")
 	public String cregisterUser() {
-		return "cregister";
+		return "setting";
 	}
-	@RequestMapping(value = "/cregister", method = RequestMethod.POST)
+	@RequestMapping(value = "/setting", method = RequestMethod.POST)
 	public String cdoUserRegister(@Valid @ModelAttribute("user") User user,
 			BindingResult bindingResult, RedirectAttributes redirectAttributes,@RequestParam("recaptcha_challenge_field") String challangeField, 
 			@RequestParam("recaptcha_response_field") String responseField,ServletRequest servletRequest,
@@ -135,16 +135,16 @@ public class RegistrationController {
 		String remoteAddress = servletRequest.getRemoteAddr();
 		ReCaptchaResponse reCaptchaResponse = this.reCaptcha.checkAnswer(remoteAddress, challangeField, responseField);
 		if (bindingResult.hasErrors()) {
-			return "cregister";
+			return "setting";
 		}
 		if(reCaptchaResponse.isValid() && !bindingResult.hasErrors()){
 		registrationService.saveUser(user);
 
 		userService.saveResume(user);// @ModelAttribute("resume") Resume resume
 		redirectAttributes.addFlashAttribute("success", true);
-		return "redirect:/cregister.html?success=true";
+		return "redirect:/setting.html?success=true";
 		}
-		return "redirect:/cregister.html?success=false";
+		return "redirect:/setting.html?success=false";
 	}
 	
 }

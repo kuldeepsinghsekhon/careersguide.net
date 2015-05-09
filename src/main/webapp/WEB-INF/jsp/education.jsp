@@ -108,7 +108,7 @@ $(document).ready(function(){
         </table>
       </div>
     </div>
-   
+   </div>
 
 <!-- Modal -->
 <form:form commandName="resume" class="form-horizontal" >

@@ -1,253 +1,199 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
-<style>
-<!-- /*
-Fade content bs-carousel with hero headers
-Code snippet by maridlcrmn (Follow me on Twitter @maridlcrmn) for Bootsnipp.com
-Image credits: unsplash.com
-*/
 
-/********************************/
-/*       Fade Bs-carousel       */
-/********************************/
-.fade-carousel {
-	position: relative;
-	height: 50vh;
-}
+        <div class="slider-area">
+            <div class="slider">
+                <div id="bg-slider" class="owl-carousel owl-theme">
+                 
+                  <div class="item"><img src="img/slider-image-3.jpg" alt="Mirror Edge"></div>
+                  <div class="item"><img src="img/slider-image-2.jpg" alt="The Last of us"></div>
+                  <div class="item"><img src="img/slider-image-1.jpg" alt="GTA V"></div>
+                 
+                </div>
+            </div>
+            <div class="container slider-content">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+                        <h2>Job Searching Just Got So Easy</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi deserunt deleniti, ullam commodi sit ipsam laboriosam velit adipisci quibusdam aliquam teneturo!</p>
+                        <div class="search-form wow pulse" data-wow-delay="0.8s">
+                            <form action="" class=" form-inline">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Job Key Word">
+                                </div>
+                                <div class="form-group">
+                                    <select name="" id="" class="form-control">
+                                        <option>Select Your City</option>
+                                        <option selected>New york, CA</option>
+                                        <option>New york, CA</option>
+                                        <option>New york, CA</option>
+                                        <option>New york, CA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="" id="" class="form-control">
+                                        <option>Select Your Category</option>
+                                        <option selected>Graphic Design</option>
+                                        <option>Web Design</option>
+                                        <option>App Design</option>
+                                    </select>
+                                </div>
+                                <input type="submit" class="btn" value="Search">
 
-.fade-carousel .carousel-inner .item {
-	height: 50vh;
-}
 
-.fade-carousel .carousel-indicators>li {
-	margin: 0 2px;
-	background-color: #f39c12;
-	border-color: #f39c12;
-	opacity: .7;
-}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-.fade-carousel .carousel-indicators>li.active {
-	width: 10px;
-	height: 10px;
-	opacity: 1;
-}
+        <div class="content-area">
+            <div class="container">
+                <div class="row page-title text-center wow bounce"  data-wow-delay="1s">
+                    <h5>Recent Jobs</h5>
+                    <h2>Available jobs for you</h2>
+                </div>
+                <div class="row jobs">
+                    <div class="col-md-9">
+                        <div class="job-posts table-responsive">
+                            <table class="table">
+                                <tr class="odd wow fadeInUp" data-wow-delay="1s">
+                                    <td class="tbl-logo"><img src="img/job-logo1.png" alt=""></td>
+                                    <td class="tbl-title"><h4>Web Designer <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>dribbble community</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                                <tr class="even wow fadeInUp" data-wow-delay="1.1s">
+                                    <td class="tbl-logo"><img src="img/job-logo2.png" alt=""></td>
+                                    <td class="tbl-title"><h4>Front End Developer <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>Jolil corporation</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                                <tr class="odd wow fadeInUp" data-wow-delay="1.2s">
+                                    <td class="tbl-logo"><img src="img/job-logo3.png" alt=""></td>
+                                    <td class="tbl-title"><h4>HR Manager <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>Fanta bevarage</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                                <tr class="even wow fadeInUp" data-wow-delay="1.3s">
+                                    <td class="tbl-logo"><img src="img/job-logo4.png" alt=""></td>
+                                    <td class="tbl-title"><h4>Internship Designer <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>Google</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                                <tr class="odd wow fadeInUp" data-wow-delay="1.4s">
+                                    <td class="tbl-logo"><img src="img/job-logo5.png" alt=""></td>
+                                    <td class="tbl-title"><h4>Software Designer <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>Microsoft</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                                <tr class="even hide-jobs">
+                                    <td class="tbl-logo"><img src="img/job-logo4.png" alt=""></td>
+                                    <td class="tbl-title"><h4>Internship Designer <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>Google</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                                <tr class="odd hide-jobs">
+                                    <td class="tbl-logo"><img src="img/job-logo5.png" alt=""></td>
+                                    <td class="tbl-title"><h4>Software Designer <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>Microsoft</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                                <tr class="even hide-jobs">
+                                    <td class="tbl-logo"><img src="img/job-logo4.png" alt=""></td>
+                                    <td class="tbl-title"><h4>Internship Designer <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>Google</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                                <tr class="odd hide-jobs">
+                                    <td class="tbl-logo"><img src="img/job-logo5.png" alt=""></td>
+                                    <td class="tbl-title"><h4>Software Designer <br><span class="job-type">full time</span></h4></td>
+                                    <td><p>Microsoft</p></td>
+                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
+                                    <td><p>&dollar; 14000</p></td>
+                                    <td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="more-jobs">
+                            <a href=""> <i class="fa fa-refresh"></i>View more jobs</a>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <hr>
 
-/********************************/
-/*          Hero Headers        */
-/********************************/
-.hero {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	z-index: 3;
-	color: #fff;
-	text-align: center;
-	text-transform: uppercase;
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, .75);
-	-webkit-transform: translate3d(-50%, -50%, 0);
-	-moz-transform: translate3d(-50%, -50%, 0);
-	-ms-transform: translate3d(-50%, -50%, 0);
-	-o-transform: translate3d(-50%, -50%, 0);
-	transform: translate3d(-50%, -50%, 0);
-}
+            <div class="container">
+                <div class="row page-title text-center  wow bounce"  data-wow-delay=".7s">
+                    <h5>TESTIMONIALS</h5>
+                    <h2>WHAT PEOPLES ARE SAYING</h2>
+                </div>
+                <div class="row testimonial">
+                    <div class="col-md-12">
+                        <div id="testimonial-slider">
+                            <div class="item">
+                                <div class="client-text">                                
+                                    <p>Jobify offer an amazing service and I couldn’t be happier! They 
+                                    are dedicated to helping recruiters find great candidates, wonderful service!</p>
+                                    <h4><strong>Ohidul Islam, </strong><i>Web Designer</i></h4>
+                                </div>
+                                <div class="client-face wow fadeInRight" data-wow-delay=".4s"> 
+                                    <img src="img/client-face1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="client-text">                                
+                                    <p>Jobify offer an amazing service and I couldn’t be happier! They 
+                                    are dedicated to helping recruiters find great candidates, wonderful service!</p>
+                                    <h4><strong>Ohidul Islam, </strong><i>Web Designer</i></h4>
+                                </div>
+                                <div class="client-face">
+                                    <img src="img/client-face2.png" alt="">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="client-text">                                
+                                    <p>Jobify offer an amazing service and I couldn’t be happier! They 
+                                    are dedicated to helping recruiters find great candidates, wonderful service!</p>
+                                    <h4><strong>Ohidul Islam, </strong><i>Web Designer</i></h4>
+                                </div>
+                                <div class="client-face">
+                                    <img src="img/client-face1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="client-text">                                
+                                    <p>Jobify offer an amazing service and I couldn’t be happier! They 
+                                    are dedicated to helping recruiters find great candidates, wonderful service!</p>
+                                    <h4><strong>Ohidul Islam, </strong><i>Web Designer</i></h4>
+                                </div>
+                                <div class="client-face">
+                                    <img src="img/client-face2.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-.hero h1 {
-	font-size: 6em;
-	font-weight: bold;
-	margin: 0;
-	padding: 0;
-}
-
-.fade-carousel .carousel-inner .item .hero {
-	opacity: 0;
-	-webkit-transition: 2s all ease-in-out .1s;
-	-moz-transition: 2s all ease-in-out .1s;
-	-ms-transition: 2s all ease-in-out .1s;
-	-o-transition: 2s all ease-in-out .1s;
-	transition: 2s all ease-in-out .1s;
-}
-
-.fade-carousel .carousel-inner .item.active .hero {
-	opacity: 1;
-	-webkit-transition: 2s all ease-in-out .1s;
-	-moz-transition: 2s all ease-in-out .1s;
-	-ms-transition: 2s all ease-in-out .1s;
-	-o-transition: 2s all ease-in-out .1s;
-	transition: 2s all ease-in-out .1s;
-}
-
-/********************************/
-/*            Overlay           */
-/********************************/
-.overlay {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	z-index: 2;
-	background-color: #080d15;
-	opacity: .7;
-}
-
-/********************************/
-/*          Custom Buttons      */
-/********************************/
-.btn.btn-lg {
-	padding: 10px 40px;
-}
-
-.btn.btn-hero, .btn.btn-hero:hover, .btn.btn-hero:focus {
-	color: #f5f5f5;
-	background-color: #1abc9c;
-	border-color: #1abc9c;
-	outline: none;
-	margin: 20px auto;
-}
-
-/********************************/
-/*       Slides backgrounds     */
-/********************************/
-.fade-carousel .slides .slide-1, .fade-carousel .slides .slide-2,
-	.fade-carousel .slides .slide-3 {
-	height: 50vh;
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-}
-
-.fade-carousel .slides .slide-1 {
-	background-image:
-		url(https://ununsplash.imgix.net/photo-1416339134316-0e91dc9ded92?q=75&fm=jpg&s=883a422e10fc4149893984019f63c818);
-}
-
-.fade-carousel .slides .slide-2 {
-	background-image:
-		url(https://ununsplash.imgix.net/photo-1416339684178-3a239570f315?q=75&fm=jpg&s=c39d9a3bf66d6566b9608a9f1f3765af);
-}
-
-.fade-carousel .slides .slide-3 {
-	background-image:
-		url(https://ununsplash.imgix.net/photo-1416339276121-ba1dfa199912?q=75&fm=jpg&s=9bf9f2ef5be5cb5eee5255e7765cb327);
-}
-
-/********************************/
-/*          Media Queries       */
-/********************************/
-@media screen and (min-width: 980px) {
-	.hero {
-		width: 980px;
-	}
-}
-
-@media screen and (max-width: 640px) {
-	.hero h1 {
-		font-size: 4em;
-	}
-}
--->
-</style>
-<div class="carousel fade-carousel slide" data-ride="carousel"
-	data-interval="4000" id="bs-carousel">
-	<!-- Overlay -->
-	<div class="overlay"></div>
-
-	<!-- Indicators -->
-	<ol class="carousel-indicators">
-		<li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-		<li data-target="#bs-carousel" data-slide-to="1"></li>
-		<li data-target="#bs-carousel" data-slide-to="2"></li>
-	</ol>
-
-	<!-- Wrapper for slides -->
-	<div class="carousel-inner">
-		<div class="item slides active">
-			<div class="slide-1"></div>
-			<div class="hero">
-				<hgroup>
-					<h1>We are creative</h1>
-					<h3>Get start your Career</h3>
-				</hgroup>
-				<button class="btn btn-hero btn-lg" role="button">See all
-					features</button>
-			</div>
-		</div>
-		<div class="item slides">
-			<div class="slide-2"></div>
-			<div class="hero">
-				<hgroup>
-					<h1>We are smart</h1>
-					<h3>Find Best Job Collage</h3>
-				</hgroup>
-				<button class="btn btn-hero btn-lg" role="button">See all
-					features</button>
-			</div>
-		</div>
-		<div class="item slides">
-			<div class="slide-3"></div>
-			<div class="hero">
-				<hgroup>
-					<h1>We are amazing</h1>
-					<h3>Get start your next awesome project</h3>
-				</hgroup>
-				<button class="btn btn-hero btn-lg" role="button">See all
-					features</button>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- /.carousel -->
-<div class="page-header">
-	<h1>Latest Jobs</h1>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="panel panel-default widget">
-			<div class="panel-heading">
-				<h3 class="panel-title">Recent Jobs</h3>
-			</div>
-			<div class="panel-body">
-				<c:forEach items="${jobs}" var="job">
-					<ul class="list-group">
-						<li class="list-group-item">
-							<div class="row">
-								<div class="col-xs-2 col-md-1">
-									<img src="http://placehold.it/80"
-										class="img-circle img-responsive" alt="" />
-								</div>
-								<div class="col-xs-10 col-md-11">
-									<div>
-										<a
-											href="http://www.jquery2dotnet.com/2013/10/google-style-login-page-desing-usign.html">
-											<c:out value="${job.title}" />
-										</a>
-										<div class="mic-info">
-											By: <a href="#">Bhaumik Patel</a> on 2 Aug 2013
-										</div>
-									</div>
-									<div class="comment-text">
-										<c:out value="${job.description}" />
-									</div>
-									<div class="action">
-										<a href='<spring:url value="/jobdetail/${job.id}.html"/>'>
-											<button type="button" class="btn btn-primary btn-xs"
-												title="View Detail">
-												<span class="glyphicon glyphicon-pencil"></span> View
-											</button>
-										</a> <a href='<spring:url value="/apply/${job.id}.html"/>'>
-											<button type="button" class="btn btn-success btn-xs"
-												title="Apply">
-												<span class="glyphicon glyphicon-ok"></span>Apply
-											</button>
-										</a>
-									</div>
-								</div>
-							</div>
-						</li>
-				</c:forEach>
-				</ul>
-				<a href="#" class="btn btn-primary btn-sm btn-block" role="button"><span
-					class="glyphicon glyphicon-refresh"></span> More</a>
-			</div>
-		</div>
-	</div>
-</div>
+        </div>
+     

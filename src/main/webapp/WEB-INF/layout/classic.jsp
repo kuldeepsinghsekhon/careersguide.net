@@ -10,50 +10,52 @@
 <link rel="icon" href="../../favicon.ico">
 
 <%@ include file="../layout/taglib.jsp"%>
-<script src='https://www.google.com/recaptcha/api.js'></script>
 <script type="text/javascript"
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
 <title><tiles:getAsString name="title" /></title>
-<link href='http://fonts.googleapis.com/css?family=Raleway:500'
-	rel='stylesheet' type='text/css'>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="../../css/bootstrap.min.css">
+     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="../../css/bootstrap-theme.min.css">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-
-
-<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-
-<script type="text/javascript"
-	src="../../js/ie-emulation-modes-warning.js">
-	
-</script>
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <link rel="stylesheet" href="../../css/normalize.css">
+        <link rel="stylesheet" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../css/fontello.css">
+        <link rel="stylesheet" href="../../css/animate.css">        
+        <link rel="stylesheet" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../css/owl.carousel.css">
+        <link rel="stylesheet" href="../../css/owl.theme.css">
+        <link rel="stylesheet" href="../../css/owl.transitions.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/responsive.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <link href="../../dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+        <link href="../../dist/css/skins/skin-blue-light.min.css" rel="stylesheet" type="text/css" />
+         <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 body {
-	min-height: 800px;
-	padding-top: 60px;
+	min-height: 1000px;
+	padding-top: 0px;
 }
 
 #body-container {
-	min-height: 500px;
+	min-height: 1800px;
 }
 </style>
 
 </head>
 
-<body>
-
-	<nav class="navbar navbar-default navbar-fixed-top">
+<body class=" sidebar-collapse ">
+  
+   <div class="wrapper">
+  
+  
+  
+	<nav class="navbar navbar-default ">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed"
@@ -69,20 +71,10 @@ body {
 				<ul class="nav navbar-nav">
 					<li class="${current=='index'?'active':'' }"><a
 						href='<spring:url value="/" />'><span class=" glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
-
- <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class=""><span class=" btn glyphicon glyphicon-search" aria-hidden="true"></span></button>
-      </form>
 					<security:authorize access="hasRole('ROLE_ADMIN')">
 						<li class="${current=='users'?'active':'' }"><a
 							href='<spring:url value="/users.html" />'>Users</a></li>
 					</security:authorize>
-
-
-
 					<security:authorize access="hasRole('ROLE_USER')">
 						<li class="${current=='resume'?'active':'' }"><a
 							href='<spring:url value="/resume-update.html" />'>Update
@@ -94,35 +86,20 @@ body {
 							href='<spring:url value="/applied-jobs.html" />'>Apllication
 								Status</a></li>
 					</security:authorize>
-
-
-
-					<security:authorize access="hasRole('ROLE_CORP')">
-						<li class="${current=='jobform'?'active':'' }"><a
-							href='<spring:url value="/jobform.html" />'>Submit Job</a></li>
-						<li class="${current=='tests'?'active':'' }"><a
-							href='<spring:url value="/tests.html" />'>Exams</a></li>
-						<li class="${current=='posted-jobs'?'active':'' }"><a
-							href='<spring:url value="/posted-jobs.html" />'>All Jobs</a></li>
-
-						<li class="${current=='applies'?'active':'' }"><a
-							href='<spring:url value="/applies.html" />'>Jobs Applies</a></li>
-
-					</security:authorize>
+					
 					<li class="${current=='jobs'?'active':'' }"><a
 						href='<spring:url value="/jobs.html" />'>Search</a></li>
 
 					<security:authorize access="!isAuthenticated()">
 						<li class="${current=='register'?'active':'' }"><a
-							href='<spring:url value="/register.html" />'>Register</a></li>
+							href='<spring:url value="/register.html" />'>Job Seekers</a></li>
 						<li class="${current=='regcorp'?'active':'' }"><a
-							href='<spring:url value="/regcorp.html" />'>Submit Job</a></li>
+							href='<spring:url value="/regcorp.html" />'>Employeers</a></li>
 						<li class="${current=='login'?'active':'' }"><a
 							href='<spring:url value="/login.html" />'>Login</a></li>
 					</security:authorize>
-
 					<li class="${current=='contactus'?'active':'' }"><a
-						href='<spring:url value="/contactus.html" />'><span class="glyphicon glyphicon-pencil" aria-hidden="true"></a></li>
+						href='<spring:url value="/contactus.html" />'>Contact</a></li>
 					
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
@@ -135,35 +112,16 @@ body {
 					</security:authorize>
 					
 				</ul>
-				</li>
-				</ul>
-
 			</div>
 			<!--/.nav-collapse -->
 		</div>
 	</nav>
-
-	<div class="container">
-
-		<div class="starter-template" id="body-container">
 			<tiles:insertAttribute name="body" />
-
-
-
-		</div>
-
-	</div>
-	<!-- /.container -->
-
 	<tiles:insertAttribute name="footer" />
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	
-	<!-- Latest compiled and minified JavaScript -->
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/owl.carousel.min.js"></script>
+        <script src="../../js/wow.js"></script>
+        <script src="../../js/main.js"></script>
+ </div>       
 </body>
 </html>
