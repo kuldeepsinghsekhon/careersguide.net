@@ -3,7 +3,7 @@
 <%@ include file="../layout/taglib.jsp"%>
 <style>
 <!--
-body { padding-top:80px; }
+
 .widget .panel-body { padding:0px; }
 .widget .list-group { margin-bottom: 0; }
 .widget .panel-title { display:inline }
@@ -18,22 +18,37 @@ body { padding-top:80px; }
 </style>
 <div class="container">
 	<div class="row">
-		<div class="col-xs-8 col-xs-offset-2">
-			<div class="input-group">
-				<form:form commandName="search">
-					<form:input path="title" placeholder=" Job Title"
-						class="form-controle" />
-					<form:input path="qualification" placeholder="Qualification"
-						class="form-controle" />
-					<button type="submit" class="btn btn-primary" type="button">
-						<span class="glyphicon glyphicon-search "></span>
-					</button>
-				</form:form>
-			</div>
-		</div>
-	</div>
-</div>
+	 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+	 <div class="search-form wow pulse" data-wow-delay="0.8s">
+	 <form:form commandName="search" class=" form-inline">
+                            
+                                <div class="form-group">
+                                    <form:input path="title" placeholder=" Job Title" type="text" class="form-control"/>
+                                </div>
+                                <div class="form-group">
+                                    <select  name="" class="form-control">
+                                        <option>Select Your City</option>
+                                        <option selected>New york, CA</option>
+                                        <option>New york, CA</option>
+                                        <option>New york, CA</option>
+                                        <option>New york, CA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <form:select path="qualification" placeholder="Qualification" class="form-control">
+                                        <option selected>Qualification</option>
+                                        <option >bbc</option>
+                                        <option>mba</option>
+                                        <option>App Design</option>
+                                    </form:select>
+                                </div>
+                                <input type="submit" class="btn" value="Search">
 
+
+                           </form:form>
+                        </div>
+                        </div>
+	</div>
 <div class="container">
 	<div class="row">
 		<div class="panel panel-default widget">

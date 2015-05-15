@@ -37,4 +37,6 @@
     <bean id="reCaptcha" class="net.tanesha.recaptcha.ReCaptchaImpl">
 		<property name="privateKey" value="6LeqPwYTAAAAAL0PblaOtcEI1pcBAKXNOTsPJkC8"/>
 	</bean>
+	<bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
     </beans>

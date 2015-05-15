@@ -158,13 +158,7 @@ body{margin-top:50px;}
             <div class="well">
                 <h1>
                     Accordion Menu With Icon</h1>
-                Admin Dashboard Accordion Menu
-            </div>
-        </div>
-    </div>
-</div>
-
-<table class="table">
+              <table class="table">
 <tr><th>Job Id</th><th>Job Title</th></tr>
 <c:forEach items="${postedjobs}" var="job">
 
@@ -175,3 +169,8 @@ body{margin-top:50px;}
 </c:forEach>
 
 </table>
+            </div>
+        </div>
+    </div>
+</div>
+

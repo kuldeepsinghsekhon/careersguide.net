@@ -130,6 +130,11 @@
     <put-attribute name="body" value="/WEB-INF/jsp/skills.jsp" />
      <put-attribute name="current" value="skills" />
   </definition>
+  <definition name="exam" extends="common" >
+    <put-attribute name="title" value=" exam Form " />
+    <put-attribute name="body" value="/WEB-INF/jsp/exam.jsp" />
+     <put-attribute name="current" value="exam" />
+  </definition>
    <definition name="setting" extends="common" >
     <put-attribute name="title" value=" testing Form " />
     <put-attribute name="body" value="/WEB-INF/jsp/setting.jsp" />

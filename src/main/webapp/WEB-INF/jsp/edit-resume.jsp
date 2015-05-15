@@ -14,7 +14,7 @@ $(document).ready(function(){
 	    }  );
 });
 </script>
-<h3>Update Your Resume</h3>
+
 <div class="container">
 
     <div class="row">
@@ -176,6 +176,66 @@ $(document).ready(function(){
 
 
 </form:form>
+
+<script src="../../js/vendor/jquery.ui.widget.js"></script>
+<script src="../../js/jquery.iframe-transport.js"></script>
+<script src="../../js/jquery.fileupload.js"></script>
+
+<link href="../../css/dropzone.css" type="text/css" rel="stylesheet" />
+
+<!-- we code these -->
+
+<script type="text/javascript">$(function () {
+    $('#fileupload').fileupload({
+        dataType: 'json',
+        
+        done: function (e, data) {
+        	$("tr:has(td)").remove();
+            $.each(data.result, function (index, file) {
+            	
+            	
+                $("#uploaded-files").append(
+                		$('<tr/>')
+                		.append($('<td/>').text(file.fileName))
+                		.append($('<td/>').text(file.fileSize))
+                		.append($('<td/>').text(file.fileType))
+                		.append($('<td/>').html("<a href='/controller/get/"+index+"'>Click</a>"))
+                		)//end $("#uploaded-files").append()
+            }); 
+        },
+        
+        progressall: function (e, data) {
+	        var progress = parseInt(data.loaded / data.total * 100, 10);
+	        $('#progress .bar').css(
+	            'width',
+	            progress + '%'
+	        );
+   		},
+   		
+		dropZone: $('#dropzone')
+    });
+});</script>
+<h1>Spring MVC - jQuery File Upload</h1>
+<div style="width:500px;padding:20px">
+
+	<input id="fileupload" type="file" name="files[]" data-url="/controller/upload.html" multiple>
+	
+	<div id="dropzone" class="fade well">Drop files here</div>
+	
+	<div id="progress" class="progress">
+    	<div class="bar" style="width: 0%;"></div>
+	</div>
+
+	<table id="uploaded-files" class="table">
+		<tr>
+			<th>File Name</th>
+			<th>File Size</th>
+			<th>File Type</th>
+			<th>Download</th>
+		</tr>
+	</table>
+	
+</div>
 </div>
 </div>
 </div>

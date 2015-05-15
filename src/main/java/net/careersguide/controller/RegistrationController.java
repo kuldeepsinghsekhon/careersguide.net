@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import net.careersguide.entity.User;
 import net.careersguide.service.RegistrationService;
+import net.careersguide.service.UserDetailService;
 import net.careersguide.service.UserService;
 import net.tanesha.recaptcha.ReCaptchaImpl;
 import net.tanesha.recaptcha.ReCaptchaResponse;
@@ -27,6 +28,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class RegistrationController {
 	@Autowired
 	private RegistrationService registrationService;
+	@Autowired
+	private UserDetailService userDetailService;
 
 	@Autowired
 	private UserService userService;
@@ -57,7 +60,7 @@ public class RegistrationController {
 		if(reCaptchaResponse.isValid() && !bindingResult.hasErrors()){
 		registrationService.saveUser(user);
 
-		userService.saveResume(user);// @ModelAttribute("resume") Resume resume
+		userDetailService.saveResume(user);// @ModelAttribute("resume") Resume resume
 		redirectAttributes.addFlashAttribute("success", true);
 		return "redirect:/register.html?success=true";
 		}
@@ -140,7 +143,7 @@ public class RegistrationController {
 		if(reCaptchaResponse.isValid() && !bindingResult.hasErrors()){
 		registrationService.saveUser(user);
 
-		userService.saveResume(user);// @ModelAttribute("resume") Resume resume
+		userDetailService.saveResume(user);// @ModelAttribute("resume") Resume resume
 		redirectAttributes.addFlashAttribute("success", true);
 		return "redirect:/setting.html?success=true";
 		}

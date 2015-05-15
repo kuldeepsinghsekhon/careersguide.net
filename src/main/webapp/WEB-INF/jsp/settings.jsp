@@ -3,7 +3,7 @@
     <%@ include  file="../layout/taglib.jsp"%>
   <style>
 <!--
-body{margin-top:50px;}
+body{margin-top:0px;}
 .glyphicon { margin-right:0px; }
 #panel-body { padding:0px; }
 #panel-body table tr td { padding-left: 15px }

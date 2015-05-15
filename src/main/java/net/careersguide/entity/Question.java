@@ -1,10 +1,13 @@
 package net.careersguide.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Question {
@@ -24,6 +27,10 @@ public class Question {
 	@ManyToOne
 	@JoinColumn(name="test_id")
 	private Test test;
+	@OneToMany(mappedBy="question")
+	private List<Answers> answers;
+	private Float marks;
+	private Float negativemarks;
 	public Integer getId() {
 		return id;
 	}
@@ -77,6 +84,24 @@ public class Question {
 	}
 	public void setTest(Test test) {
 		this.test = test;
+	}
+	public List<Answers> getAnswers() {
+		return answers;
+	}
+	public void setAnswers(List<Answers> answers) {
+		this.answers = answers;
+	}
+	public Float getMarks() {
+		return marks;
+	}
+	public void setMarks(Float marks) {
+		this.marks = marks;
+	}
+	public Float getNegativemarks() {
+		return negativemarks;
+	}
+	public void setNegativemarks(Float negativemarks) {
+		this.negativemarks = negativemarks;
 	}
 	
 }

@@ -37,7 +37,7 @@ private UserService userService;
 	}
 
 	public Job findOneJob(int id) {
-		return jobRepository.findById(id);
+		return jobRepository.findOne(id);
 	}
 
 	public List<Job> findAllBy(String seachValue,String qualification) {

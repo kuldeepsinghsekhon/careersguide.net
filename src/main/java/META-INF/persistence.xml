@@ -14,5 +14,6 @@
 		<class>net.careersguide.entity.Experience</class>
 		<class>net.careersguide.entity.Education</class>
 		<class>net.careersguide.entity.Skill</class>
+		<class>net.careersguide.entity.Answers</class>
 	</persistence-unit>
 </persistence>

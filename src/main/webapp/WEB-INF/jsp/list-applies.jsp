@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+     <%@ include  file="../layout/taglib.jsp"%>
 <script type="text/javascript">
 <!--
 $(document).ready(function(){
@@ -21,31 +21,38 @@ $(document).ready(function(){
 	});
 //-->
 </script>
+
+ <div class="content">
  <div class="col-md-12">
-        <h4>Candidates Applied For Job  Job Id </td><td><c:out value="${candidate.job.id}"/></td></h4>
         <div class="table-responsive">
 <table class="table table-bordered  table-striped" id="mytable">
 <tr>
  <th><input type="checkbox" id="checkall" /></th>
 <th>User Email</th>
 <th>UserID</th>
-<th>Edit</th>
+<th>Assign Exam</th>
+<th>View Resume</th>
 <th>Delete</th>
 </tr>
-<c:forEach items="${candidates}" var="candidate">
 
-<tr> <td><input type="checkbox" class="checkthis" />
+<c:forEach items="${responses}" var="response">
+ 
+<tr> <td><input type="checkbox" class="checkthis"  value='<c:out value="${response.id}"/>' />
 
-<td><c:out value="${candidate.candidate.id}"/></td>
-<td><c:out value="${candidate.candidate.email}"/></td>
-<td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-<td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+<td><c:out value="${response.candidate.id}"/></td>
+<td><c:out value="${response.candidate.email}"/></td>
+<td></td>
+<td><p data-placement="top" data-toggle="tooltip" title="Edit"><a class="btn btn-primary btn-xs" href="/resume/${response.candidate.id}.html" ><span class="glyphicon glyphicon-pencil"></span></a></p></td>
+<td><form:form commandName="assigntest">userId<form:input path="userid" value="${response.candidate.id}"/>TestId <form:input path="testid" value="${response.exam.id}"/><button type="submit">Submit </button></form:form>
+</td>
    
 </tr>
 
 </c:forEach>
 
+
 </table>
+
 <div class="clearfix"></div>
 <ul class="pagination pull-right">
   <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
@@ -58,5 +65,5 @@ $(document).ready(function(){
 </ul>
                 
             </div>
-            
+        </div>    
         </div>

@@ -1,10 +1,13 @@
 package net.careersguide.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 
 
@@ -28,7 +31,8 @@ public class Apply {
 	@ManyToOne
 	@JoinColumn(name = "centerCode_id")
 	private CenterCode centerCode;
-
+	@OneToMany(mappedBy="response")
+private List<Answers> answers;
 	public Test getExam() {
 		return exam;
 	}
@@ -59,6 +63,22 @@ public class Apply {
 
 	public void setCandidate(User candidate) {
 		this.candidate = candidate;
+	}
+
+	public CenterCode getCenterCode() {
+		return centerCode;
+	}
+
+	public void setCenterCode(CenterCode centerCode) {
+		this.centerCode = centerCode;
+	}
+
+	public List<Answers> getAnswers() {
+		return answers;
+	}
+
+	public void setAnswers(List<Answers> answers) {
+		this.answers = answers;
 	}
 
 }

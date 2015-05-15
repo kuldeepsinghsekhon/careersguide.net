@@ -81,7 +81,7 @@
 		<entity-width>120</entity-width>
 		<entity-height>266</entity-height>
 		<entity-X-Coordinate>190</entity-X-Coordinate>
-		<entity-Y-Coordinate>154</entity-Y-Coordinate>
+		<entity-Y-Coordinate>196</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -121,6 +121,17 @@
 	</entity>
 
 	<entity>
+		<entity-name>net.careersguide.entity.Skill</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>226</entity-height>
+		<entity-X-Coordinate>722</entity-X-Coordinate>
+		<entity-Y-Coordinate>425</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
 		<entity-name>net.careersguide.entity.Module</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>146</entity-height>
@@ -132,11 +143,11 @@
 	</entity>
 
 	<entity>
-		<entity-name>net.careersguide.entity.Skill</entity-name>
+		<entity-name>net.careersguide.entity.Answers</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>226</entity-height>
-		<entity-X-Coordinate>722</entity-X-Coordinate>
-		<entity-Y-Coordinate>425</entity-Y-Coordinate>
+		<entity-height>168</entity-height>
+		<entity-X-Coordinate>190</entity-X-Coordinate>
+		<entity-Y-Coordinate>17</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

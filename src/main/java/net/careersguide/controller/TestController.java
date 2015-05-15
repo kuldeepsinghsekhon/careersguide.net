@@ -2,11 +2,14 @@ package net.careersguide.controller;
 
 import java.security.Principal;
 
+import net.careersguide.entity.Answers;
+import net.careersguide.entity.Apply;
 import net.careersguide.entity.Question;
 import net.careersguide.entity.Test;
-import net.careersguide.repository.QuestionRepository;
-import net.careersguide.repository.TestRepository;
+import net.careersguide.entity.User;
+import net.careersguide.service.ApplyService;
 import net.careersguide.service.TestService;
+import net.careersguide.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +24,10 @@ public class TestController {
 	
 	@Autowired
 	private TestService testService;
-	
+	@Autowired
+	private UserService userService;
+	@Autowired
+	private ApplyService applyService;
 	//Find all Exams of one user and Display it on tests.jsp
 	@RequestMapping("/tests")
 	public String ShowTests(Model model,Principal principal){
@@ -71,5 +77,46 @@ public class TestController {
 		return "redirect:/test/{id}.html";
 		
 	}
-	
+	@ModelAttribute("answers")
+	public Answers createAnswersModel(){
+		return new Answers();
+	}
+	//show all questions of test of id
+			@RequestMapping("/exam/{id}/{pn}")
+			public String giveExam(Model model,@PathVariable int id,@PathVariable int pn,@ModelAttribute("answers")Answers answers,Principal principal){
+				if(principal==null){
+					return "redirect:/login.html";
+				}
+				Test test=testService.findOneTest(id);
+				User user =userService.userByName(principal.getName());
+				Apply apply=applyService.findByTestAndCandidate(test,user);
+				if(apply==null){
+					return "redirect:/login.html";
+				}
+				model.addAttribute("questions",testService.findPagedQuestions(test,pn));
+				model.addAttribute("qn",testService.findPaged1Questions(test));
+				model.addAttribute("id",id);
+				model.addAttribute("pn",pn);
+				return "exam";
+			}
+			@RequestMapping(value="/exam/{id}/{pn}",method=RequestMethod.POST)
+			public String addAnswers(@PathVariable int id,@PathVariable int pn,@ModelAttribute("answers")Answers answers,Principal principal){
+				if(principal.getName()==null){
+					return "redirect:/login.html";
+				}
+				User user =userService.userByName(principal.getName());
+				
+				Test test= testService.findOneTest(id);
+				
+				Question question=testService.findOne(pn);
+				Apply apply=applyService.findByTestAndCandidate(test,user);
+				if(apply!=null){
+					testService.addAnswers(test,question,user,apply,answers.getAnswer());
+					
+					return "redirect:/exam/{id}/{pn}.html";
+					
+				}
+				
+				return "redirect:/index.html";
+			}
 }

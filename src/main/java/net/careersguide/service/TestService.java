@@ -2,14 +2,17 @@ package net.careersguide.service;
 
 import java.util.List;
 
+import net.careersguide.entity.Answers;
+import net.careersguide.entity.Apply;
 import net.careersguide.entity.Question;
 import net.careersguide.entity.Test;
 import net.careersguide.entity.User;
+import net.careersguide.repository.AnswersRepository;
 import net.careersguide.repository.QuestionRepository;
 import net.careersguide.repository.TestRepository;
 import net.careersguide.repository.UserRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.security.access.method.P;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
@@ -21,7 +24,13 @@ public class TestService {
 	@Autowired
 	private UserRepository userRepository;
 	@Autowired
+	private UserService userService;
+	@Autowired
 	private QuestionRepository questionRepository;
+	@Autowired
+	private ApplyService applyService;
+	@Autowired
+	private AnswersRepository answersRepository;
 	
 	public List<Test> findAllByUser(String name){
 		User user=userRepository.findByEmail(name);
@@ -46,7 +55,16 @@ public class TestService {
 	
 	@PreAuthorize("#test.employer.email==authentication.name or hasRole('ROLE_ADMIN')")
 	public List<Question> findQuestions(@P("test")Test test) {
-	return questionRepository.findByTest(test);
+	return questionRepository.findByTest(test,new PageRequest(0, 100));
+	}
+	//@PreAuthorize("hasRole('ROLE_USER')")
+	public List<Question> findPagedQuestions(Test test,int pn) {
+	return questionRepository.findByTest(test,new PageRequest(pn-1, 1));
+	}
+	//@PreAuthorize("hasRole('ROLE_USER')")
+	public List<Question> findPaged1Questions(Test test) {
+		
+	return questionRepository.findByTest(test,new PageRequest(0, 100));
 	}
 	
 	@PreAuthorize("#test.employer.email==authentication.name or hasRole('ROLE_ADMIN')")
@@ -61,8 +79,35 @@ public class TestService {
 		question2.setRightsolution(question.getRightsolution());
 		questionRepository.save(question2);
 	}
-
+	@PreAuthorize("#apply.candidate.email==authentication.name or hasRole('ROLE_ADMIN')")
+	public void addAnswers(Test test, Question question, User user,@P("apply")Apply apply,String answer_string) {
+		
+		Answers dbanswer=answersRepository.findByResponseAndQuestion(apply,question);
+		if(dbanswer==null){
+		Answers answer= new Answers();
+		answer.setResponse(apply);
+		answer.setQuestion(question);
+		answer.setAnswer(answer_string);
+		if(answer_string.equalsIgnoreCase(question.getRightsolution())){
+			answer.setMarks(question.getMarks());
+		}
+		answersRepository.save(answer);
+		}else{
+			dbanswer.setResponse(apply);
+			dbanswer.setQuestion(question);
+			dbanswer.setAnswer(answer_string);
+			if(answer_string.equalsIgnoreCase(question.getRightsolution())){
+				dbanswer.setMarks(question.getMarks());
+			}
+			answersRepository.save(dbanswer);
+		}
 	
+
+	}
+
+	public Question findOne(int pn) {
+		return questionRepository.findOne(pn);
+	}
 		
 
 }

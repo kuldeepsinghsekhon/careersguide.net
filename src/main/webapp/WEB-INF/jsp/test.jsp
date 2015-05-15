@@ -57,6 +57,17 @@
 								<form:input path="solution4" class="form-control" />
 							</div>
 						</div>
+						<div class="form-group col-sm-12">
+					<label class="col-sm-4">Marks</label> 
+					<form:select   path="marks"  class="form-control" id="pass" value="">
+					<form:option value="0" label="Select Marks" />
+					
+ <c:forEach var="i" begin="1" end="5">
+  <form:option value='${i}'>${i}</form:option>
+</c:forEach> 
+							
+						</form:select>
+				</div>
 						<div class="form-group">
 							<label for="rightsolution" class="col-sm-2 control-label">Solution</label>
 							<div class="col-sm-10">
