@@ -4,10 +4,12 @@ import java.security.Principal;
 
 import net.careersguide.entity.Answers;
 import net.careersguide.entity.Apply;
+import net.careersguide.entity.Job;
 import net.careersguide.entity.Question;
 import net.careersguide.entity.Test;
 import net.careersguide.entity.User;
 import net.careersguide.service.ApplyService;
+import net.careersguide.service.JobService;
 import net.careersguide.service.TestService;
 import net.careersguide.service.UserService;
 
@@ -28,6 +30,8 @@ public class TestController {
 	private UserService userService;
 	@Autowired
 	private ApplyService applyService;
+	@Autowired
+	private JobService jobService;
 	//Find all Exams of one user and Display it on tests.jsp
 	@RequestMapping("/tests")
 	public String ShowTests(Model model,Principal principal){
@@ -76,6 +80,14 @@ public class TestController {
 		testService.addQuestion(question,test);
 		return "redirect:/test/{id}.html";
 		
+	}
+	
+	@RequestMapping("/response/{id}/result")
+	public String examResult(Model model,@PathVariable int id){
+		Job job =jobService.findOneJob(id);
+		testService.testResult(job);
+		
+		return "redirect:/response/{id}.html";
 	}
 	@ModelAttribute("answers")
 	public Answers createAnswersModel(){

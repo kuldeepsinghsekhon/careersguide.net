@@ -100,6 +100,8 @@ public class InitDbService {
 		question1.setSolution2("Delhi");
 		question1.setSolution3("Bombay");
 		question1.setSolution4("Calcuta");
+		question1.setRightsolution("A");
+		question1.setMarks(1F);
 		question1.setTest(test);
 		questionRepository.save(question1);
 		
@@ -109,6 +111,8 @@ public class InitDbService {
 		question2.setSolution2("lucky");
 		question2.setSolution3("sekhon");
 		question2.setSolution4("singh");
+		question2.setRightsolution("A");
+		question2.setMarks(2F);
 		question2.setTest(test);
 		questionRepository.save(question2);
 		

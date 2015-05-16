@@ -41,11 +41,12 @@ $(document).ready(function(){
 
 <td><c:out value="${response.candidate.id}"/></td>
 <td><c:out value="${response.candidate.email}"/></td>
+
 <td></td>
 <td><p data-placement="top" data-toggle="tooltip" title="Edit"><a class="btn btn-primary btn-xs" href="/resume/${response.candidate.id}.html" ><span class="glyphicon glyphicon-pencil"></span></a></p></td>
 <td><form:form commandName="assigntest">userId<form:input path="userid" value="${response.candidate.id}"/>TestId <form:input path="testid" value="${response.exam.id}"/><button type="submit">Submit </button></form:form>
 </td>
-   
+<td><c:out value="${response.result}"/></td>   
 </tr>
 
 </c:forEach>

@@ -2,7 +2,19 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
+<script type="text/javascript">
 
+
+
+document.onkeydown = function (e) {
+        if(e.which < 300){
+                return false;
+        }
+}
+
+
+
+</script>
 
 
 

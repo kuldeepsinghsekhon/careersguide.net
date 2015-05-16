@@ -16,6 +16,7 @@
     <td><c:out value="${job.job.id}"></c:out></td>
     <td><c:out value="${job.job.title}"></c:out></td>
     <td><a href="/exam/${job.exam.id}/1.html"><c:out value="${job.exam.id}"/></a></td>
+    <td><c:out value="${job.result}"></c:out></td>
   </tr>
   </c:forEach>
 </table>

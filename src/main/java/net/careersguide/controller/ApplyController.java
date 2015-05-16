@@ -1,6 +1,7 @@
 package net.careersguide.controller;
 
 import java.security.Principal;
+import java.util.HashMap;
 import java.util.List;
 
 import net.careersguide.entity.Apply;
@@ -70,6 +71,12 @@ public class ApplyController {
 		String name = principal.getName();
 		User user = userService.userByName(name);
 		model.addAttribute("responses", applyService.findById(id));
+		/*List<Test>tests=testService.findAllByUser(name);
+		HashMap<Integer, Test> exams = new HashMap<Integer, Test>();
+		for(Test test : tests){
+			exams.put(test.getId(), test);
+		}
+		model.addAttribute("exams",exams);*/
 		return "response";
 
 	}

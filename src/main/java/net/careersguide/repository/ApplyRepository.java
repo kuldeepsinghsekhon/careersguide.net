@@ -25,6 +25,10 @@ public interface ApplyRepository extends JpaRepository<Apply, Integer> {
 
 	Apply findByExamAndCandidate(Test test, User user);
 
+
+
+	List<Apply> findByExam(Test exam);
+
 	
 
 }

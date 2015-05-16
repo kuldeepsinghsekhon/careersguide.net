@@ -7,7 +7,7 @@
                     <div class="col-md-4">
                         <div class="single-footer">
                             <img src="img/footer-logo.png" alt="" class="wow pulse" data-wow-delay="1s">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati architecto quaerat facere blanditiis tempora sequi nulla accusamus, possimus cum necessitatibus suscipit quia autem mollitia, similique quisquam molestias. Vel unde, blanditiis.</p>
+                            <p>uam molestias. Vel unde, blanditiis.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -16,11 +16,11 @@
                             <div class="twitter-updates">
                                 <div class="single-tweets">
                                     <h5>ABOUT 9 HOURS</h5>
-                                    <p><strong>AGOMeet Aldous</strong> - a Brave New World for #rails with more cohesion, less coupling and greater dev speed <a href="http://t.co/rsekglotzs">http://t.co/rsekglotzs</a></p>
+                                    <p><strong>AGOMeet Aldous</strong> - nd greater dev speed <a href="http://t.co/rsekglotzs">http://t.co/rsekglotzs</a></p>
                                 </div>
                                 <div class="single-tweets">
                                     <h5>ABOUT 9 HOURS</h5>
-                                    <p><strong>AGOMeet Aldous</strong> - a Brave New World for #rails with more cohesion, less coupling and greater dev speed <a href="http://t.co/rsekglotzs">http://t.co/rsekglotzs</a></p>
+                                    <p><strong>AGOMeet Aldous</strong> - and greater dev speed <a href="http://t.co/rsekglotzs">http://t.co/rsekglotzs</a></p>
                                 </div>
                             </div>
                         </div>
@@ -48,8 +48,8 @@
         <footer class="main-footer">
         <div class="container">
           <div class="pull-right hidden-xs">
-            <b>Version</b> 2.0
+            <b>Version</b> 1.0
           </div>
-          <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
+          <strong>Copyright &copy; 2014-2015 <a href="http://careersGuide.net">Kuldeep Singh Sekhon</a>.</strong> All rights reserved.
         </div><!-- /.container -->
       </footer>

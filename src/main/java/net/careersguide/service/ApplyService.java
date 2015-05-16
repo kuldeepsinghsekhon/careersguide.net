@@ -12,7 +12,7 @@ import net.careersguide.entity.Job;
 import net.careersguide.entity.Test;
 import net.careersguide.entity.User;
 import net.careersguide.repository.ApplyRepository;
-import net.careersguide.repository.JobRepository;
+
 
 @Service
 public class ApplyService {
@@ -65,6 +65,19 @@ public class ApplyService {
 			User user) {
 		
 		return applyRepository.findByExamAndCandidate(test, user);
+	}
+
+	public List<Apply> findApplyByTest(Test exam) {
+		
+return applyRepository.findByExam(exam);		
+	}
+
+	public Apply findOne(Integer id) {
+		return applyRepository.findOne(id);
+	}
+
+	public List<Apply> findApplyByJob(Job job) {
+		return applyRepository.findByJob(job);
 	}
 
 }

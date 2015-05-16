@@ -33,6 +33,15 @@ public class Apply {
 	private CenterCode centerCode;
 	@OneToMany(mappedBy="response")
 private List<Answers> answers;
+	private Float result;
+	public Float getResult() {
+		return result;
+	}
+
+	public void setResult(Float result) {
+		this.result = result;
+	}
+
 	public Test getExam() {
 		return exam;
 	}

@@ -104,7 +104,7 @@ public class UserDetailService {
 		Resume resume =resumeRepository.findByUser(user);
 		return skillRepository.findByResume(resume);
 	}
-	@PreAuthorize("hasRole('ROLE_CORP') or hasRole('ROLE_ADMIN') ")
+	@PreAuthorize("hasRole('ROLE_CORP')")
 	public Object findByUser(User user) {
 		
 		Resume resume= resumeRepository.findByUser(user);

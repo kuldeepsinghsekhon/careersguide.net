@@ -22,7 +22,17 @@
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="../../css/bootstrap-theme.min.css">
-
+ <link rel="stylesheet" href="../../css/normalize.css">
+       
+        <link rel="stylesheet" href="../../css/fontello.css">
+        <link rel="stylesheet" href="../../css/animate.css">        
+        <link rel="stylesheet" href="../../css/owl.carousel.css">
+        <link rel="stylesheet" href="../../css/owl.theme.css">
+        <link rel="stylesheet" href="../../css/owl.transitions.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/main.css">
+        <link rel="stylesheet" href="../../css/responsive.css">
+       
 
 
 <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->

@@ -4,13 +4,16 @@ import java.util.List;
 
 import net.careersguide.entity.Answers;
 import net.careersguide.entity.Apply;
+import net.careersguide.entity.Job;
 import net.careersguide.entity.Question;
 import net.careersguide.entity.Test;
 import net.careersguide.entity.User;
 import net.careersguide.repository.AnswersRepository;
+import net.careersguide.repository.ApplyRepository;
 import net.careersguide.repository.QuestionRepository;
 import net.careersguide.repository.TestRepository;
 import net.careersguide.repository.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.security.access.method.P;
@@ -31,7 +34,10 @@ public class TestService {
 	private ApplyService applyService;
 	@Autowired
 	private AnswersRepository answersRepository;
-	
+	@Autowired
+	private ApplyRepository applyRepository;
+	@Autowired
+	private JobService jobService;
 	public List<Test> findAllByUser(String name){
 		User user=userRepository.findByEmail(name);
 		return testRepository.findAllByEmployer(user);
@@ -107,6 +113,32 @@ public class TestService {
 
 	public Question findOne(int pn) {
 		return questionRepository.findOne(pn);
+	}
+	//@PreAuthorize("#job.corporate.email==authentication.name or hasRole('ROLE_ADMIN')")
+	public void testResult(Job job){
+		Float result =0.0F;
+		//Job job =jobService.findOneJob(id);
+		//job.getCorporate()
+		List<Apply>appliedCandidates= applyService.findApplyByJob(job);
+		
+		for (Apply candidate : appliedCandidates) {
+			
+			List<Answers>answers=answersRepository.findByResponse(candidate);
+			if(answers!=null){
+			for (Answers answer : answers) {
+				if(answer!=null){
+					if(answer.getMarks() !=null){
+			result +=answer.getMarks();
+					}
+			
+				}
+			}
+			Apply apply=applyRepository.findOne(candidate.getId());
+			apply.setResult(result);
+			applyRepository.save(apply);
+			}
+		}
+		
 	}
 		
 
