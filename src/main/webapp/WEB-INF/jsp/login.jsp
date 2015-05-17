@@ -5,10 +5,7 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
  <div id="login-overlay" class="modal-dialog">
 
-          <div class="modal-header">
-              
-              <h4 class="modal-title" id="myModalLabel">Login to CareersGuide.net</h4>
-          </div>
+          
         
  <div class="row">
                   <div class="col-xs-7">
