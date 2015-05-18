@@ -18,7 +18,7 @@
 </style>
 <div class="container">
 	<div class="row">
-	 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+	<div class="jumbotron">
 	 <div class="search-form wow pulse" data-wow-delay="0.8s">
 	 <form:form commandName="search" class=" form-inline">
                             
@@ -48,7 +48,9 @@
                            </form:form>
                         </div>
                         </div>
+                        </div>
 	</div>
+	
 <div class="container">
 	<div class="row">
 		<div class="panel panel-default widget">
@@ -58,8 +60,9 @@
 				<span class="label label-info"> 78</span>
 			</div>
 			<div class="panel-body">
-				<c:forEach items="${jobs}" var="job">
+				
 					<ul class="list-group">
+					<c:forEach items="${jobs}" var="job">
 						<li class="list-group-item">
 							<div class="row">
 								<div class="col-xs-2 col-md-1">

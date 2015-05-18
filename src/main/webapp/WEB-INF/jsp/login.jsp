@@ -4,7 +4,7 @@
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
  <div id="login-overlay" class="modal-dialog">
-
+<div class="page-header"><h2>Login To CareersGuide.net</h2></div>
           
         
  <div class="row">
