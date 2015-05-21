@@ -4,7 +4,9 @@ package net.careersguide.controller;
 
 import java.security.Principal;
 
+import net.careersguide.service.UserDetailService;
 import net.careersguide.service.UserService;
+import net.careersguide.entity.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -18,7 +20,8 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
-	
+	@Autowired
+	private UserDetailService userDetailService;
 	@RequestMapping("/users")
 	public String findAllUser(Model model)
 	{
@@ -28,7 +31,9 @@ public class UserController {
 	@RequestMapping("/users/{id}")
 	public String findOneUser(Model model,@PathVariable int id)
 	{
-		model.addAttribute("user",userService.findOneUser(id));
+		User user=userService.findOneUser(id);
+		model.addAttribute("user",user);
+		model.addAttribute("userDetail",userDetailService.findUserDetails(user));
 		return "profile";
 	}
 	

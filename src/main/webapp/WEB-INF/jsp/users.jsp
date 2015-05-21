@@ -14,6 +14,7 @@ $(document).ready(function(){
 
 
 </script>
+<div class="container">
 <h3>Users List</h3>
 <table class="table table-bordered table-hover table-striped">
   <tr>
@@ -49,4 +50,5 @@ $(document).ready(function(){
       </div>
     </div>
   </div>
+</div>
 </div>

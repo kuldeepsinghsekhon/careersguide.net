@@ -15,21 +15,7 @@
     <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 </context:component-scan>
 <context:property-placeholder location="classpath:email.properties,classpath:application.properties" />
-<jdbc:embedded-database type="HSQL" id="dataSource"/>
- <bean id="myEmf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-     <property name="packagesToScan" value="net.careersguide.entity"/>
-     <property name="dataSource" ref="dataSource"/>
-     <property name="jpaProperties">
-         <props>
-             <prop key="hibernate.show_sql">true</prop>
-             <prop key="hibernate.hbm2ddl.auto">create</prop>
-         </props>
-     </property>
-     <property name="persistenceProvider">
-         <bean class="org.hibernate.jpa.HibernatePersistenceProvider" id="transactionManager"></bean>
-     </property>
- </bean>
- <tx:annotation-driven transaction-manager="transactionManager"/>
+<tx:annotation-driven transaction-manager="transactionManager"/>
 <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="myEmf"/>
     </bean>
@@ -38,5 +24,14 @@
 		<property name="privateKey" value="6LeqPwYTAAAAAL0PblaOtcEI1pcBAKXNOTsPJkC8"/>
 	</bean>
 	<bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+<beans profile="dev">
+<import resource="database-dev.xml"/>
+</beans>
+<beans profile="prod">
+<import resource="database-prod.xml"/>
+</beans>
+<beans profile="mysql">
+<import resource="database-mysql.xml"/>
+</beans>
 
     </beans>

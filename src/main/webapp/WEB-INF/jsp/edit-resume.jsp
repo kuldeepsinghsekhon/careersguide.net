@@ -16,7 +16,7 @@ $(document).ready(function(){
 </script>
 
 <div class="container">
-
+<div class="page-header"><h2 align="center"></h2></div>
     <div class="row">
         <div class="col-sm-3 col-md-3">
             <div class="panel-group" id="accordion">
@@ -82,7 +82,7 @@ $(document).ready(function(){
 		</c:if>	
 		
 		<div class="panel panel-default">
-  <div class="panel-heading">Change password</div>
+  <div class="panel-heading">Update Resume</div>
   <div class="panel-body">
   
 				

@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
-
+<div class="container">
+ <div class="page-header"><h2 align="center">Job Detail</h2></div>
+ <div class="col-sm-12 col-md-12">
+ 
 <table class="table well">
 <thead><tr><th colspan="2">Jod Detail</th></tr></thead>
 <tbody>
@@ -13,6 +16,8 @@
 </tbody>
 
 </table>
+</div>
+ <div class="col-sm-12 col-md-12">
 <h3>About Company </h3>
 <table  class="table well">
 <tr><td>Company Name</td><td><c:out value="${jobdetail.companyName}" /></td></tr>
@@ -21,3 +26,5 @@
 <tr><td>Send Application for job</td>
 <td><a class="btn btn-info"href='<spring:url value="/apply/${job.id}.html"/>'/> Apply job</a></td></tr>
 </table>
+</div>
+</div>

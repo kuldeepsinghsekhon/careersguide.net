@@ -30,6 +30,7 @@ public class UserDetailController {
 	{
 		String email=principal.getName();
 		model.addAttribute("resumeContent",userDetailService.findUserResume(email));
+		
 		//model.addAttribute("user",userService.findOneUser(id));
 		return "resume";
 	}

@@ -14,7 +14,7 @@ $(document).ready(function(){
 	    }  );
 });
 </script>
-<h3 align="center">Update Your Resume</h3>
+<div class="page-header"><h3 align="center">Update Your Resume Education</h3></div>
 <div class="container">
 
     <div class="row">
@@ -123,7 +123,7 @@ $(document).ready(function(){
       
 
 <div class="form-group">
-    <label for="firstName" class="col-sm-2 control-label">Course Name :</label>
+    <label for="firstName" class="col-sm-2 control-label">Course</label>
     <div class="col-sm-10">
      <input name="education[0].courseName"  class="form-control"/>
      
@@ -137,21 +137,21 @@ $(document).ready(function(){
     </div>
   </div>
    <div class="form-group">
-    <label for="firstName" class="col-sm-2 control-label">University/institution  :</label>
+    <label for="firstName" class="col-sm-2 control-label">University</label>
     <div class="col-sm-10">
      <input name="education[0].institution"  class="form-control"/>
      
     </div>
   </div>
    <div class="form-group">
-    <label for="firstName" class="col-sm-2 control-label">Passing year :</label>
+    <label for="firstName" class="col-sm-2 control-label">Passout :</label>
     <div class="col-sm-10">
      <input name="education[0].passingYear"  class="form-control"/>
      
     </div>
   </div>
    <div class="form-group">
-    <label for="firstName" class="col-sm-2 control-label">Marks Percent:</label>
+    <label for="firstName" class="col-sm-2 control-label">Percentage</label>
     <div class="col-sm-10">
      <input name="education[0].marks"  class="form-control"/>
      

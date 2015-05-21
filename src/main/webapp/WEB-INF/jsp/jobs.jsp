@@ -57,7 +57,7 @@
 			<div class="panel-heading">
 				<span class="glyphicon glyphicon-comment"></span>
 				<h3 class="panel-title">Recent Jobs</h3>
-				<span class="label label-info"> 78</span>
+				
 			</div>
 			<div class="panel-body">
 				
@@ -86,12 +86,12 @@
 										<a href='<spring:url value="/jobdetail/${job.id}.html"/>'>
 											<button type="button" class="btn btn-primary btn-xs"
 												title="View Detail">
-												<span class="glyphicon glyphicon-pencil"></span>
+												<span class="glyphicon glyphicon-pencil"></span>View
 											</button>
 										</a> <a href='<spring:url value="/apply/${job.id}.html"/>'>
 											<button type="button" class="btn btn-success btn-xs"
 												title="Approved">
-												<span class="glyphicon glyphicon-ok"></span>
+												<span class="glyphicon glyphicon-ok"></span>Apply
 											</button>
 										</a>
 

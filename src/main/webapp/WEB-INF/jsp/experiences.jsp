@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
-<h3>Update Your Resume</h3>
+<div class="page-header"><h2 class="" style="width:400px;margin-left:auto;margin-right:auto;clear: both;">Update Prior Experiences</h2></div>
 <div class="container">
 
 	<div class="row">

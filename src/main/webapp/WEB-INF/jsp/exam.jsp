@@ -16,8 +16,8 @@ document.onkeydown = function (e) {
 
 </script>
 
-
-
+<div class="container">
+<div class="page-header"><h2 align="center">Exam For The Post Of  Software Engg.</h2></div>
 <c:forEach items="${questions}" var="question">
 	<form:form commandName="answers">
 		<div class="col-md-10">
@@ -71,8 +71,8 @@ document.onkeydown = function (e) {
 
 
 				<div class="panel-footer">
-					<label class="col-sm-4">Answer</label>
-					<form:select path="answer" class="form-control">
+					<label class="col-sm-2">Answer</label>
+					<form:select path="answer" class="col-sm-4">
 						<form:option value=" " label="Select" />
 
 						<form:option value="A">A</form:option>
@@ -81,11 +81,10 @@ document.onkeydown = function (e) {
 						<form:option value="D">D</form:option>
 
 					</form:select>
-					<button type="submit" class="btn btn-success btn-sm">
+					<button type="submit" class="btn btn-success btn-sm "style="margin-left: 10px;">
 						<span class="glyphicon glyphicon-ok"></span>Submit
 					</button>
-					<button type="button" class="btn btn-primary btn-sm">View
-						Result</button>
+					
 				</div>
 			</div>
 		</div>
@@ -108,3 +107,4 @@ document.onkeydown = function (e) {
 	</div>
 </div>
 
+</div>

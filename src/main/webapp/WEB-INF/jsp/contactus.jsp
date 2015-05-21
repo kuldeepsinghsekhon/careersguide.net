@@ -77,16 +77,16 @@
             <form>
             <legend><span class="glyphicon glyphicon-globe"></span> Our office</legend>
             <address>
-                <strong>Twitter, Inc.</strong><br>
-                795 Folsom Ave, Suite 600<br>
-                San Francisco, CA 94107<br>
+                <strong>careersGuide</strong><br>
+                10 new Sant Avenue<br>
+               Amritsar Punjab<br>
                 <abbr title="Phone">
                     P:</abbr>
-                (123) 456-7890
+               980242155
             </address>
             <address>
-                <strong>Full Name</strong><br>
-                <a href="mailto:#">first.last@example.com</a>
+                <strong>Kuldeep Singh</strong><br>
+                <a href="mailto:#">mca.kuldeep.sekhon@gmail.com</a>
             </address>
             </form>
         </div>

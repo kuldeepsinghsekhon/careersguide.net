@@ -22,17 +22,20 @@ $(document).ready(function(){
 //-->
 </script>
 
- <div class="content">
- <div class="col-md-12">
+ <div class="container" >
+ <div class="page-header"><h2 align="center">Job Responses</h2></div>
+ <div class="col-md-12" style="margin-top: 30px; margin-bottom:30px;">
         <div class="table-responsive">
 <table class="table table-bordered  table-striped" id="mytable">
 <tr>
  <th><input type="checkbox" id="checkall" /></th>
+ <th>UserID</th>
 <th>User Email</th>
-<th>UserID</th>
-<th>Assign Exam</th>
+
+
 <th>View Resume</th>
-<th>Delete</th>
+<th>Assign Exam ID</th>
+<th>Result</th>
 </tr>
 
 <c:forEach items="${responses}" var="response">
@@ -42,9 +45,9 @@ $(document).ready(function(){
 <td><c:out value="${response.candidate.id}"/></td>
 <td><c:out value="${response.candidate.email}"/></td>
 
-<td></td>
+
 <td><p data-placement="top" data-toggle="tooltip" title="Edit"><a class="btn btn-primary btn-xs" href="/resume/${response.candidate.id}.html" ><span class="glyphicon glyphicon-pencil"></span></a></p></td>
-<td><form:form commandName="assigntest">userId<form:input path="userid" value="${response.candidate.id}"/>TestId <form:input path="testid" value="${response.exam.id}"/><button type="submit">Submit </button></form:form>
+<td><form:form commandName="assigntest"><form:input type="hidden" path="userid" value="${response.candidate.id}"/> <form:input path="testid" value="${response.exam.id}"/><button type="submit">Submit </button></form:form>
 </td>
 <td><c:out value="${response.result}"/></td>   
 </tr>

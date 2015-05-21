@@ -20,8 +20,9 @@
 		
 		</c:if>	
 		
-		<form:form commandName="usercorp" cssClass="registrationForm">		
-			<div class="col-md-8">
+			
+			<div class="col-md-8" style="margin-bottom: 50px;">
+			<form:form commandName="usercorp" cssClass="registrationForm">	
 				<h3 class="dark-grey">Employer Registration</h3>
 				
 				<div class="form-group col-lg-12">
@@ -67,19 +68,19 @@
 		</div>
 		
 		</c:if>
+		
 				</div>
 
 				<div class="col-sm-6">
-					<input type="checkbox" class="checkbox" />Send notifications to this email
+					
 				</div>	
-				<div class="col-sm-6">			
-			<a href=""class="">Need Help Register</a>
-			</div>
+				
 			<div class="col-sm-6">			
 			<button type="submit" class="btn btn-primary btn-block">Register</button>
 			</div>
+			</form:form>
 			</div>
-		</form:form>
+		
 			<div class="col-md-4">
 				<h3 class="dark-grey">Employer Login</h3>
                       <div class="well">

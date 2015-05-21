@@ -27,7 +27,7 @@ border:1px solid f3aaff;
 		
 		</c:if>	
 		<form:form commandName="user" cssClass="registrationForm">		
-			<div class="col-md-8">
+			<div class="col-md-8 "style="margin-bottom: 50px;">
 				<h3 class="dark-grey">Candidate Registration</h3>
 				
 				<div class="form-group col-lg-12">
@@ -74,35 +74,44 @@ border:1px solid f3aaff;
 		</div>
 		</c:if>		</div>
 
-				<div class="col-sm-12">
-					<input type="checkbox" class="checkbox" />Terms and Conditions	</div>	
+				<div class="col-sm-6">
+						</div>	
 				
 			<div class="col-sm-6">			
 			<button type="submit" class="btn btn-primary btn-block">Register</button>
 			</div>
 			</div>
 		</form:form>
-			<div class="col-md-4">
-				<h3 class="dark-grey">Terms and Conditions</h3>
-				<p>
-					By clicking on "Register" you agree to The Company's' Terms and Conditions
-				</p>
-				<p>
-					While rare, prices are subject to change based on exchange rate fluctuations - 
-					should such a fluctuation happen, we may request an additional payment. You have the option to request a full refund or to pay the new price. (Paragraph 13.5.8)
-				</p>
-				<p>
-					Should there be an error in the description or pricing of a product, we will provide you with a full refund (Paragraph 13.5.6)
-				</p>
-				<p>
-					Acceptance of an order by us is dependent on our suppliers ability to provide the product. (Paragraph 13.5.6)
-				</p>
-				
-				
-			</div>
-		</div>
-	</section>
 	
+	<div class="col-md-4">
+				<h3 class="dark-grey">Candidate Login</h3>
+                      <div class="well">
+                      <form  action="/j_spring_security_check" method="post" class="form-horizontal loginForm" id="loginForm" >
+                         
+                              <div class="form-group ">
+                                  <label for="username" class="control-label">Username</label>
+                                 <input id="textinput" name="j_username" type="text" value="" required="" title="Please enter valid email" placeholder="example@gmail.com" class="form-control" id="username">
+                                 
+                                  <span class="help-block"></span>
+                              </div>
+                              <div class="form-group">
+                                  <label for="password" class="control-label">Password</label>
+                                   <input id="textinput" name="j_password" type="password" value="" required="" title="" placeholder="Enter Password" class="form-control" id="password" >
+                                 
+                                  <span class="help-block"></span>
+                              </div>
+                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" name="remember" id="remember"> Remember login
+                                  </label>
+                                  <p class="help-block">(if this is a private computer)</p>
+                              </div>
+                              <button type="submit" class="btn btn-danger btn-block">Login</button>
+                              <a href="forgotpass.html" class="btn btn-info btn-block">Forgot Password</a>
+                          </form>
+                      </div>
+                  </div>
 </div>
 <script type="text/javascript">
 

@@ -7,7 +7,7 @@
                     <div class="col-md-4">
                         <div class="single-footer">
                             <img src="img/footer-logo.png" alt="" class="wow pulse" data-wow-delay="1s">
-                            <p>uam molestias. Vel unde, blanditiis.</p>
+                            <p>CareersGuide.net.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -16,11 +16,11 @@
                             <div class="twitter-updates">
                                 <div class="single-tweets">
                                     <h5>ABOUT 9 HOURS</h5>
-                                    <p><strong>AGOMeet Aldous</strong> - nd greater dev speed <a href="http://t.co/rsekglotzs">http://t.co/rsekglotzs</a></p>
+                                    <p><strong>AGOMeet Aldous</strong> - Best job Site </p>
                                 </div>
                                 <div class="single-tweets">
                                     <h5>ABOUT 9 HOURS</h5>
-                                    <p><strong>AGOMeet Aldous</strong> - and greater dev speed <a href="http://t.co/rsekglotzs">http://t.co/rsekglotzs</a></p>
+                                    <p><strong>AGOMeet Aldous</strong> -Excellent Exam Portal </p>
                                 </div>
                             </div>
                         </div>
@@ -30,12 +30,11 @@
                             <h4>Useful lnks</h4>
                             <div class="footer-links">
                                 <ul class="list-unstyled">
-                                    <li><a href="">About Us</a></li>
-                                    <li><a href="" class="active">Services</a></li>
-                                    <li><a href="">Work</a></li>
-                                    <li><a href="">Our Blog</a></li>
-                                    <li><a href="">Customers Testimonials</a></li>
-                                    <li><a href="">Affliate</a></li>
+                                    <li><a href="">Home</a></li>
+                                    <li><a href="" class="active">Register</a></li>
+                                    <li><a href="">Post Job</a></li>
+                                    <li><a href="">Search Job</a></li>
+                                    <li><a href="">Register</a></li>
                                     <li><a href="">Contact Us</a></li>
                                 </ul>
                             </div>

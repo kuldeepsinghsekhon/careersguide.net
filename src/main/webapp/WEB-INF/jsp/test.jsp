@@ -2,10 +2,10 @@
 	pageEncoding="UTF-8"%>
  <%@ include  file="../layout/taglib.jsp"%>
 
+<div class="container">
+<div class="page-header"><h2 align="center">Exam Preview</h2><button type="button" class="btn btn-primary " data-toggle="modal"
+	data-target="#myModal">New Question</button></div>
 
-<h3></h3>
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
-	data-target="#myModal">Add Question</button>
 <form:form commandName="addquestion" class="form-horizontal">
 	<!-- Modal -->
 
@@ -18,7 +18,7 @@
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+					<h4 class="modal-title" id="myModalLabel">New Question</h4>
 				</div>
 				<div class="modal-body">
 
@@ -27,38 +27,38 @@
 
 
 						<div class="form-group">
-							<label for="firstName" class="col-sm-2 control-label">Statement
-								:</label>
+							<label for="firstName" class="col-sm-2 control-label">Statement</label>
 							<div class="col-sm-10">
 								<form:input path="statement" class="form-control" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="Option" class="col-sm-2 control-label">Option</label>
+							<label for="Option" class="col-sm-2 control-label">Option A</label>
 							<div class="col-sm-10">
 								<form:input path="solution1" class="form-control" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="Option" class="col-sm-2 control-label">Option</label>
+							<label for="Option" class="col-sm-2 control-label">Option B</label>
 							<div class="col-sm-10">
 								<form:input path="solution2" class="form-control" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="Option" class="col-sm-2 control-label">Option</label>
+							<label for="Option" class="col-sm-2 control-label">Option C</label>
 							<div class="col-sm-10">
 								<form:input path="solution3" class="form-control" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="Option" class="col-sm-2 control-label">Option</label>
+							<label for="Option" class="col-sm-2 control-label">Option D</label>
 							<div class="col-sm-10">
 								<form:input path="solution4" class="form-control" />
 							</div>
 						</div>
-						<div class="form-group col-sm-12">
-					<label class="col-sm-4">Marks</label> 
+						<div class=" form-group">
+					<label class="control-label col-sm-2">Marks</label> 
+					<div class="col-sm-10">
 					<form:select   path="marks"  class="form-control" id="pass" value="">
 					<form:option value="0" label="Select Marks" />
 					
@@ -67,6 +67,7 @@
 </c:forEach> 
 							
 						</form:select>
+						</div>
 				</div>
 						<div class="form-group">
 							<label for="rightsolution" class="col-sm-2 control-label">Solution</label>
@@ -145,14 +146,10 @@
 				</div>
 			</div>
 			<div class="panel-footer">
-				<button type="button" class="btn btn-success btn-sm">
-					<span class="glyphicon glyphicon-ok"></span>Vote
-				</button>
-				<button type="button" class="btn btn-primary btn-sm">View
-					Result</button>
+				Solution <c:out value="${question.rightsolution}" />
 			</div>
 		</div>
 	</div>
 </c:forEach>
 
-
+</div>

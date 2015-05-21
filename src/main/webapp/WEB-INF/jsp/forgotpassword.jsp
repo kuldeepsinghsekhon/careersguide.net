@@ -22,6 +22,7 @@ $(document).ready(function() {
 //-->
 </script>
 <div class="container">
+<div class="page-header"><h2 align="center"></h2></div>
 	<div class="row">
 	
         <div class="col-md-6 col-md-offset-3">

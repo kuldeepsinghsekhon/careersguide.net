@@ -40,13 +40,13 @@ body.custom-background { background-color: #ffffff; }
            <link rel="stylesheet" href="../../css/owl.carousel.css">
 <style type="text/css">
 body {
-	min-height: 600px;
+	min-height: 1100px;
 	padding-top: 70px;
 	background-color:#f5f5f5;
 }
 
 #body-container {
-	min-height: 900px;
+	min-height: 1100px;
 }
 </style>
 
@@ -105,6 +105,18 @@ body {
           </ul>
         </li>
 					</security:authorize>
+					
+					<security:authorize access="hasRole('ROLE_CORP')">
+						<li class="${current=='jobform'?'active':'' }"><a
+							href='<spring:url value="/jobform.html" />'>Post Job</a></li>
+							<li class="${current=='users'?'active':'' }"><a
+							href='<spring:url value="/posted-jobs.html" />'>Posted Jobs</a></li>
+							<li class="${current=='tests'?'active':'' }"><a
+							href='<spring:url value="/tests.html" />'>Exams</a></li>
+					</security:authorize>
+				
+					
+					
 					
 					<li class="${current=='jobs'?'active':'' }"><a
 						href='<spring:url value="/jobs.html" />'>Search</a></li>

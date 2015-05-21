@@ -65,6 +65,13 @@ public class UserDetailService {
 		resume.setSkills(skillRepository.findByResume(resume));
 		return resume;
 	}
+	public Resume findUserDetails(User user) {
+		Resume userDeail=resumeRepository.findByUser(user);
+		userDeail.setEducation(educationRepository.findByResume(userDeail));
+		userDeail.setExperiences(experienceRepository.findByResume(userDeail));
+		userDeail.setSkills(skillRepository.findByResume(userDeail));
+		return userDeail;
+	}
 
 	public void saveResume(User user) {
 		Resume resume=new Resume();

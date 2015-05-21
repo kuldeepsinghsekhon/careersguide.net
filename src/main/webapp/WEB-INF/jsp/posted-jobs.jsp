@@ -12,7 +12,7 @@ body{margin-top:50px;}
 </style>
 <div class="container">
     <div class="row">
-        <div class="col-sm-3 col-md-3">
+        <!-- <div class="col-sm-3 col-md-3">
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -152,17 +152,22 @@ body{margin-top:50px;}
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-sm-9 col-md-9">
+            </div> 
+        </div>-->
+        <div class="col-sm-12 col-md-12">
             <div class="well">
                 <h1>
-                    Accordion Menu With Icon</h1>
+                    Recently Posted Jobs</h1>
               <table class="table">
-<tr><th>Job Id</th><th>Job Title</th></tr>
+<tr><th>Job Id</th><th>Job Title</th><th>Responses</th><th>Detail</th></tr>
 <c:forEach items="${postedjobs}" var="job">
 
-<tr><td><a href=''><c:out value="${job.id}"/></a></td><td><c:out value="${job.title}"/></td><td><a href='<spring:url value="/response/${job.id}.html"/>'>View Response</a></td><td><a class="btn btn-info" href='<spring:url value="/jobdetail/${job.id}.html"/>'> job Detail</a></td></tr>
+<tr><td><a href=''><c:out value="${job.id}"/></a></td><td><c:out value="${job.title}"/></td><td><a href='<spring:url value="/response/${job.id}.html"/>'>View Response</a></td><td><a href='<spring:url value="/jobdetail/${job.id}.html"/>'>
+											<button type="button" class="btn btn-primary btn-xs"
+												title="View Detail">
+												<span class="glyphicon glyphicon-pencil"></span>View
+											</button>
+										</a></td></tr>
 
 
 

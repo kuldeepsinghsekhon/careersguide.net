@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@ include file="../layout/taglib.jsp" %>
    
-<h3>Update Your Resume</h3>
+<div class="page-header"><h3 align="center">Update Your Resume Skills And Certifications</h3></div>
 <div class="container">
 
     <div class="row">
@@ -68,7 +68,7 @@
 		</c:if>	
 		
 		<div class="panel panel-default">
-  <div class="panel-heading">Change password</div>
+  <div class="panel-heading">Update Resume</div>
   <div class="panel-body">
   <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#myModal">
@@ -105,8 +105,7 @@
 											aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
-										<h4 class="modal-title" id="myModalLabel">Add Prior Work
-											Experiences</h4>
+										<h4 class="modal-title" id="myModalLabel">Skills And Certification </h4>
 									</div>
 									<div class="modal-body col-sm-12">			
  <div class="form-group col-sm-12">

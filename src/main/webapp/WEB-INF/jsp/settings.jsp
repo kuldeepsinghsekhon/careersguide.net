@@ -54,7 +54,7 @@ function savePass(){
 </script>
 
 <div class="container">
-
+ <div class="page-header"><h2 align="center"></h2></div>       
     <div class="row">
         <div class="col-sm-3 col-md-3">
             <div class="panel-group" id="accordion">

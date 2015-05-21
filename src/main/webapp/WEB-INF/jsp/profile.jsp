@@ -9,10 +9,7 @@ Licensed under MIT
 -->
 <style>
 <!--
-User Profile Sidebar by @keenthemes
-A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
-Licensed under MIT
-***/
+
 
 body {
   background: #F1F3FA;
@@ -121,6 +118,19 @@ body {
   background: #fff;
   min-height: 460px;
 }
+
+.table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+    border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+    border-top: 0;
+}
 -->
 </style>
 <div class="container">
@@ -135,7 +145,8 @@ body {
 				<!-- SIDEBAR USER TITLE -->
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
-						Marcus Doe
+						<c:out value="${ userDetail.firstName}"/>
+    <c:out value="${ userDetail.lastName}"/>
 					</div>
 					<div class="profile-usertitle-job">
 						Developer
@@ -195,29 +206,168 @@ body {
 		</div>
 		<div class="col-md-9">
             <div class="profile-content">
-			 <table class="table" class="table table-profile table-hover  ">
-  <tr>
-   
-        <th colspan="2">User Profile</th>
-   
-  </tr>
-
+            <div class="panel panel-info">
+  <div class="panel-heading">Personal Details</div>
+  <div class="panel-body">
+    <table class="table" class="table  table-user-information ">
+ <tbody>
   <tr>
   <td>Name:</td>
-    <td><c:out value="${ user.firstName}"/>
-    <c:out value="${ user.lastName}"/></td>
+    <td> <c:out value="${ userDetail.firstName}"/><c:out value="${ userDetail.lastName}"/></td>
    
   </tr>
- 
+  <tr>
+  <td>State:</td>
+    <td> <c:out value="${ userDetail.state}"/></td>
+       
+  </tr>
+ <tr>
+  <td>City:</td>
+    <td> <c:out value="${ userDetail.city}"/></td>
+       
+  </tr>
+  <tr>
+  <td>Age:</td>
+    <td> <c:out value="${ userDetail.city}"/></td>
+       
+  </tr>
+<tr>
+  <td>Gender:</td>
+    <td> <c:out value="${ userDetail.city}"/></td>
+       
+  </tr>
+ <tr>
+  <td>Email:</td>
+    <td> <c:out value="${ userDetail.city}"/></td>
+       
+  </tr>
+  <tr>
+  <td>Phone Number:</td>
+    <td> <c:out value="${ userDetail.city}"/></td>
+       
+  </tr>
+  <tr>
+   <td>Date of Birth:</td>
+    <td> <c:out value="${ userDetail.city}"/></td>
+       
+  </tr>
+</tbody>
 </table>
+  </div>
+  
+</div>
+      <div class="panel panel-info">
+  <div class="panel-heading">Education</div>
+  <div class="panel-body">
+        <table class="table" class="table  table-user-information ">
+ <tbody>
+  <tr>
+  <td>Course Name:</td>
+    <td> <c:out value="${ userDetail.firstName}"/><c:out value="${ userDetail.lastName}"/></td>
+   
+  </tr>
+  <tr>
+  <td>University:</td>
+    <td> <c:out value="${ userDetail.state}"/></td>
+       
+  </tr>
+ <tr>
+  <td>Passing Year:</td>
+    <td> <c:out value="${ userDetail.city}"/></td>
+       
+  </tr>
+  <tr>
+  <td>Duration:</td>
+    <td> <c:out value="${ userDetail.city}"/></td>
+       
+  </tr>
+<tr>
+ 
+ 
+</tbody>
+</table>
+  </div>
+  
+</div>
+ <div class="panel panel-info">
+  <div class="panel-heading">Experience</div>
+  <div class="panel-body">
+        <table class="table" class="table  table-user-information ">
+ <tbody>
+  <tr>
+  <td>Name:</td>
+    <td> <c:out value="${ userDetail.firstName}"/><c:out value="${ userDetail.lastName}"/></td>
+   
+  </tr>
+  <tr>
+  <td>State:</td>
+    <td> <c:out value="${ userDetail.state}"/></td>
+       
+  </tr>
+ <tr>
+  <td>City:</td>
+    <td> <c:out value="${ userDetail.city}"/></td>
+       
+  </tr>
+  <tr>
+  <td>Age:</td>
+    <td> <c:out value="${ userDetail.city}"/></td>
+       
+  </tr>
+<tr>
+  <td>Gender:</td>
+    <td> <c:out value="${ userDetail.city}"/></td>
+       
+  </tr>
+ 
+</tbody>
+</table>
+  </div>
+  
+</div>
+ <div class="panel panel-info">
+  <div class="panel-heading">Skills</div>
+  <div class="panel-body">
+       <table class="table" class="table  table-user-information ">
+ <tbody>
+  <tr>
+  <td>Name:</td>
+    <td> <c:out value="${ userDetail.firstName}"/><c:out value="${ userDetail.lastName}"/>rrrrrrrrrrrrrrrr</td>
+   
+  </tr>
+  <tr>
+  <td>State:</td>
+    <td> <c:out value="${ userDetail.state}"/></td>
+       
+  </tr>
+ <tr>
+  <td>City:</td>
+    <td> <c:out value="${ userDetail.city}"/></td>
+       
+  </tr>
+  <tr>
+  <td>Age:</td>
+    <td> <c:out value="${ userDetail.city}"/></td>
+       
+  </tr>
+<tr>
+  <td>Gender:</td>
+    <td> <c:out value="${ userDetail.city}"/></td>
+       
+  </tr>
+ 
+</tbody>
+</table>
+  </div>
+  
+</div>       
+			
 
             </div>
 		</div>
 	</div>
 </div>
-<center>
-<strong>Powered by <a href="http://j.mp/metronictheme" target="_blank">KeenThemes</a></strong>
-</center>
+
 <br>
 
 

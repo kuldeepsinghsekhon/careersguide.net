@@ -10,9 +10,9 @@ $(document).ready(function(){
 });
 //-->
 </script>
-
+<div class="container">
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+<h3>List of All Available Tests</h3><button type="button" class="btn btn-primary pull-right " data-toggle="modal" data-target="#myModal">
   Create Exam
 </button>
 
@@ -55,7 +55,7 @@ $(document).ready(function(){
   </div>
 </div>
 </form:form>
-<h3>List of All Available Tests</h3>
+
 <table class="table table-bordered table-hover table-striped">
   <tr>
     <th>Test Name</th>
@@ -73,7 +73,7 @@ $(document).ready(function(){
   </c:forEach>
 </table>
   
-  
+ </div> 
   
   
   
