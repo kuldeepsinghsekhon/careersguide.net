@@ -16,33 +16,32 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
                         <h2>Job Searching Just Got So Easy</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi deserunt deleniti, ullam commodi sit ipsam laboriosam velit adipisci quibusdam aliquam teneturo!</p>
+                        <p></p>
                         <div class="search-form wow pulse" data-wow-delay="0.8s">
-                            <form action="" class=" form-inline">
+                            <form:form commandName="search" class=" form-inline">
+                            
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Job Key Word">
+                                    <form:input path="title" placeholder=" Job Title" type="text" class="form-control"/>
                                 </div>
                                 <div class="form-group">
-                                    <select name="" id="" class="form-control">
+                                    <select  name="" class="form-control">
                                         <option>Select Your City</option>
-                                        <option selected>New york, CA</option>
-                                        <option>New york, CA</option>
-                                        <option>New york, CA</option>
-                                        <option>New york, CA</option>
+                                        <option selected>Amritsar</option>
+                                        <option>Delhi</option>
+                                        <option>Bomby</option>
+                                        <option>Calcuta</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <select name="" id="" class="form-control">
-                                        <option>Select Your Category</option>
-                                        <option selected>Graphic Design</option>
-                                        <option>Web Design</option>
-                                        <option>App Design</option>
-                                    </select>
+                                    <form:select path="qualification" placeholder="Qualification" class="form-control">
+                                        <option selected>Qualification</option>
+                                        <option >bbc</option>
+                                        <option>mba</option>
+                                        
+                                    </form:select>
                                 </div>
                                 <input type="submit" class="btn" value="Search">
-
-
-                            </form>
+                           </form:form>
                         </div>
                     </div>
                 </div>

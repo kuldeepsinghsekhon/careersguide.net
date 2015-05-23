@@ -1,10 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-
+<%@ include  file="../layout/taglib.jsp"%>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
  <div id="login-overlay" class="modal-dialog">
-<div class="page-header"><h2>Login To CareersGuide.net</h2></div>
+<div class="page-header"><h2>Login To CareersGuide.net</h2>
+<c:if test="${param.regsuccess eq true}">
+		<div class="alert alert-success ">
+		Registration Success full 
+		<h5> your Account Activate</h5>
+		</div>
+		
+		</c:if>	
+		
+		<c:if test="${param.regsuccess eq false}">
+		<div class="alert alert-danger ">
+		Registration Fail
+		<h5> your Account is not  Activate</h5>
+		</div>
+		
+		</c:if>	
+
+</div>
           
         
  <div class="row">

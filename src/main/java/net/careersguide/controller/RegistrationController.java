@@ -113,7 +113,7 @@ public class RegistrationController {
 		Calendar cal = Calendar.getInstance();
 		if ((user.getTokenExpiryDate().getTime() - cal.getTime().getTime()) <= 0) {
 			model.addAttribute("message", "Token Expired");
-			return "redirect:/login.html";
+			return "redirect:/login.html?regsuccess=false";
 		}
 		if(v.equals(user.getToken())){
 		user.setEnabled(true);
