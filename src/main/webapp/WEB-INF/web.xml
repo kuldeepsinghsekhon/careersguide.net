@@ -34,6 +34,6 @@
 	</listener>
 <context-param>
 <param-name>spring.profiles.default</param-name>
-<param-value>prod</param-value>
+<param-value>dev</param-value>
 </context-param>
 </web-app>
