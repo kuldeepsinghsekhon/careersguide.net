@@ -28,11 +28,13 @@
   		<groupId>javax.servlet</groupId>
   		<artifactId>javax.servlet-api</artifactId>
   		<version>3.1.0</version>
+  		<scope>provided</scope>
   	</dependency>
   	<dependency>
   		<groupId>javax.servlet.jsp</groupId>
   		<artifactId>javax.servlet.jsp-api</artifactId>
   		<version>2.2.1</version>
+  		<scope>provided</scope>
   	</dependency>
  <dependency>
   <groupId>org.springframework</groupId>
@@ -239,16 +241,7 @@
   		<artifactId>hibernate-validator</artifactId>
   		<version>5.1.0.Final</version>
   	</dependency>
-  	<dependency>
-  		<groupId>org.springframework.social</groupId>
-  		<artifactId>spring-social-facebook</artifactId>
-  		<version>2.0.0.RELEASE</version>
-   	</dependency>
-  	<dependency>
-	<groupId>org.springframework.social</groupId>
-	<artifactId>spring-social-facebook-web</artifactId>
-	<version>2.0.0.RELEASE</version>
-</dependency>	
+  	
   	<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib-nodep</artifactId>
@@ -306,6 +299,7 @@
         </dependency>
   </dependencies>
   <properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	<org.springframework.version>4.1.6.RELEASE</org.springframework.version>
   	<apache.tiles>3.0.4</apache.tiles>
   	<spring.security.version>3.2.3.RELEASE</spring.security.version>
