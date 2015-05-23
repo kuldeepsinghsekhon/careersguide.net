@@ -43,8 +43,9 @@ public class UserController {
 	public String userProfile(Model model,@PathVariable int id,Principal principal)
 	{
 		
-		model.addAttribute("user",userService.findOneUser(id));
-	
+		User user=userService.findUser(id);
+	//	model.addAttribute("user",user);
+		model.addAttribute("userDetail",userDetailService.findUserDetails(user));
 		return "profile";
 	}
 	//View Self Profile
@@ -52,7 +53,9 @@ public class UserController {
 	public String findOneUser(Model model,Principal principal)
 	{
 		String name=principal.getName();
-		model.addAttribute("user",userService.userByName(name));
+		User user=userService.userByName(name);
+		//model.addAttribute("user",userService.userByName(name));
+		model.addAttribute("userDetail",userDetailService.findUserDetails(user));
 		return "profile";
 	}
 	

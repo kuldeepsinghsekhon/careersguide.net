@@ -146,7 +146,7 @@ body {
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
 						<c:out value="${ userDetail.firstName}"/>
-    <c:out value="${ userDetail.lastName}"/>
+    <c:out value='${ userDetail.lastName}'/>
 					</div>
 					<div class="profile-usertitle-job">
 						Developer
@@ -238,17 +238,17 @@ body {
   </tr>
  <tr>
   <td>Email:</td>
-    <td> <c:out value="${ userDetail.city}"/></td>
+    <td> <c:out value="${ userDetail.email}"/></td>
        
   </tr>
   <tr>
   <td>Phone Number:</td>
-    <td> <c:out value="${ userDetail.city}"/></td>
+    <td> <c:out value="${ userDetail.phone}"/></td>
        
   </tr>
   <tr>
    <td>Date of Birth:</td>
-    <td> <c:out value="${ userDetail.city}"/></td>
+    <td> <c:out value="${ userDetail.birthday}"/></td>
        
   </tr>
 </tbody>
@@ -261,27 +261,29 @@ body {
   <div class="panel-body">
         <table class="table" class="table  table-user-information ">
  <tbody>
+  <c:forEach items="${ userDetail.education}" var="education">
   <tr>
+ 
   <td>Course Name:</td>
-    <td> <c:out value="${ userDetail.firstName}"/><c:out value="${ userDetail.lastName}"/></td>
+    <td> <c:out value="${ education.courseName}"/></td>
    
   </tr>
   <tr>
   <td>University:</td>
-    <td> <c:out value="${ userDetail.state}"/></td>
+    <td> <c:out value="${education.institution}"/></td>
        
   </tr>
  <tr>
   <td>Passing Year:</td>
-    <td> <c:out value="${ userDetail.city}"/></td>
+    <td> <c:out value="${education.passingYear}"/></td>
        
   </tr>
   <tr>
   <td>Duration:</td>
-    <td> <c:out value="${ userDetail.city}"/></td>
+    <td> <c:out value="${education.specialization}"/></td>
        
   </tr>
-<tr>
+  </c:forEach>
  
  
 </tbody>
@@ -294,68 +296,57 @@ body {
   <div class="panel-body">
         <table class="table" class="table  table-user-information ">
  <tbody>
+ <c:forEach items="${userDetail.experiences }" var="experience">
   <tr>
-  <td>Name:</td>
-    <td> <c:out value="${ userDetail.firstName}"/><c:out value="${ userDetail.lastName}"/></td>
+  <td>Job Title:</td>
+    <td> <c:out value="${experience.title}"/><c:out value="${ userDetail.lastName}"/></td>
    
   </tr>
   <tr>
-  <td>State:</td>
-    <td> <c:out value="${ userDetail.state}"/></td>
+  <td>Industry:</td>
+    <td> <c:out value="${experience.industry}"/></td>
        
   </tr>
  <tr>
-  <td>City:</td>
-    <td> <c:out value="${ userDetail.city}"/></td>
+  <td>Description:</td>
+    <td> <c:out value="${experience.jobDescription}"/></td>
        
   </tr>
   <tr>
-  <td>Age:</td>
-    <td> <c:out value="${ userDetail.city}"/></td>
+  <td>Duration:</td>
+    <td> <c:out value="${experience.duration}"/></td>
        
   </tr>
-<tr>
-  <td>Gender:</td>
-    <td> <c:out value="${ userDetail.city}"/></td>
-       
-  </tr>
- 
+ </c:forEach>
 </tbody>
 </table>
   </div>
   
 </div>
  <div class="panel panel-info">
-  <div class="panel-heading">Skills</div>
+  <div class="panel-heading">Expertice/Skill/Certification</div>
   <div class="panel-body">
        <table class="table" class="table  table-user-information ">
  <tbody>
+  <c:forEach items="${userDetail.skills }" var="skill">
   <tr>
-  <td>Name:</td>
-    <td> <c:out value="${ userDetail.firstName}"/><c:out value="${ userDetail.lastName}"/>rrrrrrrrrrrrrrrr</td>
+  <td>Expertice in:</td>
+    <td> <c:out value="${skill.skillName}"/></td>
    
   </tr>
   <tr>
-  <td>State:</td>
-    <td> <c:out value="${ userDetail.state}"/></td>
+  <td>Certification:</td>
+    <td> <c:out value="${ skill.certification}"/></td>
        
   </tr>
- <tr>
-  <td>City:</td>
-    <td> <c:out value="${ userDetail.city}"/></td>
+
+    <tr>
+  <td>Version:</td>
+    <td> <c:out value="${skill.version}"/></td>
        
   </tr>
-  <tr>
-  <td>Age:</td>
-    <td> <c:out value="${ userDetail.city}"/></td>
-       
-  </tr>
-<tr>
-  <td>Gender:</td>
-    <td> <c:out value="${ userDetail.city}"/></td>
-       
-  </tr>
- 
+
+ </c:forEach>
 </tbody>
 </table>
   </div>

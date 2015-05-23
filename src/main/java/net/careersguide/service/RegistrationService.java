@@ -53,7 +53,7 @@ public class RegistrationService {
 	}
 	
 	public void saveCorp(User usercorp) {
-		usercorp.setEnabled(true);
+		usercorp.setEnabled(false);
 		BCryptPasswordEncoder encoder =new BCryptPasswordEncoder();
 		usercorp.setPassword(encoder.encode(usercorp.getPassword()));
 		List<Role>roles =new ArrayList<Role>();
@@ -70,7 +70,7 @@ public class RegistrationService {
         String subject = "Registration Confirmation";
         String confirmationUrl =  "/regitrationConfirm.html?v=" + token+"&u="+id;
         String message="Please click on link to complete Registration";
-        String mailBody= message + " /n" + "http://localhost:8080" + confirmationUrl;
+        String mailBody= message + "    " + "http://careersguide.in" + confirmationUrl;
        
         sendEmailService.sendRegistrationMail(recipientAddress, subject, mailBody);
 		

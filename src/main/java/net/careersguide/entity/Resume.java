@@ -30,6 +30,8 @@ public class Resume {
 	private String landmark;
 	private String email;
 	private Integer contact;
+	private String phone;
+	private Date birthday;
 	@Column(length=1000)
 	private String summary;
 	private Integer experience;
@@ -181,6 +183,18 @@ public class Resume {
 	}
 	public void setUser(User user) {
 		this.user = user;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public Date getBirthday() {
+		return birthday;
+	}
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 	
 	

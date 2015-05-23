@@ -120,7 +120,7 @@ public class UserDetailController {
 	@RequestMapping("/resume/{id}")
 	public String showUserResume(Model model,@PathVariable int id)
 	{
-		User user =userService.findOneUser(id);
+		User user =userService.findUser(id);
 		model.addAttribute("resumeContent",userDetailService.findByUser(user));
 		return "resume";
 	}

@@ -56,7 +56,7 @@ public class UserDetailService {
                 education.setResume(resume);
                 educationRepository.save(education);
             }
-
+	
 	public Resume findUserResume(String name) {
 		User user= userRepository.findByEmail(name);
 		Resume resume=resumeRepository.findByUser(user);
@@ -65,12 +65,24 @@ public class UserDetailService {
 		resume.setSkills(skillRepository.findByResume(resume));
 		return resume;
 	}
+	
+	@PreAuthorize("hasRole('ROLE_CORP') or  hasRole('ROLE_ADMIN')")
+	public Resume findByUser(User user) {
+		
+		Resume resume= resumeRepository.findByUser(user);
+		resume.setEducation(educationRepository.findByResume(resume));
+		resume.setExperiences(experienceRepository.findByResume(resume));
+		resume.setSkills(skillRepository.findByResume(resume));
+		return resume;
+	} 
+	
+	@PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
 	public Resume findUserDetails(User user) {
-		Resume userDeail=resumeRepository.findByUser(user);
-		userDeail.setEducation(educationRepository.findByResume(userDeail));
-		userDeail.setExperiences(experienceRepository.findByResume(userDeail));
-		userDeail.setSkills(skillRepository.findByResume(userDeail));
-		return userDeail;
+		Resume userDetail= resumeRepository.findByUser(user);
+		userDetail.setEducation(educationRepository.findByResume(userDetail));
+		userDetail.setExperiences(experienceRepository.findByResume(userDetail));
+		userDetail.setSkills(skillRepository.findByResume(userDetail));
+		return userDetail;
 	}
 
 	public void saveResume(User user) {
@@ -111,15 +123,7 @@ public class UserDetailService {
 		Resume resume =resumeRepository.findByUser(user);
 		return skillRepository.findByResume(resume);
 	}
-	@PreAuthorize("hasRole('ROLE_CORP')")
-	public Object findByUser(User user) {
-		
-		Resume resume= resumeRepository.findByUser(user);
-		resume.setEducation(educationRepository.findByResume(resume));
-		resume.setExperiences(experienceRepository.findByResume(resume));
-		resume.setSkills(skillRepository.findByResume(resume));
-		return resume;
-	}
+	
 	
 
 

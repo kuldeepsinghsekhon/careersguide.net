@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <CommunicationClass name="net.careersguide.service.TestService"
+        x="595" y="-18">
+        <Association
+            destinationClassName="net.careersguide.repository.QuestionRepository"
+            endpointName="questionRepository" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.repository.AnswersRepository"
+            endpointName="answersRepository" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.repository.ApplyRepository"
+            endpointName="applyRepository" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.repository.UserRepository"
+            endpointName="userRepository" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.repository.TestRepository"
+            endpointName="testRepository" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.JobService"
+            endpointName="jobService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.ApplyService"
+            endpointName="applyService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.UserService"
+            endpointName="userService" kind="Simple"/>
+        <Communication destinationClassName="net.careersguide.repository.UserRepository"/>
+        <Communication destinationClassName="net.careersguide.entity.Test"/>
+        <Communication destinationClassName="net.careersguide.repository.TestRepository"/>
+        <Communication destinationClassName="net.careersguide.entity.Question"/>
+        <Communication destinationClassName="net.careersguide.repository.AnswersRepository"/>
+        <Communication destinationClassName="net.careersguide.repository.QuestionRepository"/>
+        <Communication destinationClassName="net.careersguide.service.ApplyService"/>
+        <Communication destinationClassName="net.careersguide.entity.Answers"/>
+        <Communication destinationClassName="net.careersguide.entity.Apply"/>
+    </CommunicationClass>
+    <CommunicationClass name="net.careersguide.service.SendEmailService"
+        x="126" y="288"/>
+    <CommunicationClass name="net.careersguide.service.UserService"
+        x="604" y="301">
+        <Association
+            destinationClassName="net.careersguide.repository.UserRepository"
+            endpointName="userRepository" kind="Simple"/>
+        <Communication destinationClassName="net.careersguide.repository.UserRepository"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="net.careersguide.controller.ApplyController" x="3" y="166">
+        <Association
+            destinationClassName="net.careersguide.service.TestService"
+            endpointName="testService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.UserService"
+            endpointName="userService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.ApplyService"
+            endpointName="applyService" kind="Simple"/>
+        <Communication destinationClassName="net.careersguide.service.UserService"/>
+        <Communication destinationClassName="net.careersguide.service.ApplyService"/>
+    </CommunicationClass>
+    <CommunicationClass name="net.careersguide.entity.Job" x="232" y="143">
+        <Association
+            destinationClassName="net.careersguide.entity.Apply"
+            endpointName="applies" kind="Simple"/>
+        <Association destinationClassName="net.careersguide.entity.User"
+            endpointName="corporate" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="net.careersguide.repository.ExperienceRepository" x="308" y="591"/>
+    <CommunicationClass
+        name="net.careersguide.service.UserDetailService" x="604" y="642">
+        <Association
+            destinationClassName="net.careersguide.repository.ExperienceRepository"
+            endpointName="experienceRepository" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.repository.EducationRepository"
+            endpointName="educationRepository" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.repository.ResumeRepository"
+            endpointName="resumeRepository" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.repository.UserRepository"
+            endpointName="userRepository" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.repository.SkillRepository"
+            endpointName="skillRepository" kind="Simple"/>
+        <Communication destinationClassName="net.careersguide.entity.Resume"/>
+        <Communication destinationClassName="net.careersguide.repository.UserRepository"/>
+        <Communication destinationClassName="net.careersguide.entity.Education"/>
+        <Communication destinationClassName="net.careersguide.repository.ResumeRepository"/>
+        <Communication destinationClassName="net.careersguide.entity.Experience"/>
+        <Communication destinationClassName="net.careersguide.repository.EducationRepository"/>
+        <Communication destinationClassName="net.careersguide.repository.ExperienceRepository"/>
+        <Communication destinationClassName="net.careersguide.repository.SkillRepository"/>
+        <Communication destinationClassName="net.careersguide.entity.Skill"/>
+    </CommunicationClass>
+    <CommunicationClass name="net.careersguide.service.SettingsService"
+        x="-50" y="394">
+        <Association
+            destinationClassName="net.careersguide.service.SendEmailService"
+            endpointName="sendEmailService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.repository.UserRepository"
+            endpointName="userRepository" kind="Simple"/>
+        <Communication destinationClassName="net.careersguide.repository.UserRepository"/>
+        <Communication destinationClassName="net.careersguide.service.SendEmailService"/>
+        <Communication destinationClassName="net.careersguide.entity.User"/>
+    </CommunicationClass>
+    <CommunicationClass name="net.careersguide.entity.Role" x="81" y="14">
+        <Association destinationClassName="net.careersguide.entity.User"
+            endpointName="users" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="net.careersguide.entity.Question" x="822" y="69">
+        <Association destinationClassName="net.careersguide.entity.Test"
+            endpointName="test" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.entity.Answers"
+            endpointName="answers" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="net.careersguide.repository.ApplyRepository" x="294" y="-60"/>
+    <CommunicationClass
+        name="net.careersguide.repository.QuestionRepository" x="724" y="-106"/>
+    <CommunicationClass
+        name="net.careersguide.controller.RegistrationController"
+        x="337" y="537">
+        <Association
+            destinationClassName="net.careersguide.service.RegistrationService"
+            endpointName="registrationService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.UserDetailService"
+            endpointName="userDetailService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.UserService"
+            endpointName="userService" kind="Simple"/>
+        <Communication destinationClassName="net.careersguide.service.UserService"/>
+        <Communication destinationClassName="net.careersguide.entity.User"/>
+        <Communication destinationClassName="net.careersguide.service.UserDetailService"/>
+        <Communication destinationClassName="net.careersguide.service.RegistrationService"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="net.careersguide.controller.SettingsController" x="16" y="620">
+        <Association
+            destinationClassName="net.careersguide.service.RegistrationService"
+            endpointName="registrationService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.SettingsService"
+            endpointName="settingsService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.UserService"
+            endpointName="userService" kind="Simple"/>
+        <Communication destinationClassName="net.careersguide.entity.User"/>
+        <Communication destinationClassName="net.careersguide.service.SettingsService"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="net.careersguide.controller.LoginController" x="36" y="271"/>
+    <CommunicationClass
+        name="net.careersguide.annotations.UniqueUsername" x="-58" y="118"/>
+    <CommunicationClass name="net.careersguide.entity.Skill" x="369" y="634">
+        <Association
+            destinationClassName="net.careersguide.entity.Resume"
+            endpointName="resume" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="net.careersguide.entity.Resume" x="874" y="677">
+        <Association
+            destinationClassName="net.careersguide.entity.Skill"
+            endpointName="skills" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.entity.Education"
+            endpointName="education" kind="Simple"/>
+        <Association destinationClassName="net.careersguide.entity.User"
+            endpointName="user" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.entity.Experience"
+            endpointName="experiences" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="net.careersguide.entity.Test" x="489" y="-83">
+        <Association
+            destinationClassName="net.careersguide.entity.Question"
+            endpointName="questions" kind="Simple"/>
+        <Association destinationClassName="net.careersguide.entity.User"
+            endpointName="employer" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.entity.Apply"
+            endpointName="applications" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="net.careersguide.repository.TestRepository" x="908" y="7"/>
+    <CommunicationClass
+        name="net.careersguide.repository.RoleRepository" x="331" y="692"/>
+    <CommunicationClass name="net.careersguide.entity.User" x="162" y="490">
+        <Association
+            destinationClassName="net.careersguide.entity.Resume"
+            endpointName="resume" kind="Simple"/>
+        <Association destinationClassName="net.careersguide.entity.Test"
+            endpointName="tests" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.entity.Apply"
+            endpointName="applies" kind="Simple"/>
+        <Association destinationClassName="net.careersguide.entity.Role"
+            endpointName="roles" kind="Simple"/>
+        <Association destinationClassName="net.careersguide.entity.Job"
+            endpointName="jobs" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="net.careersguide.controller.JobController"
+        x="930" y="512">
+        <Association
+            destinationClassName="net.careersguide.service.JobService"
+            endpointName="jobService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.UserService"
+            endpointName="userService" kind="Simple"/>
+        <Communication destinationClassName="net.careersguide.entity.Search"/>
+        <Communication destinationClassName="net.careersguide.service.JobService"/>
+        <Communication destinationClassName="net.careersguide.service.UserService"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="net.careersguide.controller.UserController" x="900" y="190">
+        <Association
+            destinationClassName="net.careersguide.service.UserDetailService"
+            endpointName="userDetailService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.UserService"
+            endpointName="userService" kind="Simple"/>
+        <Communication destinationClassName="net.careersguide.service.UserService"/>
+    </CommunicationClass>
+    <CommunicationClass name="net.careersguide.entity.Experience"
+        x="612" y="827">
+        <Association
+            destinationClassName="net.careersguide.entity.Resume"
+            endpointName="resume" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="net.careersguide.repository.EducationRepository" x="511" y="446"/>
+    <CommunicationClass
+        name="net.careersguide.controller.TestController" x="582" y="146">
+        <Association
+            destinationClassName="net.careersguide.service.JobService"
+            endpointName="jobService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.TestService"
+            endpointName="testService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.UserService"
+            endpointName="userService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.ApplyService"
+            endpointName="applyService" kind="Simple"/>
+        <Communication destinationClassName="net.careersguide.service.TestService"/>
+        <Communication destinationClassName="net.careersguide.service.JobService"/>
+        <Communication destinationClassName="net.careersguide.service.UserService"/>
+        <Communication destinationClassName="net.careersguide.service.ApplyService"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="net.careersguide.repository.SkillRepository" x="805" y="588"/>
+    <CommunicationClass
+        name="net.careersguide.service.RegistrationService" x="348" y="310">
+        <Association
+            destinationClassName="net.careersguide.service.SendEmailService"
+            endpointName="sendEmailService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.repository.RoleRepository"
+            endpointName="roleRepository" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.repository.UserRepository"
+            endpointName="userRepository" kind="Simple"/>
+        <Communication destinationClassName="net.careersguide.service.SendEmailService"/>
+        <Communication destinationClassName="net.careersguide.entity.User"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="net.careersguide.repository.UserRepository" x="868" y="260"/>
+    <CommunicationClass
+        name="net.careersguide.controller.IndexController" x="-71" y="55">
+        <Association
+            destinationClassName="net.careersguide.service.JobService"
+            endpointName="jobservice" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.UserService"
+            endpointName="userService" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="net.careersguide.entity.Search" x="543" y="582"/>
+    <CommunicationClass
+        name="net.careersguide.controller.UserDetailController" x="879" y="351">
+        <Association
+            destinationClassName="net.careersguide.service.UserDetailService"
+            endpointName="userDetailService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.UserService"
+            endpointName="userService" kind="Simple"/>
+        <Communication destinationClassName="net.careersguide.entity.Resume"/>
+        <Communication destinationClassName="net.careersguide.service.UserService"/>
+        <Communication destinationClassName="net.careersguide.service.UserDetailService"/>
+    </CommunicationClass>
+    <CommunicationClass name="net.careersguide.service.JobService"
+        x="358" y="243">
+        <Association
+            destinationClassName="net.careersguide.repository.JobRepository"
+            endpointName="jobRepository" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.UserService"
+            endpointName="userService" kind="Simple"/>
+        <Communication destinationClassName="net.careersguide.service.UserService"/>
+        <Communication destinationClassName="net.careersguide.repository.JobRepository"/>
+        <Communication destinationClassName="net.careersguide.entity.Job"/>
+    </CommunicationClass>
+    <CommunicationClass name="net.careersguide.entity.Education" x="371" y="739">
+        <Association
+            destinationClassName="net.careersguide.entity.Resume"
+            endpointName="resume" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="net.careersguide.repository.AnswersRepository" x="574" y="-92"/>
+    <CommunicationClass name="net.careersguide.repository.JobRepository"
+        x="328" y="474"/>
+    <CommunicationClass name="net.careersguide.service.ApplyService"
+        x="319" y="53">
+        <Association
+            destinationClassName="net.careersguide.repository.ApplyRepository"
+            endpointName="applyRepository" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.JobService"
+            endpointName="jobService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.TestService"
+            endpointName="testService" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.service.UserService"
+            endpointName="userService" kind="Simple"/>
+        <Communication destinationClassName="net.careersguide.service.TestService"/>
+        <Communication destinationClassName="net.careersguide.service.JobService"/>
+        <Communication destinationClassName="net.careersguide.service.UserService"/>
+        <Communication destinationClassName="net.careersguide.repository.ApplyRepository"/>
+        <Communication destinationClassName="net.careersguide.entity.Apply"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="net.careersguide.repository.ResumeRepository" x="494" y="761"/>
+    <CommunicationClass name="net.careersguide.entity.Answers" x="802" y="-45">
+        <Association
+            destinationClassName="net.careersguide.entity.Question"
+            endpointName="question" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.entity.Apply"
+            endpointName="response" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="net.careersguide.entity.Apply" x="83" y="-54">
+        <Association destinationClassName="net.careersguide.entity.Test"
+            endpointName="exam" kind="Simple"/>
+        <Association destinationClassName="net.careersguide.entity.User"
+            endpointName="candidate" kind="Simple"/>
+        <Association
+            destinationClassName="net.careersguide.entity.Answers"
+            endpointName="answers" kind="Simple"/>
+        <Association destinationClassName="net.careersguide.entity.Job"
+            endpointName="job" kind="Simple"/>
+    </CommunicationClass>
+</ClassDiagram>

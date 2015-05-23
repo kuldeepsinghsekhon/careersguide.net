@@ -89,6 +89,7 @@ public class RegistrationController {
 		}
 		if(reCaptchaResponse.isValid() && !bindingResult.hasErrors()){
 		registrationService.saveCorp(usercorp);
+		userDetailService.saveResume(usercorp);
 		return "redirect:/regcorp.html?success=true";
 		}
 		return "redirect:/regcorp.html?success=false";
@@ -104,10 +105,10 @@ public class RegistrationController {
 		if (token == null) {
 			String message = " invalid token";
 			model.addAttribute("message",  message);
-			return "redirect:/login.html";
+			return "redirect:/login.html?regsuccess=false";
 		}
 
-		User user = userService.findOneUser(id);
+		User user = userService.findUser(id);
 
 		Calendar cal = Calendar.getInstance();
 		if ((user.getTokenExpiryDate().getTime() - cal.getTime().getTime()) <= 0) {
@@ -117,7 +118,7 @@ public class RegistrationController {
 		if(v.equals(user.getToken())){
 		user.setEnabled(true);
 		registrationService.conformUser(user);
-		return "redirect:/index.html";
+		return "redirect:/login.html?regsuccess=true";
 		}
 		return "redirect:/login.html";
 	}

@@ -44,7 +44,7 @@ public class User {
 	    private String email;
 	    @Size(min=4, message="Minimum 4 Character required")
 	    private String password;
-	    @OneToMany
+	    @OneToMany(mappedBy="corporate",cascade=CascadeType.REMOVE)
 	    private List<Job>jobs;
 	    
 	    @OneToOne(mappedBy="user",cascade=CascadeType.REMOVE)
