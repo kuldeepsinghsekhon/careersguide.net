@@ -54,36 +54,65 @@
                    
                     <h2>Available jobs for you</h2>
                 </div>
-                <div class="row jobs">
-                    <div class="col-md-9">
-                        <div class="job-posts table-responsive">
-                            <table class="table">
-                            <c:forEach items="${jobs}" var="job">
-                                <tr class="odd wow fadeInUp" data-wow-delay="1s">
-                                    <td class="tbl-logo"><img src="img/job-logo1.png" alt=""></td>
-                                    <td class="tbl-title"><h4><c:out value="${job.title}" /> <br><span class="job-type">full time</span></h4></td>
-                                    <td><p>dribbble community</p>
-                                    <p><c:out value="${job.description}" /></p>
-                                    </td>
-                                    <td><p><i class="icon-location"></i>San Franciso, USA</p></td>
-                                    <td><p>&dollar; 14000</p></td>
-                                   
-                                    <td class="tbl-apply"><a href='<spring:url value="/apply/${job.id}.html"/>'>
+              
+                
+                <div class="panel panel-primary widget">
+			<div class="panel-heading">
+				
+				<h3 class="panel-title">Recent Jobs</h3>
+				
+			</div>
+			<div class="panel-body">
+				
+					<ul class="list-group">
+					<c:forEach items="${jobs}" var="job">
+						<li class="list-group-item">
+							<div class="row">
+								<div class="col-xs-2 col-md-1">
+									<img src="http://placehold.it/80"
+										class="img-circle img-responsive" alt="" />
+								</div>
+								<div class="col-xs-10 col-md-11">
+									<div>
+										<a
+											href="http://www.jquery2dotnet.com/2013/10/google-style-login-page-desing-usign.html">
+											<c:out value="${job.title}" />
+										</a>
+										<div class="mic-info">
+											By: <a href="#"><c:out value="${job.companyName}" /></a> on <c:out value="${job.publishdate}" />
+										</div>
+									</div>
+									<p>&dollar; <c:out value="${job.salaryMax}" /></p>
+									<i class="icon-location"></i><c:out value="${job.state}" /> <br><c:out value="${job.city}" />
+									<div class="action">
+										<a href='<spring:url value="/jobdetail/${job.id}.html"/>'>
+											<button type="button" class="btn btn-primary btn-xs"
+												title="View Detail">
+												<span class="glyphicon glyphicon-pencil"></span>View
+											</button>
+										</a> <a href='<spring:url value="/apply/${job.id}.html"/>'>
 											<button type="button" class="btn btn-success btn-xs"
 												title="Approved">
-												<span class="glyphicon glyphicon-ok"></span>
-											</button></td>
-											
-                                </tr>
-                                </c:forEach>
-                            </table>
-                        </div>
-                        <div class="more-jobs">
-                            <a href=""> <i class="fa fa-refresh"></i>View more jobs</a>
-                        </div>
-                    </div>
-                   
-                </div>
+												<span class="glyphicon glyphicon-ok"></span>Apply
+											</button>
+										</a>
+
+									</div>
+								</div>
+							</div>
+						</li>
+				</c:forEach>
+
+				</ul>
+				<a href="#" class="btn btn-primary btn-sm btn-block" role="button"><span
+					class="glyphicon glyphicon-refresh"></span> More</a>
+			</div>
+		</div>
+                
+                
+                
+                
+                
             </div>
             <hr>
 

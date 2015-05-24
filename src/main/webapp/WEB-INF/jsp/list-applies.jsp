@@ -22,11 +22,27 @@ $(document).ready(function(){
 //-->
 </script>
 
- <div class="container" >
- <div class="page-header"><h2 align="center">Job Responses</h2></div>
- <div class="col-md-12" style="margin-top: 30px; margin-bottom:30px;">
-        <div class="table-responsive">
-<table class="table table-bordered  table-striped" id="mytable">
+  <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+          Job Responses
+           
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+            <li class="active">Here</li>
+          </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+ <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">  Job Responses</h3><a class="btn btn-info pull-right" href='<spring:url value="/response/${examid}/result.html"/>' style="margin-left:20px;">Prepare Result</a><a class="btn btn-primary pull-right" href='<spring:url value="#"/>'>Download Excel</a>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <table class="table table-bordered table-hover table-striped">
 <tr>
  <th><input type="checkbox" id="checkall" /></th>
  <th>UserID</th>
@@ -56,18 +72,16 @@ $(document).ready(function(){
 
 
 </table>
-
-<div class="clearfix"></div>
-<ul class="pagination pull-right">
-  <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-  <li class="active"><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-</ul>
-                
-            </div>
-        </div>    
-        </div>
+                </div><!-- /.box-body -->
+                <div class="box-footer clearfix">
+                  <ul class="pagination pagination-sm no-margin pull-right">
+                    <li><a href="#">&laquo;</a></li>
+                    <li><a href="#">1</a></li>
+                    
+                    <li><a href="#">&raquo;</a></li>
+                  </ul>
+                </div>
+              </div><!-- /.box -->
+          
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->

@@ -26,6 +26,14 @@ public class Job {
 	private String functionalArea;
 	private Integer salaryMin;
 	private Integer salaryMax;
+	private Date publishdate;
+	
+	public Date getPublishdate() {
+		return publishdate;
+	}
+	public void setPublishdate(Date publishdate) {
+		this.publishdate = publishdate;
+	}
 	public Integer getSalaryMin() {
 		return salaryMin;
 	}

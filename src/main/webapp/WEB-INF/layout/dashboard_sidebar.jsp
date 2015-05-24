@@ -37,6 +37,7 @@
 						<li class="${current=='jobform'?'active':'' }"><a href="/jobform.html" ><i class="fa fa-circle-o"></i><span>Post Job</span></a></li>
 							<li class="${current=='users'?'active':'' }"><a	href='<spring:url value="/posted-jobs.html" />'><i class="fa fa-circle-o"></i><span>Your Jobs</span></a></li>
 							<li class="${current=='tests'?'active':'' }"><a href='<spring:url value="/tests.html" />'><i class="fa fa-circle-o"></i><span>Exams</span></a></li>
+					<li class="${current=='users'?'active':'' }"><a	href='<spring:url value="/posted-jobs.html" />'><i class="fa fa-circle-o"></i><span>Prepair Exams Result</span></a></li>
 					</security:authorize>
 					<li>
               <a href="../calendar.html">

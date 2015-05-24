@@ -28,9 +28,11 @@
                   <table class="table table-bordered table-hover table-striped">
 	<tr>
 		<th style="width: 20px">Job Id</th>
-		<th style="width: 40px">Job Title</th>
-		<th style="width: 40px">Response</th>
-		<th style="width: 40px">Detail</th>
+		<th style="width: 80px">Job Title</th>
+		<th style="width: 150px">Response</th>
+		
+		<th style="width: 50px">Detail</th>
+		<th style="width: 80px">Prepare  Result</th>
 	</tr>
 	<c:forEach items="${postedjobs}" var="job">
 
@@ -45,6 +47,7 @@
 						<span class="glyphicon glyphicon-pencil"></span>View
 					</button>
 			</a></td>
+			<td><a class="btn btn-xs btn-info" href='<spring:url value="/response/${job.id}/result.html"/>' >Prepare Result</a></td>
 		</tr>
 
 

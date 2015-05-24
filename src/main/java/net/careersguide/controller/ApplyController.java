@@ -71,6 +71,7 @@ public class ApplyController {
 		String name = principal.getName();
 		User user = userService.userByName(name);
 		model.addAttribute("responses", applyService.findById(id));
+		model.addAttribute("examid",id);
 		/*List<Test>tests=testService.findAllByUser(name);
 		HashMap<Integer, Test> exams = new HashMap<Integer, Test>();
 		for(Test test : tests){

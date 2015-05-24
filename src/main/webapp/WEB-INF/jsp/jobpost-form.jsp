@@ -5,8 +5,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Page Header
-            <small>Optional description</small>
+            Post New Job 
+          
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -19,9 +19,14 @@
 
           <!-- Your Page Content Here -->
 <div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-8 ">
-		<h3 class="well well-sm">Job Details</h3>
-			<form:form commandName="jobs" class="form-horizontal">
+		<div class="col-xs-10 col-sm-10 col-md-10 ">
+		
+		<div class="box box-info">
+                <div class="box-header">
+                  <h3 class="box-title">Job Description</h3>
+                </div>
+                <div class="box-body">
+			<form:form commandName="jobs" class="form-horizontal jobSubmitForm">
 				<div class="form-group">
 					<label for="title" class="col-sm-4 control-label">Title of Job :</label>
 					<div class="col-sm-8">
@@ -39,7 +44,7 @@
 					<label for="employerIndustry" class="col-sm-4 control-label"> Industry of Employer</label>
 					<div class="col-sm-8">
 						<form:select path="employerIndustry" class="form-control">
-							<form:option value="0" label="Select Industry " />
+							<form:option value=" " label="Select Industry " />
 
 							<form:option value="IT">IT</form:option>
 							<form:option value="Banking">Banking</form:option>
@@ -52,7 +57,7 @@
 					<label for="functionalArea" class="col-sm-4 control-label"> functional Area</label>
 					<div class="col-sm-8">
 						<form:select path="functionalArea" class="form-control">
-							<form:option value="0" label="Select Functional Area " />
+							<form:option value="" label="Select Functional Area " />
 
 							<form:option value="IT">IT</form:option>
 							<form:option value="Banking">Banking</form:option>
@@ -78,7 +83,7 @@
 
 					<div class=" col-sm-4   ">
 						<form:select path="experienceMin" class="form-control">
-							<form:option value="0" label="Min-Ex" />
+							<form:option value="" label="Min-Ex" />
 
 							<form:option value="1">1</form:option>
 							<form:option value="2">2</form:option>
@@ -90,7 +95,7 @@
 
 					<div class="col-sm-4  ">
 						<form:select path="experienceMax" class="form-control">
-							<form:option value="0" label="Max-Ex" />
+							<form:option value="" label="Max-Ex" />
 
 							<form:option value="1">1</form:option>
 							<form:option value="2">2</form:option>
@@ -108,7 +113,7 @@
 
 					<div class=" col-sm-4   ">
 						<form:select path="salaryMin" class="form-control">
-							<form:option value="0" label="Min-salary" />
+							<form:option value="" label="Min-salary" />
 
 							<form:option value="100000">1 Lack</form:option>
 							<form:option value="200000">2 Lack</form:option>
@@ -120,7 +125,7 @@
 
 					<div class="col-sm-4  ">
 						<form:select path="salaryMax" class="form-control">
-							<form:option value="0" label="Max-Salary" />
+							<form:option value="" label="Max-Salary" />
 
 							<form:option value="100000">1 Lack</form:option>
 							<form:option value="200000">2 Lack</form:option>
@@ -138,7 +143,7 @@
 					<label for="State" class="col-sm-4 control-label">State of Job</label>
 					<div class="col-sm-8">
 						<form:select path="state" class="form-control">
-							<form:option value="0" label="Select State" />
+							<form:option value="" label="Select State" />
 
 							<form:option value="punjab">punjab</form:option>
 							<form:option value="himachal">himachan</form:option>
@@ -158,7 +163,9 @@
 						</form:select>
 					</div>
 				</div>
-				<h3 class="well well-sm ">Company  Details</h3>
+				 
+                  <h4 class="box-title">Job Description</h4>
+                <hr class="colorgraph">
 				
 				
 				
@@ -178,7 +185,7 @@
 				</div>
 				
 				<div class="form-group">
-					<label for="companyTelephone" class="col-sm-4 control-label">Company Telephone :</label>
+					<label for="companyTelephone" class="col-sm-4 control-label">phone :</label>
 					<div class="col-sm-8">
 						<form:input path="companyTelephone" class="form-control col-sm-2" />
 					</div>
@@ -197,9 +204,86 @@
 				</div>
 			</form:form>
 		</div>
-
+</div>
+</div>
 	</div>
 	<!-- row ends -->
+	
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
-	
+	<script type="text/javascript">
+<!-- 
+$(document).ready(function(){
+	$(".jobSubmitForm").validate(
+			{
+				rules:{
+					title:{
+						required:true,
+						minlength:8
+						},
+						companyEmail:{
+							required:true,
+							email:true
+							},
+							description:{
+								required:true,
+								minlength:20
+								},
+								functionArea:{
+									required:true
+									
+									},
+									qualification:{
+										required:true,
+										minlength:2
+										},
+										experienceMin:{
+											required:true,
+											minlength:1
+											},
+											salaryMin:{
+												equired:true
+												
+												},
+												salaryMax:{
+													required:true
+													
+													},
+													experienceMax:{
+														required:true													
+														},
+												state:{
+													required:true,												
+													},
+													city:{
+														required:true
+													
+														},
+														companyName:{
+															required:true,
+															minlength:2
+															},
+															companyDescription:{
+																required:true,
+																minlength:20
+																},
+																companyTelephone:{
+																	required:true,
+																	minlength:8
+																	},
+																	employerIndustry:{
+																required:true,
+																}
+					},
+					highlight:function(element){
+						$(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+						},
+						unhighlight:function(element){
+							$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+							}
+			}
+
+		);	
+});
+-->
+</script>
