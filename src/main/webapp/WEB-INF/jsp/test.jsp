@@ -2,9 +2,22 @@
 	pageEncoding="UTF-8"%>
  <%@ include  file="../layout/taglib.jsp"%>
 
-<div class="container">
-<div class="page-header"><h2 align="center">Exam Preview</h2><button type="button" class="btn btn-primary " data-toggle="modal"
-	data-target="#myModal">New Question</button></div>
+ <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Page Header
+            <small>Optional description</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+            <li class="active">Here</li>
+          </ol>
+        </section>
+<section class="content">
+        <!-- Main content -->
+    <button type="button" class="btn btn-primary " data-toggle="modal"
+	data-target="#myModal">New Question</button>
 
 <form:form commandName="addquestion" class="form-horizontal">
 	<!-- Modal -->
@@ -91,13 +104,12 @@
 			</div>
 		</div>
 	</div>
-</form:form>
-
-
+</form:form>  
+<div class="container">
 <c:forEach items="${questions}" var="question">
-	<div class="col-md-12">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
+<div class="col-md-11">
+<div class="panel panel-primary">
+<div class="panel-heading">
 				<h3 class="panel-title">
 					<span class="glyphicon glyphicon-circle-arrow-right"></span>
 					<c:out value="${question.statement}" />
@@ -105,7 +117,7 @@
 			</div>
 			<div class="panel-body two-col">
 				<div class="row">
-					<div class="col-md-6">
+				<div class="col-md-6">
 						<div class="well well-sm">
 							<div class="checkbox">
 								<label> <input type="checkbox" value=""> <c:out
@@ -144,12 +156,16 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="panel-footer">
+				</div>
+<div class="panel-footer">
 				Solution <c:out value="${question.rightsolution}" />
 			</div>
-		</div>
-	</div>
-</c:forEach>
-
 </div>
+</div>
+</c:forEach>
+</div>  
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+
+

@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"  %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ include file="../layout/taglib.jsp"%>
 <script type="text/javascript">
 <!--
 $(document).ready(function(){
@@ -10,11 +8,25 @@ $(document).ready(function(){
 });
 //-->
 </script>
-<div class="container">
+ <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+              Available Exams
+           
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> </a></li>
+            <li class="active">Exams</li>
+          </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+          <!-- Your Page Content Here -->
 <!-- Button trigger modal -->
-<h3>List of All Available Tests</h3><button type="button" class="btn btn-primary pull-right " data-toggle="modal" data-target="#myModal">
-  Create Exam
-</button>
+
 
 <!-- Modal -->
 <form:form commandName="test"  class="form-horizontal" >
@@ -56,24 +68,46 @@ $(document).ready(function(){
 </div>
 </form:form>
 
-<table class="table table-bordered table-hover table-striped">
+<div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Available Exams</h3><button type="button" class="btn btn-primary pull-right " data-toggle="modal" data-target="#myModal">
+  Create Exam
+</button>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <table class="table table-bordered table-hover table-striped">
   <tr>
-    <th>Test Name</th>
+   <th style="width:50px;">Exam Id</th>
+   
         <th>Test Name</th>
     <th>Test Description</th>
      <th>Operations</th>
   </tr>
   <c:forEach items="${tests}" var="test">
   <tr>
-    <td><c:out value="${test.name}"/></td>
+    <td><c:out value="${test.id}"/></td>
      <td><a href='<spring:url value="/test/${test.id}.html"/>'><c:out value="${test.name}"/></a></td>
     <td><c:out value="${ test.description}"/></td>
     <td><a class="btn btn-danger" href='<spring:url value="/tests/remove/${test.id}.html"/>'>Remove</a></td>
   </tr>
   </c:forEach>
 </table>
+                </div><!-- /.box-body -->
+                <div class="box-footer clearfix">
+                  <ul class="pagination pagination-sm no-margin pull-right">
+                    <li><a href="#">&laquo;</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                  </ul>
+                </div>
+              </div><!-- /.box -->
   
- </div> 
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+
   
   
   

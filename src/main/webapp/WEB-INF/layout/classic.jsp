@@ -107,12 +107,9 @@ body {
 					</security:authorize>
 					
 					<security:authorize access="hasRole('ROLE_CORP')">
-						<li class="${current=='jobform'?'active':'' }"><a
-							href='<spring:url value="/jobform.html" />'>Post Job</a></li>
-							<li class="${current=='users'?'active':'' }"><a
-							href='<spring:url value="/posted-jobs.html" />'>Posted Jobs</a></li>
-							<li class="${current=='tests'?'active':'' }"><a
-							href='<spring:url value="/tests.html" />'>Exams</a></li>
+						
+							<li class="${current=='dashboard'?'active':'' }"><a
+							href='<spring:url value="/dashboard.html" />'>Admin Panel</a></li>
 					</security:authorize>
 				
 					

@@ -6,7 +6,12 @@
     <definition name="common" template="/WEB-INF/layout/classic.jsp">
     <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
   </definition>
-  
+  <definition name="dashboardcommon" template="/WEB-INF/layout/dashboardcommon.jsp">
+   <put-attribute name="headermenu" value="/WEB-INF/layout/dashboardheader.jsp" />
+     <put-attribute name="left_sidebar" value="/WEB-INF/layout/dashboard_sidebar.jsp" />
+     <put-attribute name="footer" value="/WEB-INF/layout/dashboard_footer.jsp" />
+        <put-attribute name="right_sidebar" value="/WEB-INF/layout/bashboard_right_sidebar.jsp" />
+  </definition>
     <definition name="pagepart" template="/WEB-INF/layout/pagepart.jsp">
     
   </definition>
@@ -15,6 +20,7 @@
     <put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
      <put-attribute name="current" value="index" />
   </definition>
+ 
   <definition name="users" extends="common" >
     <put-attribute name="title" value="List of Users page" />
     <put-attribute name="body" value="/WEB-INF/jsp/users.jsp" />
@@ -65,17 +71,17 @@
     <put-attribute name="body" value="/WEB-INF/jsp/corp-register.jsp" />
      <put-attribute name="current" value="regcorp" />
   </definition>
-  <definition name="jobform" extends="common" >
+  <definition name="jobform" extends="dashboard" >
     <put-attribute name="title" value="Job Post Form" />
     <put-attribute name="body" value="/WEB-INF/jsp/jobpost-form.jsp" />
      <put-attribute name="current" value="jobform" />
   </definition>
-   <definition name="posted-jobs" extends="common" >
+   <definition name="posted-jobs" extends="dashboardcommon" >
     <put-attribute name="title" value="Job Post Form" />
     <put-attribute name="body" value="/WEB-INF/jsp/posted-jobs.jsp" />
      <put-attribute name="current" value="posted-jobs" />
   </definition>
-   <definition name="response" extends="common" >
+   <definition name="response" extends="dashboardcommon" >
     <put-attribute name="title" value="Response Received to Job" />
     <put-attribute name="body" value="/WEB-INF/jsp/list-applies.jsp" />
      <put-attribute name="current" value="response" />
@@ -95,12 +101,12 @@
     <put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
      <put-attribute name="current" value="login" />
   </definition>
-  <definition name="tests" extends="common" >
+  <definition name="tests" extends="dashboardcommon" >
     <put-attribute name="title" value="List of Tests " />
     <put-attribute name="body" value="/WEB-INF/jsp/tests.jsp" />
      <put-attribute name="current" value="tests" />
   </definition>
-  <definition name="test" extends="common" >
+  <definition name="test" extends="dashboardcommon" >
     <put-attribute name="title" value="Test Detail " />
     <put-attribute name="body" value="/WEB-INF/jsp/test.jsp" />
      <put-attribute name="current" value="test" />
@@ -139,5 +145,12 @@
     <put-attribute name="title" value=" testing Form " />
     <put-attribute name="body" value="/WEB-INF/jsp/setting.jsp" />
      <put-attribute name="fbhome" value="setting" />
+  </definition>
+  <definition name="dashboard" extends="dashboardcommon" >
+    <put-attribute name="title" value=" User Dashboard Form " />
+    <put-attribute name="body" value="/WEB-INF/jsp/dashboard.jsp" />
+   
+     
+     <put-attribute name="current" value="dashboard" />
   </definition>
 </tiles-definitions>

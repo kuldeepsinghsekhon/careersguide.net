@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import net.careersguide.entity.Job;
 import net.careersguide.entity.User;
 import net.careersguide.repository.JobRepository;
+import net.careersguide.repository.UserRepository;
 @Service
 public class JobService {
 	
@@ -46,6 +47,7 @@ private UserService userService;
 		//return jobRepository.findByTitle(seachValue);
 	}
 
+	
 	
 
 }

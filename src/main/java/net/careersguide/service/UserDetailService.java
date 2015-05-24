@@ -76,7 +76,7 @@ public class UserDetailService {
 		return resume;
 	} 
 	
-	@PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN') or hasRole('ROLE_CORP')")
 	public Resume findUserDetails(User user) {
 		Resume userDetail= resumeRepository.findByUser(user);
 		userDetail.setEducation(educationRepository.findByResume(userDetail));
