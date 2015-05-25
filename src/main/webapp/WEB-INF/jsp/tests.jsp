@@ -29,7 +29,7 @@ $(document).ready(function(){
 
 
 <!-- Modal -->
-<form:form commandName="test"  class="form-horizontal" >
+<form:form commandName="test"  class="form-horizontal newexamForm" >
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -109,8 +109,34 @@ $(document).ready(function(){
       </div><!-- /.content-wrapper -->
 
   
-  
-  
+  <script type="text/javascript">
+<!-- 
+$(document).ready(function(){
+	$(".newexamForm").validate(
+			{
+				rules:{
+					name:{
+						required:true,
+						minlength:5
+						},
+						description:{
+									required:true,
+									minlength:5
+									
+									}
+					},
+					highlight:function(element){
+						$(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+						},
+						unhighlight:function(element){
+							$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+							}
+			}
+
+		);	
+});
+-->
+</script>
   
   
   

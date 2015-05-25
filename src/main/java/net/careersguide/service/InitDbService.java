@@ -72,6 +72,11 @@ public class InitDbService {
 		userAdmin.setRoles(roles);
 		userAdmin.setEnabled(true);
 		userRepository.save(userAdmin);
+		Resume profileAdmin=new Resume();
+		profileAdmin.setUser(userAdmin);
+		profileAdmin.setFirstName("Admin");
+		profileAdmin.setLastName("User");
+		resumeRepository.save(profileAdmin);
 
 		User userCorp =new User();
 		
@@ -86,7 +91,11 @@ public class InitDbService {
 		userCorp.setRoles(rolesCorp);
 		userCorp.setEnabled(true);
 		userRepository.save(userCorp);
-		
+		Resume profileCorp=new Resume();
+		 profileCorp.setUser(userCorp);
+		 profileCorp.setFirstName("ABC Company");
+		resumeRepository.save( profileCorp);
+
 		Test test =new Test();
 		test.setEmployer(userCorp);
 		test.setName("SampleTest");

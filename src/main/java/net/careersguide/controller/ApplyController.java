@@ -1,6 +1,7 @@
 package net.careersguide.controller;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.portlet.ModelAndView;
 
 @Controller
 public class ApplyController {
@@ -81,6 +83,13 @@ public class ApplyController {
 		return "response";
 
 	}
+	@RequestMapping(value = "/export/{id}", method = RequestMethod.GET)
+	public String getExcel(@PathVariable int id,Model model) {
+		List  resultList =new ArrayList<Apply>();
+		resultList= applyService.findById(id);
+		model.addAttribute(resultList);
+		return "ResultListExcel";
+	}  
 	@ModelAttribute("assigntest")
 	public AssignTest assignExamModel(){
 		return new AssignTest();

@@ -219,7 +219,7 @@ $(document).ready(function(){
 				rules:{
 					title:{
 						required:true,
-						minlength:8
+						minlength:5
 						},
 						companyEmail:{
 							required:true,

@@ -139,7 +139,7 @@ body {
 			<div class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
-					<img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+					<img src="#" class="img-responsive" alt="">
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
@@ -149,7 +149,7 @@ body {
     <c:out value='${ userDetail.lastName}'/>
 					</div>
 					<div class="profile-usertitle-job">
-						Developer
+					
 					</div>
 				</div>
 				<!-- END SIDEBAR USER TITLE -->
@@ -176,7 +176,7 @@ body {
 						<li>
 							<a href='<spring:url value="/resume-update.html" />' target="_blank">
 							<i class="glyphicon glyphicon-ok"></i>
-							Resume Update </a>
+							 Update Profile </a>
 						</li>
 						<li>
 							<a href='<spring:url value="/education.html" />' target="_blank">
@@ -217,25 +217,21 @@ body {
    
   </tr>
   <tr>
+  <td>Address:</td>
+    <td> <c:out value="${ userDetail.address}"/></td>
+       
+  </tr>
+ <tr>
   <td>State:</td>
     <td> <c:out value="${ userDetail.state}"/></td>
        
   </tr>
- <tr>
+  <tr>
   <td>City:</td>
     <td> <c:out value="${ userDetail.city}"/></td>
        
   </tr>
-  <tr>
-  <td>Age:</td>
-    <td> <c:out value="${ userDetail.city}"/></td>
-       
-  </tr>
-<tr>
-  <td>Gender:</td>
-    <td> <c:out value="${ userDetail.city}"/></td>
-       
-  </tr>
+
  <tr>
   <td>Email:</td>
     <td> <c:out value="${ userDetail.email}"/></td>

@@ -6,8 +6,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Page Header
-            <small>Optional description</small>
+           Create Exams 
+         
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -19,7 +19,7 @@
     <button type="button" class="btn btn-primary " data-toggle="modal"
 	data-target="#myModal">New Question</button>
 
-<form:form commandName="addquestion" class="form-horizontal">
+<form:form commandName="addquestion" class="form-horizontal addQuestionForm">
 	<!-- Modal -->
 
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
@@ -40,37 +40,37 @@
 
 
 						<div class="form-group">
-							<label for="firstName" class="col-sm-2 control-label">Statement</label>
+							<label for="statement" class="col-sm-2 control-label">Statement</label>
 							<div class="col-sm-10">
 								<form:input path="statement" class="form-control" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="Option" class="col-sm-2 control-label">Option A</label>
+							<label for="solution1" class="col-sm-2 control-label">Option A</label>
 							<div class="col-sm-10">
 								<form:input path="solution1" class="form-control" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="Option" class="col-sm-2 control-label">Option B</label>
+							<label for="solution2" class="col-sm-2 control-label">Option B</label>
 							<div class="col-sm-10">
 								<form:input path="solution2" class="form-control" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="Option" class="col-sm-2 control-label">Option C</label>
+							<label for="solution3" class="col-sm-2 control-label">Option C</label>
 							<div class="col-sm-10">
 								<form:input path="solution3" class="form-control" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="Option" class="col-sm-2 control-label">Option D</label>
+							<label for="solution4" class="col-sm-2 control-label">Option D</label>
 							<div class="col-sm-10">
 								<form:input path="solution4" class="form-control" />
 							</div>
 						</div>
 						<div class=" form-group">
-					<label class="control-label col-sm-2">Marks</label> 
+					<label for="marks" class="control-label col-sm-2">Marks</label> 
 					<div class="col-sm-10">
 					<form:select   path="marks"  class="form-control" id="pass" value="">
 					<form:option value="0" label="Select Marks" />
@@ -168,4 +168,52 @@
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
 
+<script type="text/javascript">
+<!-- 
+$(document).ready(function(){
+	$(".addQuestionForm").validate(
+			{
+				rules:{
+					
+					statement:{
+							required:true,
+							minlength:5
+							},
+							solution1:{
+								required:true,
+								minlength:3
+								},
+								solution2:{
+									required:true,
+									minlength:3
+									},
+									solution3:{
+										required:true,
+										minlength:3
+										},
+										solution4:{
+											required:true,
+											minlength:3
+											},
+											marks:{
+												required:true,
+												minlength:1
+												},
+											rightsolution:{
+								required:true,
+								minlength:1
+								}
+								
+					},
+					highlight:function(element){
+						$(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+						},
+						unhighlight:function(element){
+							$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+							}
+			}
 
+		);	
+});
+-->
+</script>

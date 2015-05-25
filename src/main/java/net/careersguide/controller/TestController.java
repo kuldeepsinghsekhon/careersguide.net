@@ -1,6 +1,7 @@
 package net.careersguide.controller;
 
 import java.security.Principal;
+import java.util.List;
 
 import net.careersguide.entity.Answers;
 import net.careersguide.entity.Apply;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.portlet.ModelAndView;
 
 @Controller
 public class TestController {
@@ -89,6 +91,7 @@ public class TestController {
 		
 		return "redirect:/response/{id}.html";
 	}
+	 
 	@ModelAttribute("answers")
 	public Answers createAnswersModel(){
 		return new Answers();

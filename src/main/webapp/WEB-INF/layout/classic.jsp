@@ -135,7 +135,7 @@ body {
       
         <security:authorize access="isAuthenticated()">
         <li class="dropdown">
-          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span>Profile <span class="caret"></span></a>
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span><security:authentication property="principal.username"/> <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href='<spring:url value="/profile.html" />'>Profile</a></li>
             <li><a href="/settings.html"><span class=" glyphicon glyphicon-cog" aria-hidden="true"></span>Settings</a></li>

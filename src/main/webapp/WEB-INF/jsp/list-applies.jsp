@@ -39,7 +39,7 @@ $(document).ready(function(){
         <section class="content">
  <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">  Job Responses</h3><a class="btn btn-info pull-right" href='<spring:url value="/response/${examid}/result.html"/>' style="margin-left:20px;">Prepare Result</a><a class="btn btn-primary pull-right" href='<spring:url value="#"/>'>Download Excel</a>
+                  <h3 class="box-title">  Job Responses</h3><a class="btn btn-info pull-right" href='<spring:url value="/response/${examid}/result.html"/>' style="margin-left:20px;">Prepare Result</a><a class="btn btn-primary pull-right" href='<spring:url value="/export/${examid}.html"/>'>Download Excel</a>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table class="table table-bordered table-hover table-striped">

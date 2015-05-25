@@ -26,7 +26,7 @@ $(document).ready(function(){
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" ><span class="glyphicon glyphicon-user">
-                            </span>Update Resume</a>
+                            </span>Update Profile</a>
                         </h4>
                     </div>
                     <div id="collapseThree" class="panel-collapse">
@@ -55,7 +55,7 @@ $(document).ready(function(){
                                 <tr>
                                     <td>
                                         <span class="glyphicon glyphicon-trash text-danger"></span><a href="#" class="text-danger">
-                                            Update Resume</a>
+                                            Update Profile</a>
                                     </td>
                                 </tr>
                             </table>
@@ -82,7 +82,7 @@ $(document).ready(function(){
 		</c:if>	
 		
 		<div class="panel panel-default">
-  <div class="panel-heading">Update Resume</div>
+  <div class="panel-heading">Update Profile</div>
   <div class="panel-body">
   
 				
@@ -164,6 +164,12 @@ $(document).ready(function(){
     <label for="city" class="col-sm-2 control-label">City</label>
     <div class="col-sm-10">
       <form:input path ="city"  class="form-control" value='${resume.city}' />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="phone" class="col-sm-2 control-label">Phone</label>
+    <div class="col-sm-10">
+      <form:input path ="phone"  class="form-control" value='${resume.phone}' />
     </div>
   </div>
   

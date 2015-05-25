@@ -12,7 +12,7 @@
               <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Alexander Pierce</p>
+              <p><security:authentication property="principal.username"/></p>
               <!-- Status -->
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -39,19 +39,7 @@
 							<li class="${current=='tests'?'active':'' }"><a href='<spring:url value="/tests.html" />'><i class="fa fa-circle-o"></i><span>Exams</span></a></li>
 					<li class="${current=='users'?'active':'' }"><a	href='<spring:url value="/posted-jobs.html" />'><i class="fa fa-circle-o"></i><span>Prepair Exams Result</span></a></li>
 					</security:authorize>
-					<li>
-              <a href="../calendar.html">
-                <i class=""></i> <span>Calendar</span>
-               
-              </a>
-            </li>
-            <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="#">Link in level 2</a></li>
-                <li><a href="#">Link in level 2</a></li>
-              </ul>
-            </li>
+					
           </ul><!-- /.sidebar-menu -->
         </section>
         <!-- /.sidebar -->
