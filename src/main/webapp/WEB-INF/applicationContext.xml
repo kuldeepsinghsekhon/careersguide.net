@@ -24,14 +24,14 @@
 		<property name="privateKey" value="6LeqPwYTAAAAAL0PblaOtcEI1pcBAKXNOTsPJkC8"/>
 	</bean>
 	<bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
-<beans profile="dev">
-<import resource="database-dev.xml"/>
-</beans>
-<beans profile="prod">
-<import resource="database-prod.xml"/>
-</beans>
-<beans profile="mysql">
-<import resource="database-mysql.xml"/>
-</beans>
+<beans profile="dev"> 
+ <import resource="database-dev.xml"/> 
+</beans> 
+<!-- <beans profile="prod"> -->
+<!-- <import resource="database-prod.xml"/> -->
+<!-- </beans> -->
+<!-- <beans profile="mysql"> -->
+<!-- <import resource="database-mysql.xml"/> -->
+<!--  </beans>  -->
 
-    </beans>
+   </beans>

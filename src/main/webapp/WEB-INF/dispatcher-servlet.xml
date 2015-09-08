@@ -19,10 +19,10 @@
 <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
     <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
 </bean>
-<bean class="org.springframework.web.servlet.view.XmlViewResolver">
+<!-- <bean class="org.springframework.web.servlet.view.XmlViewResolver">
 	   <property name="location">
 	       <value>/WEB-INF/spring-excel-views.xml</value>
 	   </property>
 	   <property name="order" value="0" />
-	</bean>
+	</bean> -->
 </beans>
